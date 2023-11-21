@@ -1,0 +1,41 @@
+//<INPUT>
+// Сніппет (HTML): inp
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.input {
+  border-radius: 25px;
+  width: 100%;
+  display: block;
+  padding: 8px 24px;
+  outline: 0;
+  border: 2px solid transparent;
+  &._form-focus {
+  }
+  &._form-error {
+  }
+}
+.input[placeholder]:not([data-placeholder-nohiden]) {
+  opacity: 1;
+  font-size: toRem(20);
+  line-height: math.div(24, 26);
+  &:focus {
+    border: 2px solid $primaryColor;
+  }
+  &::placeholder {
+    transition: opacity 0.3s;
+  }
+  &:focus::placeholder {
+    opacity: 0;
+  }
+}
+
+textarea.input {
+  resize: none;
+  padding: 0px 0px;
+}

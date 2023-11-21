@@ -1,0 +1,138 @@
+@use 'sass:math';
+
+// Connecting Mixins
+@import 'base/mixins';
+
+//Connecting fonts
+@import 'fonts/fonts';
+
+//Connection of icon fonts
+//@import "fonts/icons";
+
+//Template Settings
+
+//Default font
+$fontFamily: 'FuturaPT';
+$fontFamilyHeading: 'Halvar Breitschrift';
+$fontSize: toRem(14); //where 14(px) is the default font size from the layout
+
+//Basic colors
+$mainColor: #373a3b; //Default font color
+$bodyColor: #e5e5e5;
+$whiteColor: #fff;
+$gradientColor: var(--1, linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #3b4c82 106.06%));
+$primaryColor: #4d64aa;
+
+//Responsive Grid Settings
+//Minimum page width
+$minWidth: 320;
+//Width of the canvas (layout)
+$maxWidth: 1920;
+//Width of the bounding box (0 = no bounding)
+$maxWidthContainer: 1595;
+//The total indentation of the container
+//(30 = 15px left and right, 0 = no indentation)
+$containerPadding: 30;
+
+//Width of triggering of the first breakpoint
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+//Break points
+$pc: em($containerWidth); //PCs, laptops, some tablets in horizontal position
+$tablet: em(991.98); //Tablets, some phones in horizontal position
+$mobile: em(767.98); //Phones L
+$mobileSmall: em(479.98); //Phones S
+//Adaptive type:
+//1 = responsiveness (container has no breakpoints),
+//2 = at the breakpoint (the container changes its width at the breakpoint)
+$responsiveType: 1;
+
+//Reset
+@import 'base/null';
+
+//BODY Tag Styles
+body {
+  background-color: $bodyColor;
+  //Scroll is locked
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
+  //The site is loaded
+  .loaded & {
+  }
+}
+
+//wrapper
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  @supports (overflow: clip) {
+    overflow: clip;
+  }
+  //Press the footer
+  > main {
+    flex: 1 1 auto;
+  }
+  //Fix for sliders
+  > * {
+    min-width: 0;
+  }
+}
+//Confining container
+@if ($responsiveType==1) {
+  //Sensitive
+  [class*='__container'] {
+    @if ($maxWidthContainer>0) {
+      max-width: toRem($containerWidth);
+      margin: 0 auto;
+    }
+    @if ($containerPadding>0) {
+      @if ($maxWidthContainer>0) {
+        padding: 0 toRem(math.div($containerPadding, 2));
+      } @else {
+        @include adaptiveValue('padding-left', math.div($containerPadding, 2), 15);
+        @include adaptiveValue('padding-right', math.div($containerPadding, 2), 15);
+      }
+    }
+  }
+} @else {
+  //Break points
+  [class*='__container'] {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+      max-width: toRem($containerWidth);
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 toRem(math.div($containerPadding, 2));
+      }
+    }
+    @media (max-width: $pc) {
+      max-width: toRem(970);
+    }
+    @media (max-width: $tablet) {
+      max-width: toRem(750);
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 toRem(math.div($containerPadding, 2));
+      }
+    }
+  }
+}
+
+@import 'base';
+
+//Connecting the styles of common elements of the project
+@import 'common';
+
+//Connecting the styles of individual blocks
+@import 'header';
+@import 'footer';
+
+//Connecting the styles of individual pages
+@import 'home';

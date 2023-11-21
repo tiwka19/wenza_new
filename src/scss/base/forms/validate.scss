@@ -1,0 +1,10 @@
+.just-validate-error-label {
+  font-size: toRem(16);
+  margin-top: toRem(5);
+  padding-left: toRem(25);
+  position: absolute;
+}
+
+.just-validate-error-field {
+  border: 2px solid rgb(184, 17, 17) !important;
+}

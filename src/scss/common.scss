@@ -1,0 +1,47 @@
+// Заголовки, загальні БЕМ блоки та інше...
+h1,
+h2,
+h3,
+h4 {
+  font-family: $fontFamilyHeading;
+}
+
+.callback {
+  padding-bottom: toRem(120);
+  &__wrapper {
+    padding: toRem(80) toRem(50);
+    border-radius: 25px;
+    background: var(--2, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
+    box-shadow:
+      1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+      -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+      0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+      -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+    backdrop-filter: blur(8.5px);
+  }
+  &__title {
+    @include adaptiveValue('font-size', 48, 20);
+    line-height: math.div(59, 48);
+    text-align: center;
+    margin-bottom: toRem(40);
+  }
+  &__text {
+    font-size: toRem(28);
+    margin-bottom: toRem(64);
+    text-align: center;
+  }
+  &__inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: toRem(40);
+    margin-bottom: toRem(64);
+  }
+  &__button {
+    text-align: center;
+  }
+  &__input {
+    width: 100%;
+    position: relative;
+  }
+}

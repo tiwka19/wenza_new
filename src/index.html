@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"HomePage" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page page-home">
+        <section class="hero">
+          <div class="hero__container">
+            <div class="hero__data">
+              <h1 class="hero__title">
+                Smart Solutions <br />
+                for Smart Machines
+              </h1>
+              <p class="hero__descr">
+                Metal Cutting Tools Manufacturer. <br />
+                Based in the UAE. Working Worldwide
+              </p>
+              <a href="#" class="hero__button button button--primary"> contact us </a>
+            </div>
+            <div class="hero__image">
+              <img src="@img/hero.png" alt="image" />
+            </div>
+            <a href="#" class="hero__button hero__button--mobile button button--primary"> contact us </a>
+          </div>
+        </section>
+        <section class="news">
+          <div class="news__container">
+            <div class="news__wrapper">
+              <div class="news__image">
+                <img src="@img/news.png" alt="news" />
+              </div>
+              <a href="#" class="news__button news__button--mobile button button--secondary">button for news block</a>
+              <div class="news__data">
+                <h2 class="news__title">Title of News</h2>
+                <h3 class="news__subtitle">Subtitle for News</h3>
+                <a href="#" class="news__button button button--secondary">button for news block</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="steps">
+          <div class="steps__container">
+            <div class="steps__items">
+              <div class="steps__item">
+                <span class="steps__item-number">1</span>
+                <h3 class="steps__item-title">Increase the Speed & Quality for Machining</h3>
+              </div>
+              <div class="steps__item-line"></div>
+              <div class="steps__item">
+                <span class="steps__item-number">2</span>
+                <h3 class="steps__item-title">Increase the Speed & Quality for Machining</h3>
+              </div>
+              <div class="steps__item-line"></div>
+              <div class="steps__item">
+                <span class="steps__item-number">3</span>
+                <h3 class="steps__item-title">Increase the Speed & Quality for Machining</h3>
+              </div>
+              <div class="steps__item-line"></div>
+              <div class="steps__item">
+                <span class="steps__item-number">4</span>
+                <h3 class="steps__item-title">Increase the Speed & Quality for Machining</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="callback" id="callback">
+          <div class="callback__container">
+            <div class="callback__wrapper">
+              <h2 class="callback__title">We Can Solve Your Task</h2>
+              <p class="callback__text">Contact us and get a free consultation to help you plan and execute your metalworking projects.</p>
+              <form class="callback__form" id="form" autocomplete="off" novalidate="novalidate">
+                <div class="callback__inputs">
+                  <div class="callback__input">
+                    <input class="callback__input input" id="name" placeholder="Your name" />
+                    <div class="error-name-container"></div>
+                  </div>
+                  <div class="callback__input">
+                    <input class="callback__input input" id="email" placeholder="Your email" />
+                    <div class="error-email-container"></div>
+                  </div>
+                  <div class="callback__input">
+                    <input class="callback__input input" id="phone" placeholder="Your phone" />
+                    <div class="error-phone-container"></div>
+                  </div>
+                </div>
+                <div class="callback__button">
+                  <button class="button button--primary">contact us</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>

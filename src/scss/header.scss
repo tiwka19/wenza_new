@@ -1,0 +1,216 @@
+//====================================================================================================
+.header {
+  padding-top: toRem(45);
+  padding-bottom: toRem(45);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: $bodyColor;
+  width: 100%;
+  transition: all 0.3s;
+  z-index: 50;
+  @media (max-width: $mobile) {
+    padding-top: toRem(25);
+    padding-bottom: toRem(25);
+  }
+  &._header-scroll {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding-top: toRem(30);
+    padding-bottom: toRem(30);
+  }
+  &__container {
+    @extend %flexStack;
+    gap: toRem(15);
+  }
+  &__menu {
+    flex: 1 1 auto;
+  }
+  &__logo {
+    width: toRem(320);
+    @include adaptiveValue('width', 320, 250, 3, 1920, 1200);
+    @media (max-width: $mobileSmall) {
+      width: toRem(170);
+    }
+  }
+  &__contacts {
+    @extend %flexCenter;
+    gap: toRem(30);
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  &__contacts-item {
+    @extend %flexCenter;
+    gap: toRem(10);
+    font-weight: 500;
+    font-size: toRem(20);
+    transition: color 0.2s ease 0s;
+    ion-icon {
+      font-size: 24px;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+    @media (max-width: em(1300)) {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+.menu {
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: toRem(30);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: toRem(30);
+    }
+  }
+  &__body {
+    @media (max-width: $tablet) {
+      position: fixed;
+      width: toRem(250);
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      top: 0;
+      right: 0;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      padding: toRem(50) toRem(25);
+      transition: transform 0.2s ease 0s;
+      overflow: auto;
+      gap: toRem(30);
+      border-radius: 0 0 0 toRem(15);
+      background-color: #2e2d2c;
+      color: #fff;
+      padding: toRem(70) toRem(30) toRem(30);
+      z-index: 151;
+      transform: translateX(100%);
+      .menu-open & {
+        transform: translate(0);
+      }
+    }
+  }
+  &__link {
+    font-weight: 500;
+    font-size: toRem(20);
+    transition: color 0.2s ease 0s;
+    position: relative;
+
+    &::before,
+    &::after {
+      pointer-events: none;
+    }
+    &::before {
+      transition: 0.3s all ease 0s;
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $primaryColor;
+    }
+    &::after {
+      content: '';
+      transition: all 0.3s ease 0s;
+      position: absolute;
+      transform: scale(0);
+      left: 0;
+      bottom: -9px;
+      border-radius: 50%;
+      background-color: $primaryColor;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primaryColor;
+        &::before {
+          width: 100%;
+        }
+        &::after {
+          left: 100%;
+          width: 10px;
+          height: 10px;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+  display: none;
+  z-index: 152;
+  @media (max-width: $tablet) {
+    display: block;
+    position: absolute;
+    right: toRem(15);
+    height: toRem(30);
+  }
+  &__dots {
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+    .menu-open & {
+      display: none;
+    }
+  }
+  &__dot {
+    width: toRem(6);
+    height: toRem(6);
+    border-radius: 50%;
+    background-color: #000;
+    position: relative;
+  }
+  &__close {
+    display: none;
+    width: toRem(30);
+    height: toRem(30);
+    z-index: 10;
+    position: relative;
+    color: #fff;
+    .menu-open & {
+      display: block;
+    }
+  }
+}
+
+.marker {
+  position: absolute;
+  height: toRem(3);
+  width: 0;
+  left: 0;
+  background-color: var(--text-accent);
+  bottom: -9px;
+  transition: all 0.3s ease 0s;
+  border-radius: toRem(4);
+  &__wrapper {
+    position: relative;
+    &::after {
+      transform: scale(0);
+      content: '';
+      transition: all 0.3s ease 0s;
+      position: absolute;
+      right: 0;
+      bottom: -7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: var(--text-accent);
+    }
+    &._active::after {
+      transform: scale(1);
+    }
+  }
+}
