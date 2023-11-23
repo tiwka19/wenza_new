@@ -166,7 +166,7 @@
     }
   }
   .steps {
-    padding-bottom: toRem(120);
+    @include adaptiveValue('padding-bottom', 120, 40);
     &__items {
       @extend %flexStack;
       gap: 25px;
@@ -273,21 +273,30 @@
     }
   }
   .catalogs {
-    margin-bottom: toRem(120);
+    @include adaptiveValue('padding-bottom', 120, 40);
     &__title {
       @include adaptiveValue('font-size', 64, 20);
       line-height: math.div(64, 79);
-      @include adaptiveValue('margin-bottom', 40, 15);
+      @include adaptiveValue('margin-bottom', 40, 30);
+      @media (max-width: $mobileSmall) {
+        text-align: center;
+      }
     }
     &__items {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: toRem(40);
+      @media (max-width: em(1200)) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+      }
     }
     &__item {
       position: relative;
       border-radius: toRem(60);
-      min-height: toRem(612);
+      @include adaptiveValue('min-height', 612, 396);
       padding: toRem(40);
       overflow: hidden;
       display: flex;
@@ -300,6 +309,9 @@
         -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
       border: 2px solid var(--white, #fff);
       background: linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%);
+      @media (max-width: $mobile) {
+        border-radius: toRem(15);
+      }
     }
     &__item-data {
       margin-top: auto;
@@ -308,7 +320,7 @@
       z-index: 1;
     }
     &__item-title {
-      font-size: toRem(36);
+      @include adaptiveValue('font-size', 36, 18);
       line-height: math.div(44, 36);
       margin-bottom: toRem(15);
       max-width: toRem(315);
@@ -317,11 +329,36 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 500px;
       height: 630px;
+      object-fit: contain;
+      @media (max-width: $mobile) {
+        width: 320px;
+        height: auto;
+      }
     }
     &__item-button {
-      font-size: toRem(24);
+      @include adaptiveValue('font-size', 24, 18);
+    }
+  }
+  .map {
+    &__container {
+      position: relative;
+    }
+    &__container button.zoom {
+      position: absolute;
+      top: 15px;
+      right: 0;
+      z-index: 1;
+      font-size: toRem(18);
+    }
+    &__title {
+      @include adaptiveValue('font-size', 64, 20);
+      line-height: math.div(79, 64);
+      margin-bottom: toRem(80);
+    }
+    &__box {
+      height: toRem(750);
     }
   }
 }

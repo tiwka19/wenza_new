@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 import '../../scss/base/swiper.scss';
 
@@ -10,34 +10,38 @@ import '../../scss/base/swiper.scss';
 function initSliders() {
   if (document.querySelector('.swiper')) {
     new Swiper('.swiper', {
-      modules: [Navigation],
+      modules: [Navigation, Pagination],
       observer: true,
       observeParents: true,
       slidesPerView: 4,
       spaceBetween: 40,
-      autoHeight: true,
       speed: 800,
-
+      grabCursor: true,
       navigation: {
         prevEl: '.product-slider-prev',
         nextEl: '.product-slider-next',
+      },
+
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true,
       },
 
       breakpoints: {
         320: {
           slidesPerView: 'auto',
           spaceBetween: 30,
+          freeMode: true,
         },
         640: {
           slidesPerView: 2,
         },
         768: {
           slidesPerView: 3,
-          spaceBetween: 20,
         },
         1024: {
           slidesPerView: 4,
-          spaceBetween: 20,
         },
       },
 

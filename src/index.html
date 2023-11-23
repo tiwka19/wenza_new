@@ -71,7 +71,10 @@
               <div class="catalogs__item">
                 <img src="@img/catalogs/catalog-6.png" width="350" height="610" alt="image" class="catalogs__item-image" />
                 <div class="catalogs__item-data">
-                  <h3 class="catalogs__item-title">Super-Hard Material Tools</h3>
+                  <h3 class="catalogs__item-title">
+                    Super-Hard <br />
+                    Material Tools
+                  </h3>
                   <a href="#" class="catalogs__item-button button button--primary">download</a>
                 </div>
               </div>
@@ -159,9 +162,11 @@
           <div class="slider__container">
             <div class="slider__wrapper">
               <button class="product-slider-prev slider__button">
-                <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11 1L2 10L11 19" stroke="white" stroke-width="2" stroke-linecap="round" />
-                </svg>
+                <span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L2 10L11 19" stroke="white" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
               </button>
               <div class="slider__inner swiper">
                 <div class="slider__items swiper-wrapper">
@@ -272,12 +277,27 @@
                 </div>
               </div>
               <button class="product-slider-next slider__button">
-                <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11 1L2 10L11 19" stroke="white" stroke-width="2" stroke-linecap="round" />
-                </svg>
+                <span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L2 10L11 19" stroke="white" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
               </button>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
+        </section>
+        <section class="map">
+          <div class="map__container">
+            <h2 class="map__title">
+              Wenza is Working <br />
+              Worldwide
+            </h2>
+          </div>
+          <div class="map__container">
+            <button class="zoom button button--primary">Enable zoom</button>
+          </div>
+          <div class="map__box" id="map"></div>
         </section>
       </main>
       @@include('html/_footer.htm',{})
@@ -285,9 +305,3 @@
     @@include('html/_js.htm',{})
   </body>
 </html>
-
-<div class="имя-блока__slider swiper">
-  <div class="имя-блока__wrapper swiper-wrapper">
-    <div class="имя-блока__slide swiper-slide"></div>
-  </div>
-</div>

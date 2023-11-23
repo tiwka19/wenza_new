@@ -3,12 +3,50 @@
     <a href="#" class="header__logo"><img width="320" height="27" src="@img/logo.svg" alt="logo" /></a>
     <div class="header__menu menu">
       <nav class="menu__body">
-        <ul class="menu__list">
-          <li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Catalogs</a></li>
+        <ul class="menu__list" data-spollers="992,max">
+          <li class="menu__item">
+            <button class="menu__link" data-spoller data-dropdown-button>About Us</button>
+            <div class="menu__dropdown dropdown">
+              <ul class="dropdown__wrapper">
+                <li><a href="#" class="dropdown__link">Company Profile</a></li>
+                <li><a href="#" class="dropdown__link">Our Production</a></li>
+                <li><a href="#" class="dropdown__link">Industry Solutions</a></li>
+                <li><a href="#" class="dropdown__link">Distribution Network</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link" data-dropdown-button>Catalogs</a>
+            <div class="menu__dropdown dropdown">
+              <ul class="dropdown__wrapper">
+                <li><a href="#" class="dropdown__link">Carbide Inserts</a></li>
+                <li><a href="#" class="dropdown__link">CBN, PCD, Ceramics Inserts</a></li>
+                <li><a href="#" class="dropdown__link">Turning Tool Holders</a></li>
+                <li><a href="#" class="dropdown__link">Threading Tools</a></li>
+                <li><a href="#" class="dropdown__link">Milling Tools</a></li>
+              </ul>
+            </div>
+          </li>
           <li class="menu__item"><a href="#" class="menu__link">Products</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">What’s New</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
+          <li class="menu__item">
+            <a href="#" class="menu__link" data-dropdown-button>What’s New</a>
+            <div class="menu__dropdown dropdown">
+              <ul class="dropdown__wrapper">
+                <li><a href="#" class="dropdown__link">News</a></li>
+                <li><a href="#" class="dropdown__link">Blog</a></li>
+                <li><a href="#" class="dropdown__link">Press Kit</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link" data-dropdown-button>Contact</a>
+            <div class="menu__dropdown dropdown">
+              <ul class="dropdown__wrapper">
+                <li><a href="#" class="dropdown__link">Send Request</a></li>
+                <li><a href="#" class="dropdown__link">Careers</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>

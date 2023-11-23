@@ -63,3 +63,20 @@ validation
       errorsContainer: document.querySelector('error-email-container'),
     },
   );
+
+const dropDownButtons = document.querySelectorAll('[data-dropdown-button]');
+
+if (window.innerWidth > 992) {
+  dropDownButtons.forEach((button) => {
+    console.log(button);
+    button.addEventListener('mouseover', () => {
+      button.parentNode.classList.add('_active');
+    });
+
+    button.parentNode.addEventListener('mouseout', (event) => {
+      if (!event.relatedTarget || !event.relatedTarget.closest('._active')) {
+        button.parentNode.classList.remove('_active');
+      }
+    });
+  });
+}

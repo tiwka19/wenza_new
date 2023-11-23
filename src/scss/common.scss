@@ -6,8 +6,22 @@ h4 {
   font-family: $fontFamilyHeading;
 }
 
+.marker {
+  background: url('../img/mapbox-icon.svg') 0 0 no-repeat;
+  background-size: cover;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-ctrl-bottom-right,
+.mapboxgl-ctrl-bottom-left {
+  display: none;
+}
+
 .callback {
-  padding-bottom: toRem(120);
+  @include adaptiveValue('padding-bottom', 120, 40);
   max-width: toRem(1322);
   margin: 0 auto;
   &__wrapper {
@@ -19,17 +33,20 @@ h4 {
       -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
       0px 4px 6px 0px rgba(0, 0, 0, 0.07),
       -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
-    backdrop-filter: blur(8.5px);
+    @media (max-width: $mobile) {
+      padding: toRem(32) toRem(24);
+    }
   }
   &__title {
     @include adaptiveValue('font-size', 48, 20);
     line-height: math.div(59, 48);
     text-align: center;
-    margin-bottom: toRem(40);
+    @include adaptiveValue('margin-bottom', 40, 15);
   }
   &__text {
-    font-size: toRem(28);
-    margin-bottom: toRem(64);
+    @include adaptiveValue('font-size', 28, 18);
+    line-height: math.div(36, 28);
+    @include adaptiveValue('margin-bottom', 64, 24);
     text-align: center;
   }
   &__inputs {
@@ -38,9 +55,19 @@ h4 {
     justify-content: space-between;
     gap: toRem(40);
     margin-bottom: toRem(64);
+    @include adaptiveValue('margin-bottom', 64, 40);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: toRem(30);
+    }
   }
   &__button {
     text-align: center;
+    @media (max-width: $mobileSmall) {
+      button {
+        font-size: toRem(18);
+      }
+    }
   }
   &__input {
     width: 100%;
@@ -51,48 +78,59 @@ h4 {
 .slider {
   margin-bottom: toRem(120);
   position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    left: -250px;
-    @include adaptiveValue('left', -300, 0, 3, 1920, 1400);
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    border-radius: 0 60px 60px 0;
+
+  &__wrapper {
+    @include adaptiveValue('padding-top', 100, 30);
+    @include adaptiveValue('padding-bottom', 100, 30);
+    @include adaptiveValue('padding-left', 150, 30);
+    @include adaptiveValue('padding-right', 150, 30);
+    margin-left: toRem(-200);
+    @include adaptiveValue('margin-left', -200, -100, 3, 1920, 1200);
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: toRem(40);
+    position: relative;
+    border-radius: toRem(60);
     background: var(--1, linear-gradient(97deg, #010101 42.06%, #3b4c82 106.06%));
     box-shadow:
       0px 4px 5px 0px #000 inset,
       -1px 4px 12px 0px rgba(255, 255, 255, 0.4) inset,
       0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+    @media (max-width: em(1200)) {
+      margin-left: 0;
+      padding: toRem(30);
+    }
     @media (max-width: $mobile) {
       border-radius: 0;
+      margin: 0 toRem(-15);
     }
-  }
-  &::before{
-    content:'';
-    position: absolute;
-    right: 0;
-    z-index: 1;
-    top: toRem(-200);
-    background: url('../img/slider/slider-decor.png') 0 0 no-repeat;
-    width: 600px;
-    height: 900px;
-  }
-  &__wrapper {
-    padding: toRem(100) 0;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    gap: toRem(40);
-    @media (max-width: $mobile) {
-      padding: toRem(30) 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: -400px;
+      @include adaptiveValue('right', -400, -100, 1920, 1200);
+      z-index: 1;
+      top: toRem(100);
+      background: url('../img/slider/slider-decor.png') 0 0 no-repeat;
+      width: 700px;
+      height: 800px;
+      object-fit: contain;
+      @media (max-width: $pc) {
+        display: none;
+      }
     }
   }
   &__inner {
     max-width: toRem(1240);
+    margin: 0 auto;
     z-index: 2;
+  }
+  &__items {
+    @media (max-width: $mobile) {
+      margin-bottom: toRem(60);
+    }
   }
   &__item {
     margin: 0 auto;
@@ -129,8 +167,8 @@ h4 {
     margin-bottom: toRem(30);
     font-size: toRem(20);
     font-weight: 500;
-    @media (max-width:$mobileSmall){
-       font-size: toRem(16); 
+    @media (max-width: $mobileSmall) {
+      font-size: toRem(16);
     }
   }
   &__item-button {
@@ -145,10 +183,38 @@ h4 {
     }
   }
   &__button {
+    margin-top: toRem(100);
+    position: relative;
     z-index: 2;
-    padding-top: toRem(100);
+    width: 45px;
+    height: 45px;
+    flex: 0 0 45px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background: var(--2, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
+    box-shadow:
+      1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+      -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+      0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+      -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+
     &.product-slider-next svg {
       rotate: 180deg;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: toRem(60);
+      height: toRem(60);
+      border-radius: 59.748px;
+      background: var(--2, linear-gradient(126deg, rgba(229, 229, 229, 0.7) 3.35%, rgba(255, 255, 255, 0) 97.01%));
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.03);
+      z-index: -1;
     }
     @media (max-width: $mobile) {
       display: none;

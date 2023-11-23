@@ -1,3 +1,76 @@
 //====================================================================================================
-
+.footer {
+  background: var(--1, linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #3b4c82 106.06%));
+  @include adaptiveValue('padding-top', 120, 30);
+  @include adaptiveValue('padding-bottom', 120, 30);
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: toRem(15);
+    margin-bottom: toRem(15);
+  }
+  &__items {
+    display: flex;
+    align-items: flex-start;
+    @include adaptiveValue('gap', 70, 30);
+    color: #fff;
+    font-size: toRem(20);
+    font-family: $fontFamily;
+    font-weight: 500;
+  }
+  &__item-title {
+    margin-bottom: toRem(50);
+  }
+  &__item-list-item {
+    transition: all 0.2s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: toRem(15);
+    }
+  }
+  &__logo {
+    margin-bottom: toRem(50);
+  }
+  &__contacts-items {
+    max-width: toRem(435);
+    margin-bottom: toRem(30);
+  }
+  &__contacts-item {
+    display: flex;
+    align-items: center;
+    gap: toRem(10);
+    color: #fff;
+    font-size: toRem(20);
+    ion-icon {
+      font-size: 24px;
+      flex: 0 0 24px;
+    }
+    &:not(:last-child) {
+      margin-bottom: toRem(15);
+    }
+  }
+  .socials {
+    &__items {
+      display: flex;
+      gap: toRem(15);
+    }
+    &__item {
+      flex: 0 0 40px;
+    }
+  }
+  &__terms {
+    display: flex;
+    gap: toRem(70);
+  }
+  &__terms-link {
+    font-size: toRem(20);
+    font-weight: 500;
+    color: $primaryColor;
+  }
+}
 //====================================================================================================
