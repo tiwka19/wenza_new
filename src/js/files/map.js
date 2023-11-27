@@ -30,6 +30,15 @@ const map = new mapboxGl.Map({
   projection: 'mercator',
 });
 
+const mq = window.matchMedia('(min-width: 420px)');
+
+if (mq.matches) {
+  map.setZoom(4.3);
+} else {
+  map.setZoom(2);
+  map.setCenter([15.468754, 44.57875]);
+}
+
 map.scrollZoom.disable();
 
 const zoomButton = document.querySelector('.zoom');

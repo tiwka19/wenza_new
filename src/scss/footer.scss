@@ -7,8 +7,12 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: toRem(15);
+    gap: toRem(30);
     margin-bottom: toRem(15);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      gap: toRem(50);
+    }
   }
   &__items {
     display: flex;
@@ -18,6 +22,12 @@
     font-size: toRem(20);
     font-family: $fontFamily;
     font-weight: 500;
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+  &__items--mobile {
+    color: #fff;
   }
   &__item-title {
     margin-bottom: toRem(50);
@@ -35,20 +45,33 @@
   }
   &__logo {
     margin-bottom: toRem(50);
+    @media (max-width: $mobileSmall) {
+      max-width: toRem(270);
+      margin: 0 auto toRem(35) auto;
+    }
   }
   &__contacts-items {
     max-width: toRem(435);
     margin-bottom: toRem(30);
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: toRem(15);
+    }
   }
   &__contacts-item {
     display: flex;
     align-items: center;
     gap: toRem(10);
     color: #fff;
-    font-size: toRem(20);
+    @include adaptiveValue('font-size', 20, 16);
     ion-icon {
       font-size: 24px;
       flex: 0 0 24px;
+      @media (max-width: $mobile) {
+        font-size: toRem(20);
+        flex: 0 0 20px;
+      }
     }
     &:not(:last-child) {
       margin-bottom: toRem(15);
@@ -65,10 +88,10 @@
   }
   &__terms {
     display: flex;
-    gap: toRem(70);
+    @include adaptiveValue('gap', 70, 15);
   }
   &__terms-link {
-    font-size: toRem(20);
+    @include adaptiveValue('font-size', 20, 16);
     font-weight: 500;
     color: $primaryColor;
   }

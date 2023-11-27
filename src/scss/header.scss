@@ -7,22 +7,24 @@
   left: 0;
   background-color: $bodyColor;
   width: 100%;
-  transition: all 0.3s;
+  transition: all 0.2s;
   z-index: 50;
+
   @media (max-width: $mobile) {
     padding-top: toRem(25);
     padding-bottom: toRem(25);
   }
   &._header-scroll {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    padding-top: toRem(30);
-    padding-bottom: toRem(30);
+    padding-top: toRem(25);
+    padding-bottom: toRem(25);
   }
   &__container {
     @extend %flexStack;
     gap: toRem(15);
   }
   &__menu {
+    z-index: 6;
     flex: 1 1 auto;
   }
   &__logo {
@@ -67,15 +69,13 @@
     justify-content: center;
     gap: toRem(30);
     @media (max-width: $tablet) {
-      flex-direction: column;
-      align-items: flex-start;
-      padding-top: toRem(30);
+      display: none;
     }
   }
   &__body {
     @media (max-width: $tablet) {
       position: fixed;
-      width: toRem(250);
+      width: toRem(270);
       height: auto;
       display: flex;
       flex-direction: column;
@@ -168,6 +168,34 @@
       }
     }
   }
+  &__mobile {
+    width: 100%;
+    font-weight: 500;
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
+  &__mobile-contacts-item {
+    display: flex;
+    align-items: flex-start;
+    gap: toRem(10);
+    font-size: toRem(16);
+    line-height: toRem(20);
+    font-weight: 400;
+    &:not(:last-child) {
+      margin-bottom: toRem(15);
+    }
+    svg {
+      width: toRem(18);
+      height: toRem(18);
+      flex: 0 0 toRem(18);
+    }
+    ion-icon {
+      font-size: toRem(14);
+      width: toRem(16);
+      height: toRem(16);
+    }
+  }
 }
 
 .dropdown {
@@ -194,7 +222,7 @@
     gap: toRem(15);
     padding-top: toRem(15);
     padding-bottom: toRem(15);
-  
+
     @media (min-width: $tablet) {
       padding: toRem(30);
       border-radius: 25px;
@@ -216,6 +244,9 @@
       &:hover {
         color: $primaryColor;
       }
+    }
+    @media (max-width: $tablet) {
+      white-space: wrap;
     }
   }
 }
@@ -245,7 +276,7 @@
     width: toRem(6);
     height: toRem(6);
     border-radius: 50%;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
     position: relative;
   }
   &__close {

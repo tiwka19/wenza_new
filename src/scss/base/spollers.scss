@@ -4,49 +4,32 @@
 // Блок зі спойлерами
 .spollers {
   display: grid;
-  gap: 15px;
+  width: 100%;
 }
 // Спойлер
 .spollers__item {
   font-size: toRem(20);
+  margin-bottom: toRem(25);
 }
 // Заголовок спойлера
 .spollers__title {
   width: 100%;
   cursor: default;
-  text-align: left;
-  border: 1px solid #eee;
-  padding: toRem(10) toRem(15);
-  border-radius: toRem(5);
   position: relative;
-  list-style: none;
-  &::marker {
+  display: flex;
+  align-items: center;
+  gap: toRem(10);
+  transition: all 0.2s;
+  ion-icon {
+    font-size: toRem(18);
   }
   ._spoller-init & {
     cursor: pointer;
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      background-color: #000;
-      height: 2px;
-      width: 15px;
-      transition: transform 0.5s ease 0s;
-    }
-    &::before {
-      transform: translate(-75%, -50%) rotate(40deg);
-    }
-    &::after {
-      transform: translate(0, -50%) rotate(-40deg);
-    }
+
     &._spoller-active {
-      &::before {
-        transform: translateX(-75%) rotate(-40deg);
-      }
-      &::after {
-        transform: rotate(40deg);
+      color: $primaryColor;
+      ion-icon {
+        transform: rotate(-180deg);
       }
     }
     /*
@@ -86,7 +69,9 @@
 }
 // Контент спойлера
 .spollers__body {
-  padding: toRem(20);
-  border-radius: toRem(5);
-  border: 1px solid #eee;
+  padding-top: toRem(20);
+  display: flex;
+  flex-direction: column;
+  gap: toRem(20);
+  font-size: toRem(16);
 }

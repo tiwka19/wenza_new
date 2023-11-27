@@ -351,14 +351,24 @@
       right: 0;
       z-index: 1;
       font-size: toRem(18);
+      @media (max-width:$mobile){
+         font-size: toRem(16);
+         padding: 15px; 
+      }
+      @media (max-width:$mobileSmall){
+         font-size: toRem(14); 
+      }
     }
     &__title {
       @include adaptiveValue('font-size', 64, 20);
       line-height: math.div(79, 64);
-      margin-bottom: toRem(80);
+      @include adaptiveValue("margin-bottom", 80, 25);
     }
     &__box {
       height: toRem(750);
+      @media (max-width: $mobile) {
+        height: toRem(300);
+      }
     }
   }
 }
