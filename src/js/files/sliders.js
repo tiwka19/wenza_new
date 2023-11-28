@@ -37,10 +37,10 @@ function initSliders() {
         640: {
           slidesPerView: 2,
         },
-        768: {
+        1200: {
           slidesPerView: 3,
         },
-        1024: {
+        1580: {
           slidesPerView: 4,
         },
       },

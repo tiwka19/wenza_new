@@ -22,45 +22,47 @@ const geojson = {
   ],
 };
 
-const map = new mapboxGl.Map({
-  container: 'map',
-  style: 'mapbox://styles/wenza/clpb0jjcc006i01pk6cvt1qh2',
-  center: [22.212293, 49.996184],
-  zoom: 4.3,
-  projection: 'mercator',
-});
+if (document.querySelector('#map')) {
+  const map = new mapboxGl.Map({
+    container: 'map',
+    style: 'mapbox://styles/wenza/clpb0jjcc006i01pk6cvt1qh2',
+    center: [22.212293, 49.996184],
+    zoom: 4.3,
+    projection: 'mercator',
+  });
 
-const mq = window.matchMedia('(min-width: 420px)');
+  const mq = window.matchMedia('(min-width: 420px)');
 
-if (mq.matches) {
-  map.setZoom(4.3);
-} else {
-  map.setZoom(2);
-  map.setCenter([15.468754, 44.57875]);
-}
-
-map.scrollZoom.disable();
-
-const zoomButton = document.querySelector('.zoom');
-let isZoomEnabled = false;
-
-zoomButton.addEventListener('click', () => {
-  if (isZoomEnabled) {
-    map.scrollZoom.disable();
-    zoomButton.textContent = 'Enable Zoom';
+  if (mq.matches) {
+    map.setZoom(4.3);
   } else {
-    map.scrollZoom.enable();
-    zoomButton.textContent = 'Disable Zoom';
+    map.setZoom(2);
+    map.setCenter([15.468754, 44.57875]);
   }
-  isZoomEnabled = !isZoomEnabled;
-});
 
-// add markers to map
-for (const feature of geojson.features) {
-  // create a HTML element for each feature
-  const el = document.createElement('div');
-  el.className = 'marker';
+  map.scrollZoom.disable();
 
-  // make a marker for each feature and add it to the map
-  new mapboxGl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+  const zoomButton = document.querySelector('.zoom');
+  let isZoomEnabled = false;
+
+  zoomButton.addEventListener('click', () => {
+    if (isZoomEnabled) {
+      map.scrollZoom.disable();
+      zoomButton.textContent = 'Enable Zoom';
+    } else {
+      map.scrollZoom.enable();
+      zoomButton.textContent = 'Disable Zoom';
+    }
+    isZoomEnabled = !isZoomEnabled;
+  });
+
+  // add markers to map
+  for (const feature of geojson.features) {
+    // create a HTML element for each feature
+    const el = document.createElement('div');
+    el.className = 'marker';
+
+    // make a marker for each feature and add it to the map
+    new mapboxGl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+  }
 }
