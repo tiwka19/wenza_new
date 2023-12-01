@@ -1,0 +1,50 @@
+.customer {
+  padding-top: toRem(50);
+  &__title {
+    margin-bottom: toRem(30);
+  }
+  &__item {
+    border-radius: 25px;
+    border: 2px solid var(--white, #fff);
+    background: linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%);
+    box-shadow:
+      1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+      -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+      0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+      -3px -3px 22px 0px rgba(255, 255, 255, 0.83) inset;
+    padding: toRem(32);
+    margin-bottom: toRem(40);
+  }
+  &__item-wrapper {
+    display: flex;
+    @include adaptiveValue('gap', 30, 15);
+  }
+
+  &__item-image {
+    flex: 0 0 toRem(310);
+    @media (max-width: $mobile) {
+      flex: 0 0 toRem(200);
+    }
+    @media (max-width: $mobileSmall) {
+      max-width: toRem(100);
+    }
+  }
+
+  &__data {
+    span {
+      @include adaptiveValue('font-size', 24, 16);
+      font-family: $fontFamilyHeading;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: toRem(10);
+  }
+  &__rating {
+    margin-bottom: toRem(15);
+    margin-top: toRem(15);
+  }
+  &__text {
+    @include adaptiveValue('font-size', 24, 16);
+    margin-top: auto;
+  }
+}

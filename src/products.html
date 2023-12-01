@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"HomePage" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page page-products">
+        <div class="products">
+          <div class="products__container">
+            <div class="products__hero hero">
+              <div class="hero__wrapper">
+                <div class="hero__data">
+                  <h1 class="hero__title _section-title">Products</h1>
+                  <p class="hero__description">
+                    Our main expertise lies in the field of super-hard materials (CBN, PCD, ceramics), and carbide inserts. Apart from that the
+                    product range includes cutting tools for each type of machining - turning, milling, threading, holemaking.
+                  </p>
+                  <p class="hero__description">If you would like to implement or order WENZA tools, contact us at info@wenza.tech</p>
+                </div>
+                <div class="hero__image">
+                  <img src="@img/products/hero.png" alt="hero" />
+                </div>
+              </div>
+            </div>
+            <div class="products__items">
+              <div class="products__item">
+                <span class="products__item-title">Carbide Inserts</span>
+                <img src="@img/products/carbide.svg" alt="carbide" class="products__item-image" />
+                <a href="#" class="products__item-button button button--primary">learn more</a>
+              </div>
+              <div class="products__item">
+                <span class="products__item-title">CBN Inserts</span>
+                <img src="@img/products/cbn.svg" alt="carbide" class="products__item-image" />
+                <a href="#" class="products__item-button button button--primary">learn more</a>
+              </div>
+              <div class="products__item">
+                <span class="products__item-title">PCD Inserts</span>
+                <img src="@img/products/pcd.svg" alt="PCD Inserts" class="products__item-image" />
+                <a href="#" class="products__item-button button button--primary">learn more</a>
+              </div>
+              <div class="products__item">
+                <span class="products__item-title">Ceramics Inserts</span>
+                <img src="@img/products/ceramics.svg" alt="Ceramics Inserts" class="products__item-image" />
+                <a href="#" class="products__item-button button button--primary">learn more</a>
+              </div>
+              <div class="products__item">
+                <span class="products__item-title">Threading Tools </span>
+                <img src="@img/products/threading.svg" alt="Threading Tools" class="products__item-image" />
+                <a href="#" class="products__item-button button button--primary">learn more</a>
+              </div>
+              <div class="products__item">
+                <span class="products__item-title">Milling Tools</span>
+                <img src="@img/products/millnig.svg" alt="Milling Tools" class="products__item-image" />
+                <a href="#" class="products__item-button button button--primary">learn more</a>
+              </div>
+              <div class="products__item">
+                <span class="products__item-title">Turning Tool Holders</span>
+                <img src="@img/products/turning.svg" alt="Turning Tool Holders" class="products__item-image" />
+                <a href="#" class="products__item-button button button--primary">learn more</a>
+              </div>
+            </div>
+            <div class="products__callback callback" id="callback">
+              <div class="callback__wrapper">
+                <h2 class="callback__title">We Can Solve Your Task</h2>
+                <p class="callback__text">Contact us and get a free consultation to help you plan and execute your metalworking projects.</p>
+                <form class="callback__form" id="freeSamples" autocomplete="off" novalidate="novalidate">
+                  <div class="callback__inputs">
+                    <div class="callback__input">
+                      <input class="callback__input input" id="companyName" placeholder="Company name" />
+                      <div class="error-name-container"></div>
+                    </div>
+                    <div class="callback__input">
+                      <input class="callback__input input" id="name" placeholder="Your name" />
+                      <div class="error-email-container"></div>
+                    </div>
+                    <div class="callback__input">
+                      <input class="callback__input input" id="email" placeholder="Your Email" />
+                      <div class="error-phone-container"></div>
+                    </div>
+                    <div class="callback__input">
+                      <input class="callback__input input" id="phone" placeholder="Your phone" />
+                      <div class="error-phone-container"></div>
+                    </div>
+                  </div>
+                  <div class="callback__button">
+                    <button class="button button--primary">contact us</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="products__process process">
+              <h2 class="process__title _section-title">Production Process</h2>
+              <p class="process__text">
+                We have a full cycle production equipped with up-to-date machinery. The nomenclature and size range fully comply with ISO 1832. Our
+                company also produces non-standardized products according to customer drawings.
+              </p>
+              <p class="process__text">
+                Each insert has its own identification number, which can be used to track when, by whom and how it was made, namely: if the insert was
+                coated, ground, soldered, cut, when the composite was sintered, from what powder supplies, with what characteristics, and so on.
+              </p>
+              <div class="process__images">
+                <div class="process__image">
+                  <img src="@img/products/process/1.png" alt="process 1" />
+                </div>
+                <div class="process__image">
+                  <img src="@img/products/process/2.png" alt="process 2" />
+                </div>
+                <div class="process__image">
+                  <img src="@img/products/process/3.png" alt="process 3" />
+                </div>
+                <div class="process__image">
+                  <img src="@img/products/process/4.png" alt="process 4" />
+                </div>
+                <div class="process__image">
+                  <img src="@img/products/process/5.png" alt="process 5" />
+                </div>
+                <div class="process__image">
+                  <img src="@img/products/process/6.png" alt="process 6" />
+                </div>
+              </div>
+            </div>
+            <div class="products__tech">
+              <h2 class="products__tech-title _section-title">Tailored Technical Solutions</h2>
+              <p class="products__tech-text">
+                We know that there are cases when it is difficult to find the right combination of inserts and tooling from a wide range of cutting
+                tools to solve the tasks of the production site in the best possible way. For this purpose, we have created a convenient form, by
+                filling in which you will provide our specialists with thorough information about the workpiece machining at the production site.
+              </p>
+              <p class="products__tech-text">
+                The data will be promptly processed by our engineers and we will be able to find the most effective solution for you. The more
+                detailed you describe the process, the faster we will prepare a proposal.
+              </p>
+              <a href="#" class="products__tech-button button button--primary">fill in the form</a>
+            </div>
+          </div>
+        </div>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>
