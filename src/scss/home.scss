@@ -142,12 +142,14 @@
       @include adaptiveValue('font-size', 64, 20);
       line-height: math.div(64, 79);
       @include adaptiveValue('margin-bottom', 40, 15);
+      color: #FFF;
     }
     &__subtitle {
       @include adaptiveValue('font-size', 36, 16);
       line-height: math.div(36, 46);
       font-family: $fontFamily;
       margin-bottom: toRem(45);
+      color: #FFF;
       @media (max-width: $mobile) {
         margin-bottom: toRem(0);
       }

@@ -48,6 +48,7 @@ function initSliders() {
       on: {},
     });
   }
+
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {

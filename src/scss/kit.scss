@@ -1,0 +1,166 @@
+.kit {
+  @include adaptiveValue('padding-top', 120, 40);
+  @include adaptiveValue('padding-bottom', 120, 40);
+  &__title {
+    @include adaptiveValue('margin-bottom', 80, 15);
+    @media (max-width: $mobile) {
+      text-align: center;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: toRem(40);
+    @media (max-width: em(1200)) {
+      flex-direction: column;
+    }
+  }
+  &__items {
+    @media (max-width: em(1200)) {
+      width: 100%;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: toRem(25);
+    gap: toRem(20);
+    background: var(--3, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
+    box-shadow:
+      1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+      -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+      0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+      -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+
+    @include adaptiveValue('padding', 40, 20);
+    &:not(:last-child) {
+      margin-bottom: toRem(40);
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  &__item-data {
+    max-width: toRem(400);
+    flex: 1 1 auto;
+  }
+  &__item-image {
+    flex: 0 0 toRem(100);
+  }
+  &__item-title {
+    @include adaptiveValue('font-size', 24, 16);
+    margin-bottom: toRem(10);
+  }
+  &__item-descr {
+    @include adaptiveValue('font-size', 20, 16);
+  }
+  &__item-link {
+    font-size: toRem(24);
+    padding: toRem(16) toRem(36);
+    @media (max-width: $mobile) {
+      font-size: toRem(20);
+      padding: toRem(8) toRem(24);
+    }
+  }
+  &__marketing {
+    padding: toRem(40);
+    border-radius: 25px;
+    background: var(--3, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
+    box-shadow:
+      1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+      -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+      0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+      -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+      @media (max-width:$mobileSmall){
+         padding: toRem(25) toRem(15); 
+      }
+  }
+  &__marketing-title {
+    @include adaptiveValue('font-size', 36, 20);
+    @include adaptiveValue('margin-bottom', 25, 15);
+  }
+  &__marketing-wrapper {
+    display: flex;
+    align-items: center;
+    gap: toRem(30);
+    margin-bottom: toRem(25);
+    @media (max-width: $mobileSmall) {
+      flex-direction: column;
+    }
+  }
+  &__marketing-qr {
+    border-radius: 25px;
+    background: var(--3, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
+    box-shadow:
+      1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+      -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+      0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+      -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+    padding: toRem(30);
+    @media (max-width: $mobileSmall) {
+      display: none;
+    }
+  }
+  &__marketing-name,
+  &__marketing-job {
+    @include adaptiveValue('font-size', 24, 18);
+    margin-bottom: toRem(5);
+    font-family: $fontFamilyHeading;
+    @media (max-width: $mobileSmall) {
+      text-align: center;
+    }
+  }
+  &__marketing-link {
+    padding-top: toRem(30);
+    display: inline-flex;
+    align-items: center;
+    gap: toRem(10);
+    position: relative;
+    font-size: toRem(20);
+    @media (max-width:$mobileSmall){
+       justify-content: center; 
+       width: 100%;
+    }
+    &::before,
+    &::after {
+      pointer-events: none;
+    }
+    &::before {
+      transition: 0.3s all ease 0s;
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $primaryColor;
+    }
+    &::after {
+      content: '';
+      transition: all 0.3s ease 0s;
+      position: absolute;
+      transform: scale(0);
+      left: 0;
+      bottom: -9px;
+      border-radius: 50%;
+      background-color: $primaryColor;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primaryColor;
+        &::before {
+          width: 100%;
+        }
+        &::after {
+          left: 100%;
+          width: 10px;
+          height: 10px;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
