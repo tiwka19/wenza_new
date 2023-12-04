@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  @@include('html/_head.htm',{ "title":"HomePage" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page page-kit">
+        <div class="kit">
+          <div class="kit__container">
+            <h1 class="kit__title _section-title">Press Kit</h1>
+            <div class="kit__wrapper">
+              <div class="kit__items">
+                <div class="kit__item">
+                  <div class="kit__item-image">
+                    <img src="@img/kit/logo.png" alt="kit" />
+                  </div>
+                  <div class="kit__item-data">
+                    <h2 class="kit__item-title">Logo Usage Guide</h2>
+                    <p class="kit__item-descr">This is a short guide to using our logo in different types of media, print and web design.</p>
+                  </div>
+                  <div class="kit__item-button">
+                    <a href="#" class="kit__item-link button button--primary">download</a>
+                  </div>
+                </div>
+                <div class="kit__item">
+                  <div class="kit__item-image">
+                    <img src="@img/kit/company.png" alt="kit" />
+                  </div>
+                  <div class="kit__item-data">
+                    <h2 class="kit__item-title">Company Presentation</h2>
+                    <p class="kit__item-descr">Brief information about our company</p>
+                  </div>
+                  <div class="kit__item-button">
+                    <a href="#" class="kit__item-link button button--primary">download</a>
+                  </div>
+                </div>
+                <div class="kit__item">
+                  <div class="kit__item-image">
+                    <img src="@img/kit/logotype.png" alt="kit" />
+                  </div>
+                  <div class="kit__item-data">
+                    <h2 class="kit__item-title">Logotype</h2>
+                    <p class="kit__item-descr">Our logo is available in various formats for your convenience</p>
+                  </div>
+                  <div class="kit__item-button">
+                    <a href="#" class="kit__item-link button button--primary">download</a>
+                  </div>
+                </div>
+              </div>
+              <div class="kit__marketing">
+                <h2 class="kit__marketing-title">Marketing Department</h2>
+                <div class="kit__marketing-wrapper">
+                  <div class="kit__marketing-image">
+                    <img src="@img/kit/avatar.png" alt="avatar" />
+                  </div>
+                  <div class="kit__marketing-qr">
+                    <img src="@img/kit/qrcode.svg" alt="qr" />
+                  </div>
+                </div>
+                <div class="kit__marketing-name">Pauline Shulmeister</div>
+                <div class="kit__marketing-job">Head of Marketing & PR Department</div>
+                <a href="mailto:shu@wenza.tech" class="kit__marketing-link">
+                  <ion-icon name="mail"></ion-icon> 
+                  shu@wenza.tech</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>

@@ -1,0 +1,101 @@
+.post {
+  @include adaptiveValue('padding-top', 120, 40);
+  &__title {
+    @include adaptiveValue('margin-bottom', 80, 15);
+    @media (max-width: $mobileSmall) {
+      text-align: center;
+    }
+  }
+  &__image {
+    position: relative;
+    img {
+      min-height: toRem(115);
+      object-fit: cover;
+      object-position: center;
+      border-radius: toRem(15);
+    }
+  }
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    @include adaptiveValue('gap', 60, 30);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+  &__text {
+    padding: toRem(20) 0;
+    @include adaptiveValue('font-size', 36, 16);
+    line-height: math.div(46, 36);
+    @media (max-width: $mobileSmall) {
+      padding: toRem(10) 0;
+    }
+  }
+  &__date {
+    position: absolute;
+    top: toRem(25);
+    right: toRem(25);
+    color: #fff;
+    display: block;
+    @include adaptiveValue('font-size', 20, 14);
+    @media (max-width: $mobile) {
+      top: toRem(10);
+      right: toRem(15);
+    }
+  }
+  &__tags {
+    position: absolute;
+    top: toRem(25);
+    left: toRem(25);
+    color: #fff;
+    @include adaptiveValue('font-size', 20, 14);
+    font-weight: 500;
+    @media (max-width: $mobile) {
+      top: toRem(10);
+      left: toRem(15);
+    }
+  }
+  &__button {
+    text-align: center;
+    margin-top: toRem(20);
+    @media (max-width: $mobile) {
+      margin-top: toRem(10);
+    }
+  }
+  &__link {
+    @include adaptiveValue('font-size', 32, 16);
+    @media (max-width: $mobileSmall) {
+      padding: toRem(8) toRem(24);
+    }
+  }
+
+  &__related {
+    max-width: toRem(360);
+    width: 100%;
+    @include adaptiveValue('max-width', 360, 250, 3, 1920, 992);
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  &__slider {
+    position: relative;
+    padding-bottom: toRem(50);
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
+  .news__item {
+    margin-bottom: toRem(40);
+    @media (max-width: $tablet) {
+      max-width: toRem(200);
+    }
+  }
+  .swiper-pagination {
+    text-align: start !important;
+  }
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #373a3b;
+  }
+}

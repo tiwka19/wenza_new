@@ -44,8 +44,8 @@
   transition: 0.3s opacity;
   transform: translate3d(0, 0, 0);
   z-index: 10;
-  @media (min-width: 768px){
-      display: none;
+  @media (min-width: 768px) {
+    display: none;
   }
 }
 .swiper-pagination.swiper-pagination-hidden {
@@ -63,34 +63,13 @@
   overflow: hidden;
   font-size: 0;
 }
-.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
-  transform: scale(0.5);
-  position: relative;
-}
-.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
-  transform: scale(1);
-}
-.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
-  transform: scale(1);
-}
-.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
-  transform: scale(0.66);
-}
-.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev {
-  transform: scale(0.5);
-}
-.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
-  transform: scale(0.66);
-}
-.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
-  transform: scale(0.5);
-}
+
 .swiper-pagination-bullet {
-  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
-  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+  width: 10px;
+  height: 10px;
   display: inline-block;
   border-radius: 50%;
-  background: #FFF;
+  background: #fff;
   opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.3);
 }
 button.swiper-pagination-bullet {
@@ -109,7 +88,7 @@ button.swiper-pagination-bullet {
 }
 .swiper-pagination-bullet-active {
   opacity: var(--swiper-pagination-bullet-opacity, 1);
-  background: #FFF;
+  background: #fff;
 }
 .swiper-pagination-vertical.swiper-pagination-bullets,
 .swiper-vertical > .swiper-pagination-bullets {
@@ -126,7 +105,7 @@ button.swiper-pagination-bullet {
 .swiper-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
   top: 50%;
   transform: translateY(-50%);
-  width: 8px;
+  width: 10px;
 }
 .swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
 .swiper-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
