@@ -1,10 +1,65 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+.sitemap {
+  padding-top: toRem(50);
+  &__title {
+    margin-bottom: toRem(30);
+  }
+  ul li {
+    font-weight: 500;
+    font-size: toRem(30);
+    margin-bottom: toRem(15);
+  }
+  ul li a  {
+    position: relative;
+    &::before,
+    &::after {
+      pointer-events: none;
+    }
+    &::before {
+      transition: 0.3s all ease 0s;
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $primaryColor;
+    }
+    &::after {
+      content: '';
+      transition: all 0.3s ease 0s;
+      position: absolute;
+      transform: scale(0);
+      left: 0;
+      bottom: -9px;
+      border-radius: 50%;
+      background-color: $primaryColor;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primaryColor;
+        &::before {
+          width: 100%;
+        }
+        &::after {
+          left: 100%;
+          width: 10px;
+          height: 10px;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
 h1,
 h2,
 h3,
 h4 {
   font-family: $fontFamilyHeading;
-  color: #2E2D2C;
+  color: #2e2d2c;
 }
 
 ._section-title {

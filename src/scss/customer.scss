@@ -1,7 +1,11 @@
 .customer {
   padding-top: toRem(50);
+
   &__title {
     margin-bottom: toRem(30);
+  }
+  &__list {
+    @include adaptiveValue("padding-bottom", 120, 40);
   }
   &__item {
     border-radius: 25px;

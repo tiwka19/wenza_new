@@ -134,7 +134,6 @@ if (document.querySelector('#freeSamples')) {
 }
 
 const dropDownButtons = document.querySelectorAll('[data-dropdown-button]');
-
 if (window.innerWidth > 992) {
   dropDownButtons.forEach((button) => {
     button.addEventListener('mouseover', () => {
@@ -148,3 +147,47 @@ if (window.innerWidth > 992) {
     });
   });
 }
+
+const formUpload = () => {
+  const actualButton = document.querySelector('#uploadInput');
+  const uploadButton = document.querySelector('#uploadButton');
+  const fileNameSpan = uploadButton.querySelector('span');
+  const closeIcon = document.querySelector('#closeIcon');
+  if (!actualButton) return;
+
+  actualButton.addEventListener('change', function () {
+    const fileName = this.files[0].name;
+    fileNameSpan.textContent = fileName;
+    document.querySelector('.form__callback-upload').classList.add('active');
+    uploadButton.classList.add('active');
+  });
+
+  closeIcon.addEventListener('click', function () {
+    actualButton.value = '';
+    uploadButton.classList.remove('active');
+    fileNameSpan.textContent = 'upload your CV';
+    document.querySelector('.form__callback-upload').classList.remove('active');
+  });
+};
+
+formUpload();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const inputs = document.querySelectorAll('.form-input');
+  const submitButton = document.getElementById('submitButton');
+
+  function checkInputs() {
+    const allFilled = Array.from(inputs).every((input) => input.value.trim() !== '');
+    submitButton.classList.toggle('disabled', !allFilled);
+  }
+
+  function submitForm() {
+    alert('Форма отправлена!');
+  }
+
+  inputs.forEach((input) => {
+    input.addEventListener('input', checkInputs);
+  });
+
+  submitButton.addEventListener('click', submitForm);
+});
