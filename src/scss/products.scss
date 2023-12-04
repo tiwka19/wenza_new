@@ -88,10 +88,10 @@
     }
     &__item-button {
       justify-content: center;
-      @include adaptiveValue('font-size', 24, 18);
+      @include adaptiveValue('font-size', 24, 16);
       line-height: math.div(26, 18);
       @media (max-width: $mobileSmall) {
-        padding: toRem(8) toRem(24);
+        padding: toRem(8) toRem(20);
         font-size: toRem(14);
       }
     }

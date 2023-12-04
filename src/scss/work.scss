@@ -1,86 +1,89 @@
-.work {
-  @include adaptiveValue('padding-top', 120, 40);
-  &__title {
-    @include adaptiveValue('margin-bottom', 60, 15);
-    @media (max-width: $mobileSmall) {
-      text-align: center;
+.page-work {
+  .work {
+    @include adaptiveValue('padding-top', 120, 40);
+    &__title {
+      @include adaptiveValue('margin-bottom', 60, 15);
+      @media (max-width: $mobileSmall) {
+        text-align: center;
+      }
     }
-  }
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    @include adaptiveValue('margin-bottom', 60, 15);
-    justify-content: space-between;
-    gap: toRem(30);
-    @media (max-width: $tablet) {
-      flex-direction: column;
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      @include adaptiveValue('margin-bottom', 60, 15);
+      justify-content: space-between;
+      gap: toRem(30);
+      @media (max-width: $tablet) {
+        flex-direction: column;
+      }
     }
-  }
-  &__text {
-    max-width: toRem(947);
-    @include adaptiveValue('font-size', 36, 16);
-    line-height: math.div(44, 36);
-    @media (max-width: $mobileSmall) {
-      text-align: center;
+    &__text {
+      max-width: toRem(947);
+      @include adaptiveValue('font-size', 36, 16);
+      line-height: math.div(44, 36);
+      @media (max-width: $mobileSmall) {
+        text-align: center;
+      }
     }
-  }
-  &__main-image {
-    flex-shrink: 0;
-    @media (max-width: $pc) {
-      max-width: toRem(450);
+    &__main-image {
+      flex-shrink: 0;
+      @media (max-width: $pc) {
+        max-width: toRem(450);
+      }
     }
-  }
-  &__images {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: toRem(40);
-    @include adaptiveValue('gap', 40, 15);
-    @include adaptiveValue('padding-bottom', 120, 40);
-    @media (max-width: $tablet) {
-      grid-template-columns: 1fr 1fr;
+    &__images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: toRem(40);
+      @include adaptiveValue('gap', 40, 15);
+      @include adaptiveValue('padding-bottom', 120, 40);
+      @media (max-width: $tablet) {
+        grid-template-columns: 1fr 1fr;
+      }
     }
-  }
-  &__items {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: toRem(40);
-    @include adaptiveValue('gap', 40, 25, 3, 1920, 992);
-    @include adaptiveValue('padding-bottom', 120, 40);
-    @media (max-width: $tablet) {
-      grid-template-columns: 1fr 1fr;
+    &__items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: toRem(40);
+      @include adaptiveValue('gap', 40, 25, 3, 1920, 992);
+      @include adaptiveValue('padding-bottom', 120, 40);
+      @media (max-width: $tablet) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+      }
     }
-    @media (max-width: $mobile) {
-      grid-template-columns: 1fr;
+    &__item {
+      padding: toRem(30);
+      @include adaptiveValue('padding', 30, 15);
+      border-radius: 25px;
+      background: var(--3, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
+      box-shadow:
+        1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+        -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+        0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+        -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+      display: flex;
+      align-items: center;
+      gap: toRem(25);
     }
-  }
-  &__item {
-    padding: toRem(30);
-    @include adaptiveValue('padding', 30, 15);
-    border-radius: 25px;
-    background: var(--3, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
-    box-shadow:
-      1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
-      -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
-      0px 4px 6px 0px rgba(0, 0, 0, 0.07),
-      -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
-    display: flex;
-    align-items: center;
-    gap: toRem(25);
-  }
-  &__item-image {
-    flex: 0 0 toRem(80);
-    @media (max-width: $mobile) {
-      flex: 0 0 toRem(50);
+    &__item-image {
+      flex: 0 0 toRem(80);
+      @media (max-width: $mobile) {
+        flex: 0 0 toRem(50);
+      }
     }
-  }
-  &__item-image img {
-    object-fit: cover;
-  }
-  &__item-text {
-    @include adaptiveValue('font-size', 20, 16);
-    line-height: math.div(26, 20);
+    &__item-image img {
+      object-fit: cover;
+    }
+    &__item-text {
+      @include adaptiveValue('font-size', 20, 16);
+      line-height: math.div(26, 20);
+    }
   }
 }
+
 .work__form {
   padding-bottom: toRem(120);
   .form {
