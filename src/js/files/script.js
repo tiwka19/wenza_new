@@ -150,10 +150,10 @@ if (window.innerWidth > 992) {
 
 const formUpload = () => {
   const actualButton = document.querySelector('#uploadInput');
+  if (!actualButton) return;
   const uploadButton = document.querySelector('#uploadButton');
   const fileNameSpan = uploadButton.querySelector('span');
   const closeIcon = document.querySelector('#closeIcon');
-  if (!actualButton) return;
 
   actualButton.addEventListener('change', function () {
     const fileName = this.files[0].name;
@@ -175,6 +175,7 @@ formUpload();
 document.addEventListener('DOMContentLoaded', function () {
   const inputs = document.querySelectorAll('.form-input');
   const submitButton = document.getElementById('submitButton');
+  if (!submitButton) return;
 
   function checkInputs() {
     const allFilled = Array.from(inputs).every((input) => input.value.trim() !== '');

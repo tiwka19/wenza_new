@@ -10,7 +10,7 @@
     font-size: toRem(30);
     margin-bottom: toRem(15);
   }
-  ul li a  {
+  ul li a {
     position: relative;
     &::before,
     &::after {
@@ -66,25 +66,6 @@ h4 {
   @include adaptiveValue('font-size', 64, 28);
   line-height: math.div(79, 64);
 }
-
-// body {
-//   position: relative;
-//   &::after {
-//     content: '';
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     pointer-events: none;
-//     width: 100%;
-//     height: 100%;
-//     z-index: 5;
-//     background-color: rgba(0, 0, 0, 0.4);
-//     opacity: 0;
-//     html.menu-open & {
-//       opacity: 1;
-//     }
-//   }
-// }
 
 .marker {
   background: url('../img/mapbox-icon.svg') 0 0 no-repeat;
@@ -156,5 +137,32 @@ h4 {
   &__input {
     width: 100%;
     position: relative;
+  }
+}
+
+.solution {
+  table {
+    width: 100%;
+    margin-bottom: toRem(60);
+    th {
+      background: var(--1, linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #3b4c82 106.06%));
+      color: #fff;
+      padding: toRem(15) toRem(30);
+      font-size: toRem(28);
+      font-family: $fontFamily;
+      font-weight: 500;
+    }
+    th:nth-child(1) {
+      min-width: toRem(300);
+    }
+    td {
+      padding: toRem(30) toRem(60);
+      background-color: #fff;
+      @include adaptiveValue('font-size', 26, 16);
+      line-height: math.div(32, 26);
+    }
+    td:nth-child(1) {
+      text-align: center;
+    }
   }
 }
