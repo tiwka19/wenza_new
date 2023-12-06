@@ -1,0 +1,116 @@
+.carbide__types {
+  @include adaptiveValue('padding-bottom', 120, 40);
+  &-title {
+    margin-bottom: toRem(50);
+    @media (max-width: $mobileSmall) {
+      font-size: toRem(20);
+      text-align: center;
+      margin-bottom: toRem(25);
+    }
+  }
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    @media (max-width: em(1200)) {
+      flex-direction: column;
+    }
+  }
+  &-image {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 777px;
+      height: 792px;
+      right: -350px;
+      top: 115px;
+      z-index: -1;
+      background-image: url('@img/robot-mas.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      @media (max-width: $pc) {
+        display: none;
+      }
+    }
+    img {
+      transform: scale(-1, 1);
+      @media (max-width: em(1200)) {
+        max-width: toRem(600);
+      }
+      @media (max-width: $mobileSmall) {
+        max-width: 100%;
+        transform: scale(1, 1);
+      }
+    }
+    @media (min-width: em(1200)) {
+      margin-left: toRem(-100);
+    }
+  }
+  &-items {
+    @media (max-width: em(1200)) {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(25);
+      width: 100%;
+    }
+  }
+  &-item {
+    border-radius: 25px;
+    background: var(--2, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
+    box-shadow:
+      1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+      -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+      0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+      -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+    padding: toRem(32);
+    max-width: toRem(688);
+    @media (max-width: em(1200)) {
+      margin: 0 !important;
+      width: 100%;
+      max-width: 100%;
+    }
+    @media (max-width: $mobileSmall) {
+      padding: toRem(16);
+      border-radius: toRem(15);
+    }
+  }
+  &-item:nth-child(1) {
+    margin-bottom: toRem(50);
+    margin-right: toRem(230);
+  }
+  &-item:nth-child(2) {
+    margin-bottom: toRem(33);
+    margin-left: auto;
+  }
+  &-item:nth-child(3) {
+    margin-bottom: toRem(50);
+    margin-left: auto;
+  }
+  &-item:nth-child(4) {
+    margin-right: toRem(230);
+  }
+
+  &-item-title {
+    @include adaptiveValue('font-size', 24, 16);
+    @include adaptiveValue('margin-bottom', 25, 10);
+    font-family: $fontFamilyHeading;
+  }
+  &-item-descr {
+    @include adaptiveValue('font-size', 26, 16);
+    line-height: math.div(35, 28);
+    letter-spacing: -1px;
+    @media (max-width: $mobile) {
+      letter-spacing: normal;
+    }
+  }
+}
+
+.grades {
+  &__title {
+    margin-bottom: toRem(60);
+  }
+  &__descr {
+    @include adaptiveValue('font-size', 36, 16);
+    margin-bottom: toRem(60);
+  }
+}

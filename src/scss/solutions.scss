@@ -192,47 +192,10 @@
     }
   }
 }
-
 .solution {
-  .hero__container {
-    gap: toRem(100);
-  }
-  .hero__image {
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-  .benefits {
-    @include adaptiveValue('padding-bottom', 120, 40);
-    &__title {
-      @include adaptiveValue('margin-bottom', 60, 15);
-    }
-    &__items {
-      display: flex;
-      gap: toRem(40);
-    }
-    &__item {
-      padding: toRem(30);
-      border-radius: toRem(25);
-      background: var(--2, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
-      box-shadow:
-        1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
-        -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
-        0px 4px 6px 0px rgba(0, 0, 0, 0.07),
-        -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
-    }
-    &__item-head {
-      display: flex;
-      align-items: center;
-      gap: toRem(15);
-      margin-bottom: toRem(25);
-    }
-    &__item-title {
-      font-size: toRem(24);
-      line-height: math.div(29, 24);
-    }
-    &__item-text {
-      @include adaptiveValue('font-size', 28, 16);
-      line-height: math.div(35, 28);
+  .hero {
+    &__image {
+      margin: 0;
     }
   }
 }
