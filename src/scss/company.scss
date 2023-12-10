@@ -187,8 +187,9 @@
       }
     }
     &__item-descr {
-      @include adaptiveValue('font-size', 20, 18);
-      line-height: math.div(26, 20);
+      @include adaptiveValue('font-size', 28, 18);
+      line-height: math.div(35, 28);
+      letter-spacing: -1px;
     }
     &__decor {
       position: absolute;
@@ -450,6 +451,7 @@
     }
     &__item-title {
       @include adaptiveValue('font-size', 24, 20);
+      line-height: math.div(29, 24);
     }
     &__item-descr {
       @include adaptiveValue('font-size', 26, 18);

@@ -21,10 +21,11 @@
     &__container {
       display: flex;
       align-items: center;
+      gap: toRem(60);
       @media (max-width: $mobile) {
         flex-direction: column;
-        padding: toRem(30) toRem(20);
         gap: toRem(30);
+        padding: toRem(30) toRem(20);
         text-align: center;
       }
     }
@@ -189,13 +190,6 @@
       width: 10px;
       height: 10px;
       background-color: #373a3b;
-    }
-  }
-}
-.solution {
-  .hero {
-    &__image {
-      margin: 0;
     }
   }
 }

@@ -146,32 +146,15 @@
       }
     }
     &__callback-textarea textarea {
-      height: toRem(125);
+      height: toRem(195);
       padding: toRem(15);
     }
-    &__callback-upload {
-      display: flex;
-      align-items: center;
-      gap: toRem(10);
-    }
-    &__upload-button {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: toRem(5);
-      font-size: toRem(16);
-      padding: toRem(5) toRem(25);
-      &.active {
-        background-color: $primaryColor;
-        color: #fff;
-      }
-    }
+
     &__button {
       text-align: center;
       margin-bottom: toRem(15);
       button {
-        padding: toRem(10) toRem(24);
-        font-size: toRem(18);
+        padding: toRem(16) toRem(60);
       }
       button.disabled {
         background-color: #cecece;

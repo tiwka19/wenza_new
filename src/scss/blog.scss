@@ -8,6 +8,7 @@
   }
   &__descr {
     @include adaptiveValue('font-size', 36, 16);
+    line-height: math.div(46, 36);
     @include adaptiveValue('margin-bottom', 80, 24);
     @media (max-width: $mobile) {
       text-align: center;

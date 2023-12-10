@@ -11,8 +11,6 @@ function initSliders() {
   if (document.querySelector('.swiper')) {
     new Swiper('.swiper', {
       modules: [Navigation, Pagination],
-      observer: true,
-      observeParents: true,
       slidesPerView: 4,
       spaceBetween: 40,
       speed: 800,
@@ -49,6 +47,38 @@ function initSliders() {
     });
   }
 
+  if (document.querySelector('.about-products__slider')) {
+    new Swiper('.about-products__slider', {
+      modules: [Navigation, Pagination],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 4,
+      spaceBetween: 40,
+      speed: 800,
+      grabCursor: true,
+
+      pagination: {
+        el: '.about-products__nav',
+        dynamicBullets: true,
+        clickable: true,
+      },
+
+      breakpoints: {
+        320: {
+          slidesPerView: 'auto',
+          spaceBetween: 30,
+        },
+        1200: {
+          slidesPerView: 3,
+        },
+        1580: {
+          slidesPerView: 4,
+        },
+      },
+
+      on: {},
+    });
+  }
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {

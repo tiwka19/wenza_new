@@ -4,7 +4,7 @@
   <body>
     <div class="wrapper">
       @@include('html/_header.htm',{})
-      <main class="page page-solutions solution carbide">
+      <main class="page page-product single-product carbide">
         <section class="hero">
           <div class="hero__container">
             <div class="hero__data">
@@ -21,37 +21,37 @@
             </div>
           </div>
         </section>
-        <section class="carbide__types">
-          <div class="carbide__container">
-            <h2 class="carbide__types-title _section-title">Types of Carbide Inserts</h2>
-            <div class="carbide__types-wrapper">
-              <div class="carbide__types-image">
+        <section class="single-product types">
+          <div class="types__container">
+            <h2 class="types__title _section-title">Types of Carbide Inserts</h2>
+            <div class="types__wrapper">
+              <div class="types__image">
                 <img src="@img/robot.webp" alt="carbide" />
               </div>
-              <div class="carbide__types-items">
-                <div class="carbide__types-item">
-                  <div class="carbide__types-item-title">Turning Inserts:</div>
-                  <p class="carbide__types-item-descr">
+              <div class="types__items">
+                <div class="types__item">
+                  <div class="types__item-title">Turning Inserts:</div>
+                  <p class="types__item-descr">
                     Ideal for lathes and turning operations, these inserts excel in creating precise and smooth surfaces on workpieces
                   </p>
                 </div>
-                <div class="carbide__types-item">
-                  <div class="carbide__types-item-title">Milling Inserts:</div>
-                  <p class="carbide__types-item-descr">
+                <div class="types__item">
+                  <div class="types__item-title">Milling Inserts:</div>
+                  <p class="types__item-descr">
                     Suited for milling machines, these inserts facilitate the removal of material with great precision, making them versatile tools
                     for various industries
                   </p>
                 </div>
-                <div class="carbide__types-item">
-                  <div class="carbide__types-item-title">Threading Inserts:</div>
-                  <p class="carbide__types-item-descr">
+                <div class="types__item">
+                  <div class="types__item-title">Threading Inserts:</div>
+                  <p class="types__item-descr">
                     Designed for threading and tapping operations, these inserts ensure accurate and consistent thread profiles, reducing the risk
                     of part failure.
                   </p>
                 </div>
-                <div class="carbide__types-item">
-                  <div class="carbide__types-item-title">Grooving and Parting Inserts:</div>
-                  <p class="carbide__types-item-descr">
+                <div class="types__item">
+                  <div class="types__item-title">Grooving and Parting Inserts:</div>
+                  <p class="types__item-descr">
                     Perfect for separating workpieces or creating grooves, these inserts enhance the efficiency of these processes
                   </p>
                 </div>
@@ -59,7 +59,7 @@
             </div>
           </div>
         </section>
-        <div class="carbide__grades grades">
+        <section class="carbide__grades grades">
           <div class="grades__container">
             <h2 class="grades__title _section-title">Carbide Grades Description</h2>
             <p class="grades__descr">
@@ -67,7 +67,6 @@
               in a variety of grades, each finely tuned to tackle specific materials and applications. Refer to the table below to learn the specific
               carbide grades by WENZA that can transform your machining operations for precision and efficiency.
             </p>
-
             <table>
               <thead>
                 <tr>
@@ -120,13 +119,383 @@
                 <tr>
                   <td>Chromium Advance</td>
                   <td>
-                    This grade offers an optimized blend of TiAlN coating and a micro-grain carbide substrate featuring a high Co content, resulting in exceptional adhesion resistance and toughness. It is well-suited for semi-finishing stainless steels and threading general materials
+                    This grade offers an optimized blend of TiAlN coating and a micro-grain carbide substrate featuring a high Co content, resulting
+                    in exceptional adhesion resistance and toughness. It is well-suited for semi-finishing stainless steels and threading general
+                    materials
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </div>
+        </section>
+        <section class="carbide__navigator navigator">
+          <div class="navigator__container">
+            <h2 class="navigator__title _section-title">Chip Breakers Navigator for Carbide Inserts</h2>
+            <p class="navigator__text">
+              When it comes to carbide inserts, one of the most important factor for selecting one is a chip breaker. The chip breaker is a feature
+              designed into the cutting edge of the insert that help control the chip formation and evacuation during machining. These features are
+              crucial for optimizing the machining process, enhancing tool life, and improving surface finish. Chip breakers come in various shapes,
+              each suitable for the particular material and application. For more information about chip breakers for carbide inserts by WENZA refer
+              to the tables below.
+            </p>
+            <div class="navigator__inserts">
+              <h2 class="navigator__inserts-title">Negative Inserts</h2>
+              <div class="navigator__inserts-items">
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PF</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/PF.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for finishing operations on ISO P group materials (steel).
+                    <img src="@img/inserts/negative/PF-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PM</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/PM.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-finishing operations on ISO P group materials (steel).
+                    <img src="@img/inserts/negative/PM-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PP</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/PP.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-roughing operations on ISO P group materials (steel).
+                    <img src="@img/inserts/negative/PP-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PR</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/PR.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for roughing operations on ISO P group materials (steel).
+                    <img src="@img/inserts/negative/PR-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PP</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/PSR.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for roughing operations on ISO P group materials (steel).
+                    <img src="@img/inserts/negative/PSR-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PP</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/MF1.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for finishing operations on ISO M group materials (stainless steel).
+                    <img src="@img/inserts/negative/MF1-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PP</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/MU.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-finishing operations on ISO M group materials (stainless steel).
+                    <img src="@img/inserts/negative/MU-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PP</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/MU1.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-finishing operations on ISO M group materials (stainless steel).
+                    <img src="@img/inserts/negative/MU1-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PP</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/MU2.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-finishing operations on ISO M group materials (stainless steel).
+                    <img src="@img/inserts/negative/MU2-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PP</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/MM.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-finishing operations on ISO M group materials (stainless steel).
+                    <img src="@img/inserts/negative/MM-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PP</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/MM1.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-finishing operations on ISO M group materials (stainless steel).
+                    <img src="@img/inserts/negative/MM1-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PP</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/K.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-finishing operations on ISO M group materials (stainless steel).
+                    <img src="@img/inserts/negative/K-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PP</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/negative/AL.png" alt="PF" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-finishing operations on ISO M group materials (stainless steel).
+                    <img src="@img/inserts/negative/AL-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="navigator__inserts">
+              <h2 class="navigator__inserts-title">Positive Inserts</h2>
+              <div class="navigator__inserts-items">
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PM</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/positive/PM.png" alt="PM" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for finishing operations on ISO P group materials (steel).
+                    <img src="@img/inserts/positive/PM-mask.png" alt="PM" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">PM1</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/positive/PM1.png" alt="PM1" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-finishing operations on ISO P group materials (steel).
+                    <img src="@img/inserts/positive/PM1-mask.png" alt="PM1" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+                <div class="navigator__inserts-item" data-showmore="size">
+                  <span class="navigator__inserts-item-title">AL</span>
+                  <div class="navigator__inserts-item-image">
+                    <img src="@img/inserts/positive/AL.png" alt="AL" />
+                  </div>
+                  <div data-showmore-content="0" class="block__content navigator__inserts-item-content">
+                    Chip breaker for semi-roughing operations on ISO P group materials (steel).
+                    <img src="@img/inserts/positive/AL-mask.png" alt="AL" />
+                  </div>
+                  <button hidden data-showmore-button type="button" class="navigator__inserts-item-button button button--secondary">
+                    <span>show more</span>
+                    <span>close</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="carbide__shapes shapes">
+          <div class="shapes__container">
+            <h2 class="shapes__title _section-title">Availability in Shapes and Sizes for Carbide Inserts</h2>
+            <p class="shapes__descr">
+              Carbide inserts come in various shapes and sizes to suit different machining operations and applications. Whether it's turning, milling,
+              or grooving, there's a carbide insert that fits your needs. Refer to the tables below to learn the shapes and sizes of carbide inserts
+              available at WENZA.
+            </p>
+          </div>
+          <div class="shapes__wrapper">
+            <div class="shapes__tables">
+              <img src="@img/shapes.png" alt="image" />
+            </div>
+            <div class="shapes__image">
+              <img src="@img/shapes-mask.png" alt="image" />
+            </div>
+          </div>
+          <div class="shapes__container">
+            <div class="shapes__descr">
+              Choosing the right carbide insert requires a thoughtful evaluation of your machining needs, including material compatibility, operation
+              type, cutting conditions, and surface finish requirements. With the appropriate selection, carbide inserts can significantly improve
+              machining efficiency, tool life, and the quality of your finished products. Let us help you with this choice. Fill in the form and our
+              specialists will contact you shorty!
+            </div>
+          </div>
+        </section>
+        <section class="carbide__callback callback" id="callback">
+          <div class="callback__container">
+            <div class="callback__wrapper">
+              <h2 class="callback__title">Looking for a Carbide Insert?</h2>
+              <p class="callback__text">Contact us and get a free consultation to help you plan and execute your metalworking projects.</p>
+              <form class="callback__form" id="form" autocomplete="off" novalidate="novalidate">
+                <div class="callback__inputs">
+                  <div class="callback__input">
+                    <input class="callback__input input" id="name" placeholder="Your name" />
+                    <div class="error-email-container"></div>
+                  </div>
+                  <div class="callback__input">
+                    <input class="callback__input input" id="email" placeholder="Your Email" />
+                    <div class="error-phone-container"></div>
+                  </div>
+                  <div class="callback__input">
+                    <input class="callback__input input" id="phone" placeholder="Your phone" />
+                    <div class="error-phone-container"></div>
+                  </div>
+                </div>
+                <div class="callback__button">
+                  <button class="button button--primary">contact us</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        <section class="carbide__about-products about-products">
+          <div class="about-products__container">
+            <h2 class="about-products__title _section-title">More About Our Products</h2>
+            <div class="about-products__items">
+              <div class="about-products__item">
+                <div class="about-products__item-image">
+                  <img src="@img/catalogs/cbn.png" alt="slide" />
+                </div>
+                <div class="about-products__item-name">CBN</div>
+              </div>
+              <div class="about-products__item">
+                <div class="about-products__item-image">
+                  <img src="@img/catalogs/psd.png" alt="slide" />
+                </div>
+                <div class="about-products__item-name">PCD</div>
+              </div>
+              <div class="about-products__item">
+                <div class="about-products__item-image">
+                  <img src="@img/catalogs/ceramics.png" alt="slide" />
+                </div>
+                <div class="about-products__item-name">Ceramics</div>
+              </div>
+              <div class="about-products__item">
+                <div class="about-products__item-image">
+                  <img src="@img/catalogs/ceramics.png" alt="slide" />
+                </div>
+                <div class="about-products__item-name">Turning Tool Holders</div>
+              </div>
+            </div>
+            <div class="about-products__slider swiper">
+              <div class="about-products__wrapper swiper-wrapper">
+                <div class="about-products__slide swiper-slide">
+                  <div class="about-products__item">
+                    <div class="about-products__item-image">
+                      <img src="@img/catalogs/cbn.png" alt="slide" />
+                    </div>
+                    <div class="about-products__item-name">CBN</div>
+                  </div>
+                </div>
+                <div class="about-products__slide swiper-slide">
+                  <div class="about-products__item">
+                    <div class="about-products__item-image">
+                      <img src="@img/catalogs/cbn.png" alt="slide" />
+                    </div>
+                    <div class="about-products__item-name">CBN</div>
+                  </div>
+                </div>
+                <div class="about-products__slide swiper-slide">
+                  <div class="about-products__item">
+                    <div class="about-products__item-image">
+                      <img src="@img/catalogs/cbn.png" alt="slide" />
+                    </div>
+                    <div class="about-products__item-name">CBN</div>
+                  </div>
+                </div>
+                <div class="about-products__slide swiper-slide">
+                  <div class="about-products__item">
+                    <div class="about-products__item-image">
+                      <img src="@img/catalogs/cbn.png" alt="slide" />
+                    </div>
+                    <div class="about-products__item-name">CBN</div>
+                  </div>
+                </div>
+              </div>
+              <div class="about-products__nav swiper-pagination"></div>
+            </div>
+          </div>
+        </section>
       </main>
       @@include('html/_footer.htm',{})
     </div>

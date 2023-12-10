@@ -139,30 +139,3 @@ h4 {
     position: relative;
   }
 }
-
-.solution {
-  table {
-    width: 100%;
-    margin-bottom: toRem(60);
-    th {
-      background: var(--1, linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #3b4c82 106.06%));
-      color: #fff;
-      padding: toRem(15) toRem(30);
-      font-size: toRem(28);
-      font-family: $fontFamily;
-      font-weight: 500;
-    }
-    th:nth-child(1) {
-      min-width: toRem(300);
-    }
-    td {
-      padding: toRem(30) toRem(60);
-      background-color: #fff;
-      @include adaptiveValue('font-size', 26, 16);
-      line-height: math.div(32, 26);
-    }
-    td:nth-child(1) {
-      text-align: center;
-    }
-  }
-}
