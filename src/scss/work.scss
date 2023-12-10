@@ -155,6 +155,10 @@
       margin-bottom: toRem(15);
       button {
         padding: toRem(16) toRem(60);
+        @media (max-width:$mobileSmall){
+           font-size: toRem(16);
+           padding: toRem(10) toRem(30); 
+        }
       }
       button.disabled {
         background-color: #cecece;

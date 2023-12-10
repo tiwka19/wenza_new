@@ -2,7 +2,8 @@
 .page-home {
   .hero {
     @include adaptiveValue('padding-bottom', 120, 40);
-    padding-top: toRem(100);
+
+    @include adaptiveValue("padding-top", 100, 50);
     &__container {
       @extend %flexStack;
       gap: toRem(15);
@@ -189,7 +190,6 @@
       @include adaptiveValue('padding-left', 150, 30);
       @include adaptiveValue('padding-right', 150, 30);
       transform: translateX(-135px);
-
       position: relative;
       display: flex;
       align-items: flex-start;
@@ -203,7 +203,8 @@
         0px 4px 8px 0px rgba(0, 0, 0, 0.25);
       @media (max-width: em(1200)) {
         margin-left: 0;
-        padding: toRem(30);
+        padding: toRem(30) !important;
+        transform: translatex(0);
       }
       @media (max-width: $mobile) {
         border-radius: 0;
