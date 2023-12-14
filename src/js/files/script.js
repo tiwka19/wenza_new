@@ -2,6 +2,10 @@ import { isMobile } from './functions.js';
 import { flsModules } from './modules.js';
 import JustValidate from 'just-validate';
 
+if(!document.querySelector('#catalogs')) {
+  document.querySelector('[data-goto]').removeAttribute('data-goto')
+}
+
 if (document.getElementById('phone')) {
   document.getElementById('phone').addEventListener('input', function (event) {
     const inputValue = this.value;
