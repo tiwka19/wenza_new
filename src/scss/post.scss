@@ -26,6 +26,7 @@
   &__text {
     padding: toRem(20) 0;
     @include adaptiveValue('font-size', 36, 16);
+    letter-spacing: -1px;
     line-height: math.div(46, 36);
     @media (max-width: $mobileSmall) {
       padding: toRem(10) 0;

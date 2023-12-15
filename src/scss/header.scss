@@ -204,7 +204,7 @@
   opacity: 0;
   visibility: hidden;
   padding-top: toRem(35);
-  width: max-content;
+  width: toRem(230);
   z-index: -1;
   transition: all 0.2s;
   @media (max-width: $tablet) {
