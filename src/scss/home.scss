@@ -214,8 +214,8 @@
       &::before {
         content: '';
         position: absolute;
-        right: -400px;
-        @include adaptiveValue('right', -400, -100, 1920, 1200);
+        right: -500px;
+        @include adaptiveValue('right', -500, -100, 1920, 1200);
         z-index: 1;
         top: toRem(100);
         background: url('../img/slider/slider-decor.png') 0 0 no-repeat;

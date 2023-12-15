@@ -19,6 +19,13 @@ const geojson = {
         coordinates: [-2.205824, 54.210549],
       },
     },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [33.856769, 54.547408],
+      },
+    },
   ],
 };
 
@@ -26,15 +33,15 @@ if (document.querySelector('#map')) {
   const map = new mapboxGl.Map({
     container: 'map',
     style: 'mapbox://styles/wenza/clpb0jjcc006i01pk6cvt1qh2',
-    center: [22.212293, 49.996184],
-    zoom: 4.3,
+    center: [30.212293, 45.996184],
+    zoom: 3,
     projection: 'mercator',
   });
 
   const mq = window.matchMedia('(min-width: 420px)');
 
   if (mq.matches) {
-    map.setZoom(4.3);
+    map.setZoom(2.8);
   } else {
     map.setZoom(2);
     map.setCenter([15.468754, 44.57875]);
@@ -62,7 +69,6 @@ if (document.querySelector('#map')) {
     const el = document.createElement('div');
     el.className = 'marker';
 
-    // make a marker for each feature and add it to the map
     new mapboxGl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
   }
 }
