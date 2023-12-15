@@ -877,6 +877,7 @@
       z-index: 5;
     }
   }
+
   .engine {
     @include adaptiveValue('padding-bottom', 120, 40);
     &__title {
@@ -910,9 +911,11 @@
     }
     &__item-img img {
       height: toRem(380);
+      width: toRem(506);
       object-fit: contain;
       @media (max-width: em(1200)) {
         height: auto;
+        width: auto;
       }
     }
     &__item-box {
@@ -926,7 +929,7 @@
       display: flex;
       gap: toRem(25);
       align-items: center;
-      padding: toRem(30);
+      padding: toRem(25);
       min-height: toRem(290);
       @media (max-width: em(1200)) {
         flex-direction: column;
