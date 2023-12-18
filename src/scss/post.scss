@@ -1,5 +1,6 @@
 .post {
   @include adaptiveValue('padding-top', 120, 40);
+  @include adaptiveValue('padding-bottom', 120, 40);
   &__title {
     @include adaptiveValue('margin-bottom', 80, 15);
     @media (max-width: $mobileSmall) {
@@ -8,8 +9,10 @@
   }
   &__image {
     position: relative;
+    margin-bottom: toRem(40);
     img {
       min-height: toRem(115);
+      height: toRem(320);
       object-fit: cover;
       object-position: center;
       border-radius: toRem(15);
@@ -23,15 +26,7 @@
       flex-direction: column;
     }
   }
-  &__text {
-    padding: toRem(20) 0;
-    @include adaptiveValue('font-size', 36, 16);
-    letter-spacing: -1px;
-    line-height: math.div(46, 36);
-    @media (max-width: $mobileSmall) {
-      padding: toRem(10) 0;
-    }
-  }
+
   &__date {
     position: absolute;
     top: toRem(25);
@@ -58,7 +53,7 @@
   }
   &__button {
     text-align: center;
-    margin-top: toRem(20);
+    margin-top: toRem(60);
     @media (max-width: $mobile) {
       margin-top: toRem(10);
     }
@@ -71,9 +66,10 @@
   }
 
   &__related {
-    max-width: toRem(360);
-    width: 100%;
-    @include adaptiveValue('max-width', 360, 250, 3, 1920, 992);
+    flex: 0 0 toRem(340);
+    @media (max-width: $pc) {
+      flex: 0 0 toRem(300);
+    }
     @media (max-width: $tablet) {
       display: none;
     }
@@ -98,5 +94,17 @@
     width: 10px;
     height: 10px;
     background-color: #373a3b;
+  }
+}
+
+.post__content {
+  p {
+    padding: toRem(20) 0;
+    @include adaptiveValue('font-size', 36, 16);
+    letter-spacing: -1px;
+    line-height: math.div(46, 36);
+    @media (max-width: $mobileSmall) {
+      padding: toRem(10) 0;
+    }
   }
 }

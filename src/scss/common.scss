@@ -66,9 +66,9 @@ h4 {
   @include adaptiveValue('font-size', 64, 28);
   line-height: math.div(79, 64);
   .page-product & {
-    @media (max-width:$mobileSmall){
-       font-size: toRem(20); 
-       margin-bottom: toRem(25);
+    @media (max-width: $mobileSmall) {
+      font-size: toRem(20);
+      margin-bottom: toRem(25);
     }
   }
 }
@@ -93,11 +93,12 @@ h4 {
 
 .callback {
   @include adaptiveValue('padding-bottom', 120, 40);
-  max-width: toRem(1322);
-  margin: 0 auto;
+
   &__wrapper {
     padding: toRem(80) toRem(30);
     border-radius: 25px;
+    max-width: toRem(1320);
+    margin: 0 auto;
     background: var(--2, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
     box-shadow:
       1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,

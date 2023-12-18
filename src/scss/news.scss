@@ -36,6 +36,7 @@
   }
   &__item-date {
     font-size: toRem(20);
+    line-height: math.div(25, 20);
     margin-bottom: toRem(10);
     display: block;
   }
