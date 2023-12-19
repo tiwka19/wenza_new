@@ -2,8 +2,8 @@ import { isMobile } from './functions.js';
 import { flsModules } from './modules.js';
 import JustValidate from 'just-validate';
 
-if(!document.querySelector('#catalogs')) {
-  document.querySelector('[data-goto]').removeAttribute('data-goto')
+if (!document.querySelector('#catalogs')) {
+  document.querySelector('[data-goto]').removeAttribute('data-goto');
 }
 
 if (document.getElementById('phone')) {
@@ -66,6 +66,32 @@ if (document.querySelector('#form')) {
         errorsContainer: document.querySelector('error-email-container'),
       },
     );
+
+  const formSubmitting = () => {
+    let forms = document.querySelectorAll('.wpcf7');
+    forms.forEach((form) => {
+      let submitBtn = form.querySelector('input[type="submit"]');
+      submitBtn.addEventListener('click', () => {
+        submitBtn.value = 'Please, wait...';
+      });
+      form.addEventListener(
+        'wpcf7mailsent',
+        (e) => {
+          submitBtn.value = 'contact us';
+        },
+        false,
+      );
+      form.addEventListener(
+        'wpcf7invalid',
+        () => {
+          submitBtn.value = 'contact us';
+          submitBtn.disabled = false;
+        },
+        false,
+      );
+    });
+  };
+  formSubmitting();
 }
 
 if (document.querySelector('#freeSamples')) {

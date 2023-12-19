@@ -574,6 +574,7 @@
     }
     &__item {
       position: relative;
+      display: block;
       padding: toRem(40);
       background: var(--3, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
       box-shadow:
@@ -583,6 +584,12 @@
         -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
       border-radius: 25px;
       flex: 1 1 toRem(370);
+      transition: transform 0.2s;
+      @media (any-hover: hover) {
+        &:hover {
+          transform: translateY(-10px);
+        }
+      }
       @media (max-width: em(1200)) {
         padding: toRem(30);
       }

@@ -9,21 +9,7 @@ const geojson = {
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [10.57, 50.4197, 11.3982],
-      },
-    },
-    {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [-2.205824, 54.210549],
-      },
-    },
-    {
-      type: 'Feature',
-      geometry: {
-        type: 'Point',
-        coordinates: [33.856769, 54.547408],
+        coordinates: [53.654414, 23.872146],
       },
     },
   ],
@@ -33,18 +19,17 @@ if (document.querySelector('#map')) {
   const map = new mapboxGl.Map({
     container: 'map',
     style: 'mapbox://styles/wenza/clpb0jjcc006i01pk6cvt1qh2',
-    center: [30.212293, 45.996184],
-    zoom: 3,
+    center: [45.212293, 45.996184],
     projection: 'mercator',
   });
 
   const mq = window.matchMedia('(min-width: 420px)');
 
   if (mq.matches) {
-    map.setZoom(2.8);
-  } else {
     map.setZoom(2);
-    map.setCenter([15.468754, 44.57875]);
+  } else {
+    map.setZoom(1);
+    map.setCenter([45.468754, -5.57875]);
   }
 
   map.scrollZoom.disable();
