@@ -618,9 +618,14 @@
     }
     &__item-name,
     &__item-job {
-      @include adaptiveValue('font-size', 24, 20);
       font-family: $fontFamilyHeading;
       margin-bottom: toRem(10);
+    }
+    &__item-name {
+      font-size: toRem(22);
+    }
+    &__item-job {
+      font-size: toRem(20);
     }
     &__item-email {
       color: $primaryColor;

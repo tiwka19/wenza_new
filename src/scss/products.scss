@@ -1158,15 +1158,19 @@
       transform: translateY(-15px);
       border-collapse: collapse;
       border-radius: 1em;
+      th {
+        text-align: center;
+      }
       th:first-child {
+        background: linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #0f1010 106.06%);
         border-radius: 25px 0 0 25px;
       }
       th:last-child {
         border-radius: 0 25px 25px 0;
+        background: linear-gradient(97deg, #161718 0%, #010101 42.06%, #3b4c82 106.06%);
       }
     }
     tr {
-      background: var(--1, linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #3b4c82 106.06%));
       border-radius: 20px;
     }
     th {
@@ -1184,20 +1188,20 @@
       }
     }
 
-    // tbody {
-    //   tr:first-child td:first-child {
-    //     border-radius: 25px 0 0 0;
-    //   }
-    //   tr:first-child td:last-child {
-    //     border-radius: 0 25px 0 0;
-    //   }
-    //   tr:last-child td:first-child {
-    //     border-radius: 0 0 0 25px;
-    //   }
-    //   tr:last-child td:last-child {
-    //     border-radius: 0 0 25px 0;
-    //   }
-    // }
+    tbody {
+      tr:first-child td:first-child {
+        border-radius: 25px 0 0 0;
+      }
+      tr:first-child td:last-child {
+        border-radius: 0 25px 0 0;
+      }
+      tr:last-child td:first-child {
+        border-radius: 0 0 0 25px;
+      }
+      tr:last-child td:last-child {
+        border-radius: 0 0 25px 0;
+      }
+    }
 
     td {
       padding: toRem(30) toRem(60);

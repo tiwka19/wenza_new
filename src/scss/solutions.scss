@@ -1,6 +1,7 @@
 .page-solutions {
   .hero {
-    @include adaptiveValue('min-height', 820, 496);
+    @include adaptiveValue('padding-top', 120, 30);
+    @include adaptiveValue('padding-bottom', 120, 30);
     background: linear-gradient(97deg, #3b4c82 0%, #010101 55.79%, #373a3b 106.06%);
     position: relative;
     display: grid;
@@ -25,7 +26,6 @@
       @media (max-width: $mobile) {
         flex-direction: column;
         gap: toRem(30);
-        padding: toRem(30) toRem(20);
         text-align: center;
       }
     }
@@ -118,7 +118,10 @@
       }
       @media (any-hover: hover) {
         &:hover {
-          color: #4d64aa;
+          .advantages__item-title {
+            color: #4d64aa;
+          }
+
           svg path {
             stroke: #4d64aa;
           }

@@ -23,7 +23,7 @@
         gap: toRem(25) toRem(15);
       }
     }
-  
+
     &__item-image {
       margin-bottom: toRem(25);
       img {
@@ -45,11 +45,21 @@
       @include adaptiveValue('font-size', 24, 16);
       line-height: math.div(29, 24);
       margin-bottom: toRem(10);
+      font-family: $fontFamilyHeading;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $primaryColor;
+        }
+      }
     }
     &__item-descr {
       font-size: toRem(20);
       margin-bottom: toRem(25);
       line-height: math.div(25, 20);
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
       @media (max-width: $mobileSmall) {
         display: none;
       }
@@ -72,5 +82,3 @@
     }
   }
 }
-
-

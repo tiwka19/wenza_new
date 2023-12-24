@@ -28,6 +28,7 @@
   }
   &__item {
     display: flex;
+    align-items: flex-start;
     gap: toRem(20);
     @media (max-width: $mobile) {
       flex-direction: column;
@@ -44,12 +45,11 @@
     }
   }
   &__item-image {
-    max-width: toRem(277);
-    width: 100%;
-    min-width: toRem(200);
+    flex: 0 0 toRem(277);
     @media (max-width: $tablet) {
       width: 100%;
       max-width: 100%;
+      flex: auto;
     }
   }
   &__item-image img {
@@ -68,10 +68,20 @@
   &__item-title {
     @include adaptiveValue('font-size', 24, 16);
     line-height: math.div(29, 24);
+    font-family: $fontFamilyHeading;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primaryColor;
+      }
+    }
   }
   &__item-descr {
     font-size: toRem(20);
     line-height: math.div(25, 20);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   &__items-tags {
     display: flex;
@@ -85,8 +95,8 @@
     @include adaptiveValue('font-size', 20, 16);
   }
   &__item-link {
-    font-size: toRem(16);
-    padding: toRem(10) toRem(24);
+    font-size: toRem(16) !important;
+    padding: toRem(10) toRem(24) !important;
     @media (max-width: $mobile) {
       align-self: center;
     }

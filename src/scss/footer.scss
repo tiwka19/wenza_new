@@ -123,6 +123,12 @@
     @include adaptiveValue('font-size', 20, 16);
     font-weight: 500;
     color: $primaryColor;
+    text-underline-offset: 5px;
+    @media (any-hover: hover){
+      &:hover{
+        text-decoration: underline;
+      }
+    }
   }
 }
 //====================================================================================================
