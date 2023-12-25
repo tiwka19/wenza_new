@@ -172,6 +172,12 @@
     }
     &__item-image {
       margin-bottom: toRem(25);
+      img {
+        max-width: 280px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 25px;
+      }
     }
     &__item-link {
       max-width: toRem(200);

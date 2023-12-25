@@ -43,7 +43,7 @@
       @include adaptiveValue('margin-right', -200, -50);
       @media (max-width: $mobile) {
         margin-bottom: 0;
-        margin-right: 0;
+        margin-right: 0 !important;
       }
     }
   }
@@ -189,7 +189,6 @@
     &__item-descr {
       @include adaptiveValue('font-size', 28, 18);
       line-height: math.div(35, 28);
-      letter-spacing: -1px;
     }
     &__decor {
       position: absolute;
@@ -291,7 +290,7 @@
     gap: toRem(40);
     margin-bottom: toRem(60);
     margin-left: toRem(-80);
-    @include adaptiveValue('margin-left', -80, 30, 3, 1920, 1200);
+    @include adaptiveValue('margin-left', -80, 0, 3, 1920, 1200);
     &__inner {
       max-width: toRem(1200);
     }
@@ -489,7 +488,7 @@
     }
   }
   .production {
-    padding-bottom: toRem(120);
+    @include adaptiveValue('padding-bottom', 120, 40);
     &__container {
       position: relative;
       &::after {
@@ -591,8 +590,9 @@
       line-height: math.div(79, 64);
     }
     &__text {
-      margin-bottom: toRem(80);
-      font-size: toRem(28);
+      @include adaptiveValue('margin-bottom', 80, 25);
+      @include adaptiveValue('font-size', 28, 18);
+      line-height: math.div(36 , 28);
     }
     &__items {
       display: grid;

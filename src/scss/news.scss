@@ -1,84 +1,82 @@
-.page-news {
-  .news {
-    @include adaptiveValue('padding-top', 120, 40);
-    &__title {
-      @include adaptiveValue('margin-bottom', 60, 10);
-      @media (max-width: $mobile) {
-        text-align: center;
-      }
+.news {
+  @include adaptiveValue('padding-top', 120, 40);
+  &__title {
+    @include adaptiveValue('margin-bottom', 60, 10);
+    @media (max-width: $mobile) {
+      text-align: center;
     }
-    &__descr {
-      @include adaptiveValue('font-size', 36, 16);
-      @include adaptiveValue('margin-bottom', 80, 24);
-      @media (max-width: $mobile) {
-        text-align: center;
-      }
+  }
+  &__descr {
+    @include adaptiveValue('font-size', 36, 16);
+    @include adaptiveValue('margin-bottom', 80, 24);
+    @media (max-width: $mobile) {
+      text-align: center;
     }
-    &__items {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: toRem(80) toRem(40);
-      padding-bottom: toRem(80);
-      @media (max-width: $mobile) {
-        gap: toRem(25) toRem(15);
-      }
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: toRem(80) toRem(40);
+    padding-bottom: toRem(80);
+    @media (max-width: $mobile) {
+      gap: toRem(25) toRem(15);
     }
+  }
 
-    &__item-image {
-      margin-bottom: toRem(25);
-      img {
-        min-height: toRem(100);
-        object-fit: cover;
-        border-radius: toRem(25);
-        @media (max-width: $mobileSmall) {
-          border-radius: toRem(15);
-        }
-      }
-    }
-    &__item-date {
-      font-size: toRem(20);
-      line-height: math.div(25, 20);
-      margin-bottom: toRem(10);
-      display: block;
-    }
-    &__item-title {
-      @include adaptiveValue('font-size', 24, 16);
-      line-height: math.div(29, 24);
-      margin-bottom: toRem(10);
-      font-family: $fontFamilyHeading;
-      @media (any-hover: hover) {
-        &:hover {
-          color: $primaryColor;
-        }
-      }
-    }
-    &__item-descr {
-      font-size: toRem(20);
-      margin-bottom: toRem(25);
-      line-height: math.div(25, 20);
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+  &__item-image {
+    margin-bottom: toRem(25);
+    img {
+      min-height: toRem(100);
+      object-fit: cover;
+      border-radius: toRem(25);
       @media (max-width: $mobileSmall) {
-        display: none;
+        border-radius: toRem(15);
       }
     }
-    &__items-tags {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: toRem(10);
-      margin-bottom: toRem(25);
+  }
+  &__item-date {
+    font-size: toRem(20);
+    line-height: math.div(25, 20);
+    margin-bottom: toRem(10);
+    display: block;
+  }
+  &__item-title {
+    @include adaptiveValue('font-size', 24, 16);
+    line-height: math.div(29, 24);
+    margin-bottom: toRem(10);
+    font-family: $fontFamilyHeading;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primaryColor;
+      }
     }
-    &__item-tag {
-      color: $primaryColor;
-      font-weight: 500;
-      @include adaptiveValue('font-size', 20, 16);
+  }
+  &__item-descr {
+    font-size: toRem(20);
+    margin-bottom: toRem(25);
+    line-height: math.div(25, 20);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    @media (max-width: $mobileSmall) {
+      display: none;
     }
-    &__item-link {
-      font-size: toRem(16);
-      padding: toRem(10) toRem(24);
-    }
+  }
+  &__items-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: toRem(10);
+    margin-bottom: toRem(25);
+  }
+  &__item-tag {
+    color: $primaryColor;
+    font-weight: 500;
+    @include adaptiveValue('font-size', 20, 16);
+  }
+  &__item-link {
+    font-size: toRem(16);
+    padding: toRem(10) toRem(24);
   }
 }

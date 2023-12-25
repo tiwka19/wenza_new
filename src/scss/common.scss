@@ -136,8 +136,11 @@ h4 {
   &__button {
     text-align: center;
     @media (max-width: $mobileSmall) {
-      button {
+      button,
+      input {
         font-size: toRem(18);
+        display: flex;
+        margin: 0 auto;
       }
     }
   }
@@ -179,20 +182,21 @@ h4 {
   background-color: #ebac00;
 }
 
-
-.tablepress .sorting:hover, .tablepress .sorting_asc, .tablepress .sorting_desc {
-  color: #FFF !important;
+.tablepress .sorting:hover,
+.tablepress .sorting_asc,
+.tablepress .sorting_desc {
+  color: #fff !important;
   background-color: inherit !important;
 }
 
-.tablepress>:not(caption)>*>* {
+.tablepress > :not(caption) > * > * {
   vertical-align: middle !important;
 }
 
-.tablepress>:where(tbody)>.odd>* {
-  background-color: #FFF !important;
+.tablepress > :where(tbody) > .odd > * {
+  background-color: #fff !important;
 }
 
-.dataTables_wrapper  {
+.dataTables_wrapper {
   margin-bottom: toRem(60) !important;
 }

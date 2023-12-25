@@ -32,4 +32,9 @@
       }
     }
   }
+  &.disabled {
+    pointer-events: none;
+    color: #fff;
+    background-color: #cecece;
+  }
 }
