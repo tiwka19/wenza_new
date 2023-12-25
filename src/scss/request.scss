@@ -1,0 +1,215 @@
+.request {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(30);
+    margin-bottom: toRem(30);
+    @include adaptiveValue('padding-top', 120, 40);
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+  &__data {
+    padding-top: toRem(100);
+  }
+
+  &__title {
+    margin-bottom: toRem(40) !important;
+  }
+  &__description {
+    margin-bottom: toRem(30);
+    @include adaptiveValue('font-size', 36, 20);
+    line-height: math.div(46, 36);
+    @media (max-width: $tablet) {
+      margin-bottom: toRem(0);
+    }
+  }
+  &__image {
+    flex: 0 0 percent(595, 1540);
+    transform: translateX(100px);
+    @media (max-width: $mobile) {
+      transform: translate(0);
+    }
+  }
+  &__image img {
+    max-width: 100%;
+  }
+  &__input {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #ffffff;
+    border-radius: 5px !important;
+    width: 100%;
+    height: 40px;
+    padding: toRem(10) toRem(15);
+    &.just-validate-error-field {
+      border: 1px solid rgb(184, 17, 17);
+    }
+  }
+  .form {
+    transform: translateY(-200px);
+    background: linear-gradient(123.09deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(242, 242, 242, 0.7) 50%, rgba(255, 255, 255, 0) 109.9%);
+    box-shadow:
+      inset -3px -3px 6px rgba(255, 255, 255, 0.83),
+      inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.07)) drop-shadow(-3px -5px 6px rgba(255, 255, 255, 0.38));
+    backdrop-filter: blur(8.5px);
+    border-radius: 25px;
+    padding: toRem(60) toRem(50);
+    @media (max-width: $pc) {
+      transform: translateY(-100px);
+    }
+    @media (max-width: $mobile) {
+      padding: toRem(30);
+      transform: translateY(0);
+    }
+    &__row {
+      padding-bottom: toRem(50);
+      margin-bottom: toRem(50);
+      border-bottom: 1px solid #ffffff;
+      @media (max-width: $mobile) {
+        padding-bottom: toRem(30);
+        margin-bottom: toRem(30);
+      }
+      &._last {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    &__row-choices {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: toRem(40);
+      flex-wrap: wrap;
+      @media (max-width: $mobileSmall) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: toRem(30);
+      }
+    }
+    &__row-title,
+    &__choice-title {
+      margin-bottom: toRem(30);
+      font-size: toRem(24);
+      line-height: math.div(29, 24);
+      font-family: $fontFamilyHeading;
+      @media (max-width: $mobileSmall) {
+        font-size: toRem(22);
+      }
+      span {
+        font-size: toRem(16);
+        line-height: math.div(24, 16);
+      }
+    }
+    &__choice-checkboxes .wpcf7-radio {
+      display: flex;
+      align-items: center;
+      gap: toRem(50);
+      flex-wrap: wrap;
+      @media (max-width: $mobileSmall) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: toRem(30);
+      }
+    }
+    &__row-inputs {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: toRem(40);
+      @media (max-width: $tablet) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: toRem(25);
+      }
+    }
+    &__row-inputs._end {
+      align-items: flex-end;
+      @media (max-width: $mobile) {
+        align-items: flex-start;
+      }
+    }
+    &__row-inputs._grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      @media (max-width: $tablet) {
+        grid-template-columns: 1fr;
+      }
+    }
+    .row-input {
+      width: 100%;
+      border-radius: 5px;
+      position: relative;
+      &__label {
+        font-size: toRem(20);
+        line-height: math.div(25, 20);
+        margin-bottom: toRem(10);
+        display: block;
+      }
+    }
+    &__upload-button {
+      display: flex;
+      align-items: center;
+      gap: toRem(5);
+      font-size: toRem(20);
+      padding: toRem(5) toRem(25);
+      text-align: center;
+      justify-content: center;
+      cursor: pointer;
+      white-space: nowrap;
+      @media (max-width: $mobileSmall) {
+        width: 100%;
+      }
+      .upload-button-icon {
+        width: toRem(30);
+        height: toRem(30);
+      }
+      svg {
+        width: toRem(30);
+        height: toRem(30);
+      }
+
+      &._active {
+        background-color: $primaryColor;
+        color: #fff;
+        svg {
+          fill: #fff;
+        }
+        .upload-button-icon {
+          display: none;
+        }
+        .remove-button {
+          display: block;
+        }
+      }
+    }
+    .remove-button {
+      display: none;
+      width: toRem(30);
+      height: toRem(30);
+    }
+    &__send {
+      text-align: center;
+      &-button {
+        margin-bottom: toRem(15);
+        cursor: pointer;
+        width: toRem(210);
+        text-align: center;
+        justify-content: center;
+        @media (max-width: $mobileSmall) {
+          width: 100%;
+        }
+      }
+      &-text a {
+        color: #000;
+        font-weight: 500;
+        @media (any-hover: hover) {
+          &:hover {
+            color: var(--text-accent);
+          }
+        }
+      }
+    }
+  }
+}

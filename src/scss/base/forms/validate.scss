@@ -5,6 +5,12 @@
   position: absolute;
 }
 
+.request {
+  .just-validate-error-label {
+    padding-left: toRem(0);
+  }
+}
+
 .just-validate-error-field {
   border: 2px solid rgb(184, 17, 17) !important;
 }

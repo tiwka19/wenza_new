@@ -46,7 +46,7 @@
   &__item-image {
     max-width: toRem(277);
     width: 100%;
-    min-width: toRem(200);
+    min-width: toRem(250);
     @media (max-width: $tablet) {
       width: 100%;
       max-width: 100%;
@@ -71,6 +71,10 @@
   }
   &__item-descr {
     font-size: toRem(20);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     line-height: math.div(25, 20);
   }
   &__items-tags {

@@ -14,7 +14,7 @@
 //Default font
 $fontFamily: 'FuturaPT';
 $fontFamilyHeading: 'Halvar Breitschrift';
-$fontSize: toRem(14); //where 14(px) is the default font size from the layout
+$fontSize: toRem(18); //where 14(px) is the default font size from the layout
 
 //Basic colors
 $mainColor: #373a3b; //Default font color
@@ -146,3 +146,5 @@ body {
 @import 'kit';
 @import 'work';
 @import 'psd';
+@import 'request';
+@import 'contacts';
