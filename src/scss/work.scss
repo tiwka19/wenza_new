@@ -27,8 +27,12 @@
     }
     &__main-image {
       flex-shrink: 0;
+      border-radius: 25px;
       @media (max-width: $pc) {
         max-width: toRem(450);
+      }
+      img {
+        border-radius: 25px;
       }
     }
     &__images {
@@ -40,6 +44,9 @@
       @media (max-width: $tablet) {
         grid-template-columns: 1fr 1fr;
       }
+    }
+    &__image img {
+      border-radius: 25px;
     }
     &__items {
       display: grid;
@@ -70,6 +77,7 @@
     }
     &__item-image {
       flex: 0 0 toRem(80);
+      border-radius: 25px;
       @media (max-width: $mobile) {
         flex: 0 0 toRem(50);
       }
@@ -155,9 +163,9 @@
       margin-bottom: toRem(15);
       button {
         padding: toRem(16) toRem(60);
-        @media (max-width:$mobileSmall){
-           font-size: toRem(16);
-           padding: toRem(10) toRem(30); 
+        @media (max-width: $mobileSmall) {
+          font-size: toRem(16);
+          padding: toRem(10) toRem(30);
         }
       }
       button.disabled {
@@ -169,11 +177,16 @@
     &__sub {
       font-size: toRem(20);
       text-align: center;
-      span {
+      a {
         color: #2e2d2c;
         font-weight: 500;
         text-decoration: underline;
         text-underline-offset: 5px;
+        @media (any-hover: hover){
+          &:hover{
+            color: $primaryColor;
+          }
+        }
       }
     }
   }

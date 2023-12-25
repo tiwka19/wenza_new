@@ -57,16 +57,38 @@
       @include adaptiveValue('gap', 40, 15);
       @media (max-width: $tablet) {
         grid-template-columns: 1fr 1fr;
+        padding-top: toRem(0);
       }
     }
     &__image {
       border-radius: toRem(15);
-      overflow: hidden;
-      min-height: toRem(193);
+      position: relative;
+      span {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        @include adaptiveValue('font-size', 28, 20);
+        width: toRem(45);
+        height: toRem(45);
+        display: grid;
+        place-items: center;
+        border-radius: 505%;
+        background: var(--2, linear-gradient(123deg, rgba(229, 229, 229, 1) 10.86%, rgba(255, 255, 255, 0) 109.9%));
+        box-shadow:
+          1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+          -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+          0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+          -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+        @media (max-width: $mobileSmall) {
+          width: toRem(30);
+          height: toRem(30);
+          bottom: 15px;
+          right: 15px;
+        }
+      }
     }
     &__image img {
       object-fit: cover;
-      height: 100%;
     }
   }
 }
@@ -76,8 +98,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     @include adaptiveValue('padding-bottom', 120, 40);
-    gap: toRem(40);
-    @include adaptiveValue('gap', 40, 15, 3, 1920, 992);
+    gap: toRem(30);
+    @include adaptiveValue('gap', 30, 15, 3, 1920, 992);
     @media (max-width: em(1180)) {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -176,12 +198,14 @@
 
 .single-product {
   .hero {
-    @include adaptiveValue('min-height', 820, 496);
+    @include adaptiveValue('min-height', 920, 496);
+    @include adaptiveValue('padding-top', 120, 40);
+    @include adaptiveValue('padding-bottom', 120, 40);
+    @include adaptiveValue('margin-bottom', 120, 40);
     background: linear-gradient(97deg, #3b4c82 0%, #010101 55.79%, #373a3b 106.06%);
     position: relative;
     display: grid;
     place-items: center;
-    @include adaptiveValue('margin-bottom', 120, 40);
     &::after {
       content: '';
       position: absolute;
@@ -202,7 +226,7 @@
       @media (max-width: $tablet) {
         flex-direction: column;
         gap: toRem(30);
-        padding: toRem(30) toRem(20);
+        padding: 0 toRem(20);
         text-align: center;
       }
     }
@@ -219,7 +243,7 @@
     &__text {
       font-size: toRem(36);
       @include adaptiveValue('font-size', 36, 16);
-      line-height: math.div(46, 36);
+      line-height: math.div(48, 36);
       margin-bottom: toRem(20);
       color: #fff;
       a {
@@ -236,9 +260,15 @@
       position: relative;
       z-index: 2;
       img {
-        @include adaptiveValue('max-width', 800, 300);
+        max-width: 800px;
+        @media (max-width: $pc) {
+          max-width: 500px;
+        }
         @media (max-width: $mobile) {
           max-width: 100%;
+        }
+        @media (max-width:$mobileSmall){
+           max-width: 300px; 
         }
       }
     }
@@ -491,7 +521,7 @@
         font-size: toRem(16);
         padding: toRem(10) toRem(24);
         @media (max-width: $mobileSmall) {
-          padding: toRem(10);
+          padding: toRem(10) toRem(15);
           font-size: toRem(14);
         }
       }
@@ -520,7 +550,10 @@
       display: flex;
       align-items: center;
       gap: toRem(100);
-      padding-left: max(15px, calc((100% - 1595px) / 2));
+      padding-left: max(20px, calc((100% - 1580px) / 2));
+      @media (max-width: $pc) {
+        padding-left: max(20px, calc((100% - 1306px) / 2));
+      }
       @include adaptiveValue('padding-bottom', 120, 40);
       @media (max-width: $mobile) {
         padding: 0 toRem(15);
@@ -576,7 +609,10 @@
       position: relative;
       display: block;
       padding: toRem(40);
-      background: var(--3, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
+      border-radius: 25px;
+      background:
+        lightgray 143.766px -168.53px / 81.21% 112.825% no-repeat,
+        linear-gradient(158deg, #e5e5e5 2.62%, #fff 97.77%);
       box-shadow:
         1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
         -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
@@ -584,6 +620,7 @@
         -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
       border-radius: 25px;
       flex: 1 1 toRem(370);
+
       transition: transform 0.2s;
       @media (any-hover: hover) {
         &:hover {
@@ -821,6 +858,9 @@
     }
     &__box-item-img {
       flex: 0 0 toRem(130);
+      @media (max-width: $mobile) {
+        flex: auto;
+      }
     }
     &-main {
       position: relative;
@@ -1131,11 +1171,18 @@
         left: percent(850, 950);
       }
     }
+    &__item-img {
+      position: relative;
+    }
     &__item-img-number {
       @include adaptiveValue('width', 50, 30);
       @include adaptiveValue('height', 50, 30);
+      font-family: $fontFamilyHeading;
       display: grid;
       place-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
       fill: var(--2, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
       box-shadow:
         1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
@@ -1196,61 +1243,6 @@
   margin-bottom: toRem(30) !important;
 }
 
-table {
-  width: 100%;
-  margin-bottom: toRem(60);
-  thead {
-    transform: translateY(-15px);
-    border-collapse: collapse !important;
-    th {
-      background-color: transparent !important;
-      text-align: center !important;
-    }
-    tr {
-      background: var(--1, linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #3b4c82 106.06%)) !important;
-      border-radius: 20px !important;
-      color: #fff !important;
-      font-weight: 400 !important;
-    }
-  }
-
-  th {
-    color: #fff !important;
-    padding: toRem(15) toRem(30) !important;
-    font-size: toRem(28) !important;
-    font-family: $fontFamily !important;
-    font-weight: 500 !important;
-    @media (max-width: $mobile) {
-      font-size: toRem(20);
-    }
-    @media (max-width: $mobileSmall) {
-      padding: toRem(5);
-      font-weight: 400;
-    }
-  }
-
-  td {
-    padding: toRem(30) toRem(60) !important;
-    background-color: #fff;
-    border: 1px solid #4d64aa !important;
-    @include adaptiveValue('font-size', 26, 16);
-    line-height: math.div(32, 26);
-    vertical-align: middle !important;
-    @media (max-width: $tablet) {
-      padding: toRem(30) !important;
-    }
-    @media (max-width: $mobileSmall) {
-      padding: toRem(10) !important;
-    }
-  }
-  td:nth-child(1) {
-    text-align: center;
-    white-space: nowrap;
-    @media (max-width: $mobile) {
-      white-space: wrap;
-    }
-  }
-}
 .tablepress .sorting:hover,
 .tablepress .sorting_asc,
 .tablepress .sorting_desc {

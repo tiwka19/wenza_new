@@ -1,27 +1,43 @@
 //====================================================================================================
 .footer {
   background: var(--1, linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #3b4c82 106.06%));
-  @include adaptiveValue('padding-top', 120, 30);
-  @include adaptiveValue('padding-bottom', 120, 30);
+  @include adaptiveValue('padding-top', 100, 30);
+  @include adaptiveValue('padding-bottom', 100, 30);
+  &__container {
+    @media (max-width: $pc) {
+      max-width: toRem(1040);
+    }
+  }
   &__wrapper {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: toRem(30);
-    margin-bottom: toRem(15);
+    margin-bottom: toRem(60);
     @media (max-width: $tablet) {
       flex-direction: column;
       gap: toRem(30);
+      margin-bottom: toRem(30);
+    }
+    @media (max-width: $mobileSmall) {
+      margin-bottom: toRem(0);
+      gap: toRem(0);
     }
   }
   &__items {
     display: flex;
     align-items: flex-start;
-    @include adaptiveValue('gap', 70, 30);
+    gap: toRem(70);
     color: #fff;
     font-size: toRem(20);
     font-family: $fontFamily;
     font-weight: 500;
+    @media (max-width: $pc) {
+      gap: toRem(30);
+      font-size: toRem(16);
+      max-width: toRem(650);
+      width: 100%;
+    }
     @media (max-width: $mobile) {
       display: none;
     }
@@ -38,8 +54,12 @@
       font-size: toRem(20);
     }
     .spollers__title {
-      font-size: toRem(24);
+      font-size: toRem(20);
       justify-content: center;
+      font-weight: 450;
+    }
+    .spollers__item {
+      margin-bottom: toRem(40);
     }
     @media (min-width: $mobile) {
       display: none;
@@ -47,7 +67,7 @@
   }
   &__item-title {
     margin-bottom: toRem(50);
-    color: #FFF;
+    color: #fff;
     font-family: $fontFamily !important;
   }
   &__item-list-item {
@@ -58,11 +78,14 @@
       }
     }
     &:not(:last-child) {
-      margin-bottom: toRem(15);
+      margin-bottom: toRem(30);
     }
   }
   &__logo {
     margin-bottom: toRem(50);
+    @media (max-width: $pc) {
+      max-width: toRem(280);
+    }
     @media (max-width: $mobileSmall) {
       max-width: toRem(270);
       margin: 0 auto toRem(35) auto;
@@ -82,7 +105,17 @@
     align-items: center;
     gap: toRem(10);
     color: #fff;
-    @include adaptiveValue('font-size', 20, 16);
+    font-size: toRem(20);
+    @media (max-width: $pc) {
+      font-size: toRem(16);
+      line-height: math.div(20, 16);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primaryColor;
+      }
+    }
     svg {
       font-size: 24px;
       flex: 0 0 24px;
@@ -99,8 +132,16 @@
     &__items {
       display: flex;
       gap: toRem(15);
-      @media (max-width:$mobile){
-         justify-content: center; 
+      @media (max-width: $pc) {
+        width: 100%;
+        justify-content: flex-end;
+        padding-top: toRem(15);
+      }
+      @media (max-width: $mobile) {
+        justify-content: center;
+      }
+      @media (max-width: $mobileSmall) {
+        padding-top: 0;
       }
     }
     &__item {
@@ -115,14 +156,30 @@
     display: flex;
     flex-wrap: wrap;
     @include adaptiveValue('gap', 70, 15);
-    @media (max-width:$mobile){
-       padding-top: toRem(30); 
+    @media (max-width: $mobile) {
+      padding-top: toRem(30);
+    }
+    @media (max-width: $mobileSmall) {
+      gap: toRem(10) !important;
+      justify-content: center;
     }
   }
   &__terms-link {
-    @include adaptiveValue('font-size', 20, 16);
-    font-weight: 500;
+    font-size: toRem(20);
+    font-weight: 450;
     color: $primaryColor;
+    text-underline-offset: 5px;
+    @media (max-width: $pc) {
+      font-size: toRem(16);
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: toRem(14);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 //====================================================================================================

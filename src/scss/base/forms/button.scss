@@ -40,8 +40,8 @@
     }
   }
   &.disabled {
-    background-color: #cecece;
-    color: #fff;
     pointer-events: none;
+    color: #fff;
+    background-color: #cecece;
   }
 }

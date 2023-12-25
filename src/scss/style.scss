@@ -45,7 +45,7 @@ $mobileSmall: em(479.98); //Phones S
 //Adaptive type:
 //1 = responsiveness (container has no breakpoints),
 //2 = at the breakpoint (the container changes its width at the breakpoint)
-$responsiveType: 1;
+$responsiveType: 2;
 
 //Reset
 @import 'base/null';
@@ -94,8 +94,8 @@ body {
       @if ($maxWidthContainer>0) {
         padding: 0 toRem(math.div($containerPadding, 2));
       } @else {
-        @include adaptiveValue('padding-left', math.div($containerPadding, 2), 15);
-        @include adaptiveValue('padding-right', math.div($containerPadding, 2), 15);
+        @include adaptiveValue('padding-left', math.div($containerPadding, 2), 30);
+        @include adaptiveValue('padding-right', math.div($containerPadding, 2), 30);
       }
     }
   }
@@ -103,6 +103,7 @@ body {
   //Break points
   [class*='__container'] {
     margin: 0 auto;
+    padding: 0 25px;
     @if ($maxWidthContainer>0) {
       max-width: toRem($containerWidth);
     } @else {
@@ -111,7 +112,7 @@ body {
       }
     }
     @media (max-width: $pc) {
-      max-width: toRem(970);
+      max-width: toRem(1356);
     }
     @media (max-width: $tablet) {
       max-width: toRem(750);

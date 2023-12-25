@@ -15,6 +15,11 @@ textarea {
   padding: 8px 24px;
   outline: 0;
   border: 2px solid transparent;
+  color: #373a3b;
+  &::placeholder {
+    color: #373a3b;
+    opacity: 1;
+  }
   &._form-focus {
   }
   &._form-error {
@@ -24,6 +29,7 @@ textarea {
   opacity: 1;
   font-size: toRem(20);
   line-height: math.div(24, 26);
+  color: #373a3b;
   &:focus {
     border: 2px solid $primaryColor;
   }
