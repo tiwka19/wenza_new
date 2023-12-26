@@ -11,10 +11,38 @@ if (phoneInput) {
   });
 }
 
+const formSubmitting = () => {
+  let forms = document.querySelectorAll('.wpcf7');
+  forms.forEach((form) => {
+    let submitBtn = form.querySelector('input[type="submit"]');
+    submitBtn.addEventListener('click', () => {
+      submitBtn.value = 'Please, wait...';
+      submitBtn.classList.add('disabled');
+    });
+    form.addEventListener(
+      'wpcf7mailsent',
+      (e) => {
+        submitBtn.value = 'contact us';
+        submitBtn.classList.remove('disabled');
+      },
+      false,
+    );
+    form.addEventListener(
+      'wpcf7invalid',
+      () => {
+        submitBtn.value = 'contact us';
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('disabled');
+      },
+      false,
+    );
+  });
+};
+formSubmitting();
+
 const formValidations = () => {
   if (document.querySelector('#form')) {
     let validation = new JustValidate('#form');
-
     if (document.querySelector('#companyName')) {
       validation
         .addField(
@@ -127,7 +155,6 @@ const formValidations = () => {
     }
   }
 };
-
 formValidations();
 
 const requestForm = () => {
@@ -188,6 +215,17 @@ const formUpload = () => {
   const uploadButton = document.querySelector('#uploadButton');
   const fileNameSpan = uploadButton.querySelector('span');
   const closeIcon = document.querySelector('#closeIcon');
+
+  const inputFields = document.querySelectorAll('.form-input');
+  const submitButton = document.getElementById('submitButton');
+
+  const checkInputs = () => {
+    const inputsFilled = Array.from(inputFields).every((input) => input.value.trim() !== '');
+
+    submitButton.classList.toggle('disabled', !inputsFilled);
+  };
+
+  inputFields.forEach((input) => input.addEventListener('input', checkInputs));
 
   actualButton.addEventListener('change', function () {
     const fileName = this.files[0].name;

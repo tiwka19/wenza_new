@@ -267,8 +267,8 @@
         @media (max-width: $mobile) {
           max-width: 100%;
         }
-        @media (max-width:$mobileSmall){
-           max-width: 300px; 
+        @media (max-width: $mobileSmall) {
+          max-width: 300px;
         }
       }
     }
@@ -858,6 +858,7 @@
     }
     &__box-item-img {
       flex: 0 0 toRem(130);
+      position: relative;
       @media (max-width: $mobile) {
         flex: auto;
       }
@@ -904,6 +905,9 @@
       border-radius: 50%;
       font-family: $fontFamilyHeading;
       font-size: toRem(20);
+      position: absolute;
+      top: -15px;
+      left: 0;
       @media (min-width: $tablet) {
         display: none;
       }

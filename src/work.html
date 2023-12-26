@@ -88,6 +88,20 @@
                   <div class="form__column">
                     <div class="form__callback-textarea">
                       <textarea cols="30" rows="10" class="input" placeholder="Your comment"></textarea>
+                      <input type="file" id="uploadInput" hidden />
+                      <label for="uploadInput" id="uploadButton" class="form__callback-upload button button--secondary">
+                        <svg class="uploadIcon" width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M8.76953 12.7675L9.9009 13.8989L15.2019 8.5979L15.2019 18.6665C15.2019 19.1084 15.5601 19.4665 16.0019 19.4665C16.4437 19.4665 16.8019 19.1084 16.8019 18.6665L16.8019 8.5979L22.1029 13.8989L23.2342 12.7675L16.0019 5.53516L8.76953 12.7675Z" fill="currentColor"/>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0018 5.53516L23.2342 12.7675C23.5466 13.0799 23.5466 13.5865 23.2342 13.8989C22.9218 14.2113 22.4152 14.2113 22.1028 13.8989L16.0018 7.7979L9.90084 13.8989C9.58842 14.2113 9.08189 14.2113 8.76947 13.8989C8.45705 13.5865 8.45705 13.0799 8.76947 12.7675L16.0018 5.53516Z" fill="currentColor"/>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M6.66719 20.5332C7.10902 20.5332 7.46719 20.8914 7.46719 21.3332V22.6665C7.46719 23.6975 8.30292 24.5332 9.33385 24.5332L22.6672 24.5332C23.6981 24.5332 24.5339 23.6975 24.5339 22.6665V21.3332C24.5339 20.8914 24.892 20.5332 25.3339 20.5332C25.7757 20.5332 26.1339 20.8914 26.1339 21.3332V22.6665C26.1339 24.5811 24.5818 26.1332 22.6672 26.1332L9.33385 26.1332C7.41927 26.1332 5.86719 24.5811 5.86719 22.6665V21.3332C5.86719 20.8914 6.22536 20.5332 6.66719 20.5332Z" fill="currentColor"/>
+                        </svg>                          
+                        <button type="button" class="close__upload" id="closeIcon">
+                          <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 8L8 24M8 8L24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </button>
+                        <span> upload your CV</span>
+                      </label>
                     </div>
                   </div>
                 </div>

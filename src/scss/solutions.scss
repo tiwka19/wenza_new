@@ -57,8 +57,8 @@
         @media (max-width: $mobile) {
           max-width: 100%;
         }
-        @media (max-width:$mobileSmall){
-           max-width: toRem(280); 
+        @media (max-width: $mobileSmall) {
+          max-width: toRem(280);
         }
       }
 
@@ -181,10 +181,11 @@
     &__item-image {
       margin-bottom: toRem(25);
       img {
-        max-width: 280px;
+        max-width: toRem(285);
+        height: toRem(320);
         width: 100%;
         object-fit: cover;
-        border-radius: 25px;
+        border-radius: toRem(25);
       }
     }
     &__item-link {

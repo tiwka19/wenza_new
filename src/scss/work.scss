@@ -154,8 +154,22 @@
       }
     }
     &__callback-textarea textarea {
-      height: toRem(195);
+      height: toRem(120);
       padding: toRem(15);
+      margin-bottom: toRem(32);
+    }
+    &__callback-upload {
+      padding: toRem(7) toRem(25) !important;
+    }
+    &__callback-upload.active {
+      svg.uploadIcon {
+        display: none;
+      }
+    }
+    &__callback-upload span {
+      font-size: toRem(16);
+      font-family: $fontFamilyHeading;
+      font-weight: 400;
     }
 
     &__button {
@@ -182,8 +196,8 @@
         font-weight: 500;
         text-decoration: underline;
         text-underline-offset: 5px;
-        @media (any-hover: hover){
-          &:hover{
+        @media (any-hover: hover) {
+          &:hover {
             color: $primaryColor;
           }
         }
@@ -193,6 +207,7 @@
 }
 
 .close__upload {
+  height: 32px;
   display: none;
   .form__callback-upload.active & {
     display: block;
