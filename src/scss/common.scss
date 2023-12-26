@@ -151,9 +151,11 @@ h4 {
 
 .wpcf7-submit {
   margin: 0 auto;
-  @media (max-width: $mobile) {
-    display: flex;
-  }
+  display: flex;
+}
+
+.wpcf7-spinner {
+  display: none;
 }
 
 .wpcf7-response-output {
