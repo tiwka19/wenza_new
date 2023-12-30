@@ -8,14 +8,13 @@
         <section class="hero">
           <div class="hero__container">
             <div class="hero__data">
-              <h1 class="hero__title">Efficient metalworking for every manufacturer with Wenza!</h1>
+              <h1 class="hero__title _section-title">Efficient metalworking for every manufacturer with Wenza!</h1>
             </div>
             <div class="hero__image">
               <picture>
                 <source srcset="@img/hero-company-mobile.png" media="(max-width: 485px)" />
                 <img src="@img/hero-company.png" alt="wenza" />
               </picture>
-        
             </div>
           </div>
         </section>
@@ -63,63 +62,58 @@
             </div>
           </div>
         </section>
-        <section class="product">
-          <div class="product__container">
-            <div class="product__wrapper">
-              <div class="product__inner">
-                <h2 class="product__title">Products</h2>
-                <div class="product__slider slider">
-                  <button class="product-slider-prev slider__button">
-                    <span>
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 1L2 10L11 19" stroke="white" stroke-width="2" stroke-linecap="round" />
-                      </svg>
-                    </span>
-                  </button>
-                  <div class="slider__inner swiper">
-                    <div class="slider__items swiper-wrapper">
-                      <div class="slider__item swiper-slide">
-                        <div class="slider__item-image">
-                          <img src="@img/catalogs/catalog-slide-1.png" alt="slide" />
-                          <div class="slider__item-name">Carbide</div>
-                        </div>
-                      </div>
-                      <div class="slider__item swiper-slide">
-                        <div class="slider__item-image">
-                          <img src="@img/catalogs/cbn.png" alt="slide" />
-                          <div class="slider__item-name">CBN</div>
-                        </div>
-                      </div>
-                      <div class="slider__item swiper-slide">
-                        <div class="slider__item-image">
-                          <img src="@img/catalogs/psd.png" alt="slide" />
-                          <div class="slider__item-name">PCD</div>
-                        </div>
-                      </div>
-                      <div class="slider__item swiper-slide">
-                        <div class="slider__item-image">
-                          <img src="@img/catalogs/ceramics.png" alt="slide" />
-                          <div class="slider__item-name">Ceramics</div>
-                        </div>
-                      </div>
-                      <div class="slider__item swiper-slide">
-                        <div class="slider__item-image">
-                          <img src="@img/catalogs/catalog-slide-1.png" alt="slide" />
-                          <div class="slider__item-name">Carbide</div>
-                        </div>
+        <section class="products">
+          <div class="products__container">
+            <div class="products__wrapper">
+              <h2 class="products__title _section-title">Products</h2>
+              <div class="products__slider slider">
+                <button class="products-slider-button swiper-button swiper-button-prev">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L2 10L11 19" stroke="white" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </button>
+                <div class="products-slider slider swiper">
+                  <div class="slider__items swiper-wrapper">
+                    <div class="slider__item swiper-slide">
+                      <div class="slider__item-image">
+                        <img src="@img/catalogs/catalog-slide-1.png" alt="slide" />
+                        <div class="slider__item-name">Carbide</div>
                       </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="slider__item swiper-slide">
+                      <div class="slider__item-image">
+                        <img src="@img/catalogs/cbn.png" alt="slide" />
+                        <div class="slider__item-name">CBN</div>
+                      </div>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <div class="slider__item-image">
+                        <img src="@img/catalogs/psd.png" alt="slide" />
+                        <div class="slider__item-name">PCD</div>
+                      </div>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <div class="slider__item-image">
+                        <img src="@img/catalogs/ceramics.png" alt="slide" />
+                        <div class="slider__item-name">Ceramics</div>
+                      </div>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <div class="slider__item-image">
+                        <img src="@img/catalogs/catalog-slide-1.png" alt="slide" />
+                        <div class="slider__item-name">Carbide</div>
+                      </div>
+                    </div>
                   </div>
-                  <button class="product-slider-next slider__button">
-                    <span>
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 1L2 10L11 19" stroke="white" stroke-width="2" stroke-linecap="round" />
-                      </svg>
-                    </span>
-                  </button>
+                  <div class="swiper-pagination"></div>
                 </div>
+                <button class="products-slider-button swiper-button swiper-button-next">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 1L2 10L11 19" stroke="white" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </button>
               </div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
         </section>
@@ -276,7 +270,10 @@
                   <img src="@img/team/team-1.png" alt="team" />
                 </div>
                 <div class="team__item-name">Max Chukin</div>
-                <div class="team__item-job">Chief Commercial Officer</div>
+                <div class="team__item-job">
+                  Chief Commercial <br />
+                  Officer
+                </div>
                 <a href="mailto:mch@wenza.tech" class="team__item-email">mch@wenza.tech</a>
               </div>
               <div class="team__item">
@@ -284,7 +281,10 @@
                   <img src="@img/team/team-2.png" alt="team" />
                 </div>
                 <div class="team__item-name">Anton Adaev</div>
-                <div class="team__item-job">Sales Director</div>
+                <div class="team__item-job">
+                  Sales <br />
+                  Director
+                </div>
                 <a href="mailto:adaev@wenza.tech" class="team__item-email">adaev@wenza.tech</a>
               </div>
               <div class="team__item">
@@ -292,7 +292,10 @@
                   <img src="@img/team/team-3.png" alt="team" />
                 </div>
                 <div class="team__item-name">Daria Dorokh</div>
-                <div class="team__item-job">Marketing Specialist</div>
+                <div class="team__item-job">
+                  Marketing <br />
+                  Specialist
+                </div>
                 <a href="mailto:dorokh@wenza.tech" class="team__item-email">dorokh@wenza.tech</a>
               </div>
               <div class="team__item">
@@ -300,7 +303,10 @@
                   <img src="@img/team/team-4.png" alt="team" />
                 </div>
                 <div class="team__item-name">Ratnesh Kumar</div>
-                <div class="team__item-job">Chief Executive Officer</div>
+                <div class="team__item-job">
+                  Chief Executive <br />
+                  Officer
+                </div>
                 <a href="mailto:ratnesh.kumar@wenza.tech" class="team__item-email">ratnesh.kumar@wenza.tech</a>
               </div>
             </div>

@@ -103,7 +103,7 @@ body {
   //Break points
   [class*='__container'] {
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 toRem(30);
     @if ($maxWidthContainer>0) {
       max-width: toRem($containerWidth);
     } @else {
@@ -112,10 +112,10 @@ body {
       }
     }
     @media (max-width: $pc) {
-      max-width: toRem(1356);
+      max-width: toRem(1100);
     }
     @media (max-width: $tablet) {
-      max-width: toRem(750);
+      max-width: toRem(992);
     }
     @media (max-width: $mobile) {
       max-width: none;

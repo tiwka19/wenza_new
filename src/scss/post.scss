@@ -2,14 +2,19 @@
   @include adaptiveValue('padding-top', 120, 40);
   @include adaptiveValue('padding-bottom', 120, 40);
   &__title {
-    @include adaptiveValue('margin-bottom', 80, 15);
+    margin-bottom: toRem(80);
+    @media (max-width: $pc) {
+      @include adaptiveValue('margin-bottom', 40, 15);
+    }
+
     @media (max-width: $mobileSmall) {
       text-align: center;
+      font-size: toRem(28) !important;
     }
   }
   &__image {
     position: relative;
-    @include adaptiveValue('margin-bottom', 40, 15);
+    @include adaptiveValue('margin-bottom', 30, 15);
     img {
       width: 100%;
       min-height: toRem(115);
@@ -17,6 +22,9 @@
       object-fit: cover;
       object-position: center;
       border-radius: toRem(15);
+      @media (max-width:$mobileSmall){
+         height: auto; 
+      }
     }
   }
   &__wrapper {
@@ -101,9 +109,12 @@
 .post__content {
   p {
     padding: toRem(20) 0;
-    @include adaptiveValue('font-size', 36, 16);
+    font-size: toRem(36);
     text-align: justify;
     line-height: math.div(46, 36);
+    @media (max-width: $pc) {
+      @include adaptiveValue('font-size', 20, 16);
+    }
     @media (max-width: $mobileSmall) {
       padding: toRem(10) 0;
     }

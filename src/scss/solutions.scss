@@ -32,29 +32,43 @@
     &__data {
       position: relative;
       z-index: 2;
+      @media (max-width: $pc) {
+        max-width: toRem(641);
+      }
+      @media (max-width: $tablet) {
+        max-width: toRem(550);
+      }
     }
     &__title {
       color: #fff;
-      @include adaptiveValue('font-size', 64, 28);
+      font-size: toRem(64);
       line-height: math.div(79, 64);
       @include adaptiveValue('margin-bottom', 40, 15);
+      @media (max-width: $pc) {
+        @include adaptiveValue('font-size', 48, 28);
+      }
     }
     &__text {
       font-size: toRem(36);
-      @include adaptiveValue('font-size', 36, 16);
       line-height: math.div(46, 36);
       margin-bottom: toRem(20);
       color: #fff;
+      @media (max-width: $pc) {
+        font-size: toRem(20);
+      }
     }
     &__image {
       position: relative;
       z-index: 2;
       margin-bottom: toRem(-300);
-      @include adaptiveValue('margin-right', -300, -50);
-
+      margin-right: toRem(-300);
+      @media (max-width: $pc) {
+        margin-right: toRem(-100);
+        margin-bottom: toRem(0);
+      }
       img {
-        @include adaptiveValue('max-width', 800, 300);
-        @media (max-width: $mobile) {
+        max-width: toRem(800);
+        @media (max-width: $pc) {
           max-width: 100%;
         }
         @media (max-width: $mobileSmall) {
@@ -80,7 +94,10 @@
     &__items {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      @include adaptiveValue('gap', 40, 20);
+      gap: toRem(40);
+      @media (max-width: $pc) {
+        gap: toRem(20);
+      }
       @media (max-width: em(1180)) {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -92,7 +109,7 @@
       }
     }
     &__item {
-      @include adaptiveValue('padding', 30, 15);
+      padding: toRem(30);
       background: linear-gradient(123.09deg, #e5e5e5 -3.86%, #fafafa 109.9%);
       box-shadow:
         0px 4px 6px rgba(0, 0, 0, 0.07),
@@ -105,8 +122,11 @@
       flex-direction: column;
       justify-content: space-between;
       gap: toRem(15);
-      min-height: toRem(370);
+
       transition: color 0.2s ease 0s;
+      @media (max-width: $pc) {
+        padding: toRem(20);
+      }
       @media (max-width: em(580)) {
         flex-direction: row;
         align-items: center;
@@ -139,7 +159,10 @@
     }
     &__item-title {
       font-family: $fontFamilyHeading;
-      @include adaptiveValue('font-size', 24, 16);
+      font-size: toRem(24);
+      @media (max-width: $pc) {
+        @include adaptiveValue('font-size', 20, 16);
+      }
       line-height: math.div(29, 24);
     }
     &__item-img {
@@ -157,7 +180,10 @@
   .more {
     @include adaptiveValue('padding-bottom', 120, 40);
     &__title {
-      @include adaptiveValue('margin-bottom', 80, 30);
+      margin-bottom: toRem(80);
+      @media (max-width: $pc) {
+        margin-bottom: toRem(40);
+      }
     }
     &__container {
       @media (max-width: $mobileSmall) {
@@ -178,12 +204,22 @@
         display: none;
       }
     }
+    &__item {
+      @media (max-width:$mobileSmall){
+         max-width: toRem(205); 
+      }
+    }
     &__item-image {
       margin-bottom: toRem(25);
       img {
-        max-width: toRem(285);
-        height: toRem(320);
-        width: 100%;
+        @media (max-width: $pc) {
+          width: toRem(192);
+          height: toRem(236);
+        }
+        @media (max-width: $mobile) {
+          width: auto;
+          height: auto;
+        }
         object-fit: cover;
         border-radius: toRem(25);
       }
@@ -191,6 +227,10 @@
     &__item-link {
       max-width: toRem(200);
       font-size: toRem(20);
+      @media (max-width: $pc) {
+        font-size: toRem(16);
+        padding: toRem(10) toRem(24);
+      }
     }
     &__slider {
       @media (min-width: $mobileSmall) {

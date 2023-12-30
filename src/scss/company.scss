@@ -1,6 +1,6 @@
 .page-company {
   .hero {
-    @include adaptiveValue('min-height', 820, 496);
+    min-height: toRem(820);
     background: linear-gradient(97deg, #3b4c82 0%, #010101 55.79%, #373a3b 106.06%);
     position: relative;
     display: grid;
@@ -18,13 +18,18 @@
       background-position: center;
       background-repeat: no-repeat;
     }
+    @media (max-width: $pc) {
+      min-height: toRem(670);
+    }
+    @media (max-width: $tablet) {
+      @include adaptiveValue('min-height', 500, 496);
+    }
     &__container {
       display: flex;
       align-items: center;
       @media (max-width: $mobile) {
         flex-direction: column;
-        padding: toRem(30) toRem(20);
-        gap: toRem(30);
+        padding: toRem(0) toRem(25);
         text-align: center;
       }
     }
@@ -32,35 +37,32 @@
       position: relative;
       z-index: 2;
       color: #fff;
-      @include adaptiveValue('font-size', 64, 28);
-      line-height: math.div(79, 64);
       max-width: toRem(900);
+      @media (max-width: $mobileSmall) {
+        font-size: toRem(28);
+        margin-bottom: toRem(15);
+      }
     }
-    
+
     &__image {
       position: relative;
       z-index: 2;
       margin-bottom: toRem(-200);
       @include adaptiveValue('margin-right', -200, -50);
-      @media (max-width: $mobile) {
+      @media (max-width: $tablet) {
         margin-bottom: 0;
         margin-right: 0 !important;
       }
     }
   }
   .benefits {
+    &__container {
+      @media (max-width: $pc) {
+        max-width: toRem(1438);
+      }
+    }
     .why-mask-mobile {
       display: none;
-      @media (max-width: $mobileSmall) {
-        display: block;
-        position: absolute;
-        bottom: -180px;
-        width: 100%;
-        height: 241px;
-        @media (max-width: $mobileSmall) {
-          height: 80%;
-        }
-      }
     }
     @include adaptiveValue('padding-bottom', 300, 50);
     &__wrapper {
@@ -88,10 +90,7 @@
       margin-left: toRem(20);
       position: relative;
       width: toRem(530);
-      @include adaptiveValue('width', 530, 242, 3, 1180, 320);
-      @include adaptiveValue('height', 530, 242, 3, 1180, 320);
       height: toRem(530);
-
       display: grid;
       place-items: center;
       z-index: 10;
@@ -99,19 +98,27 @@
       background-size: cover;
       border-radius: 50%;
       backdrop-filter: blur(10px);
-
+      @media (max-width: $pc) {
+        @include adaptiveValue('width', 375, 241);
+        @include adaptiveValue('height', 375, 241);
+      }
       &::before {
         content: '';
         position: absolute;
         right: -390px;
-        top: -135px;
+        top: -110px;
         width: 665px;
         height: 800px;
         background-image: url('@img/why-mask.svg');
         background-size: cover;
         z-index: -5;
-        @media (max-width: em(1500)) {
-          top: -135px;
+        @media (max-width: $pc) {
+          background-size: contain;
+          background-repeat: no-repeat;
+          top: -120px;
+          right: -310px;
+          width: 529px;
+          height: 630px;
         }
         @media (max-width: em(1180)) {
           display: none;
@@ -123,11 +130,13 @@
         position: absolute;
         width: toRem(573);
         height: toRem(573);
-        @include adaptiveValue('width', 573, 262, 3, 1180, 320);
-        @include adaptiveValue('height', 573, 262, 3, 1180, 320);
         background: rgba(255, 255, 255, 0.3);
         border-radius: 50%;
         z-index: -2;
+        @media (max-width: $pc) {
+          @include adaptiveValue('width', 405, 262);
+          @include adaptiveValue('height', 405, 262);
+        }
       }
       @media (max-width: em(1180)) {
         margin: 0 auto;
@@ -147,15 +156,31 @@
       font-family: $fontFamilyHeading;
     }
     &__data-description {
-      @include adaptiveValue('font-size', 28, 18);
+      font-size: toRem(28);
       line-height: math.div(35, 28);
+      @media (max-width: $pc) {
+        @include adaptiveValue('font-size', 20, 18);
+        max-width: toRem(305);
+        margin: 0 auto;
+      }
     }
     &__items {
       display: flex;
       flex-direction: column;
-      @include adaptiveValue('gap', 60, 25);
+      gap: toRem(60);
       flex: 1 1 auto;
       position: relative;
+      @media (max-width: $pc) {
+        gap: toRem(35);
+      }
+      @media (max-width: em(1180)) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: toRem(15);
+      }
+      @media (max-width: $mobileSmall) {
+        grid-template-columns: 1fr;
+      }
     }
     &__item {
       padding: toRem(32);
@@ -164,6 +189,12 @@
         inset -3px -3px 6px rgba(255, 255, 255, 0.83),
         inset 1px 1px 5px rgba(0, 0, 0, 0.05);
       border-radius: 25px;
+      @media (max-width: $pc) {
+        max-width: toRem(468);
+      }
+      @media (max-width: $mobileSmall) {
+        padding: toRem(15);
+      }
       @media (min-width: em(1180)) {
         max-width: toRem(688);
         &:nth-child(2),
@@ -172,6 +203,9 @@
         }
         &:nth-child(1) {
           transform: translateY(-30px);
+          @media (max-width: $pc) {
+            transform: translateY(0);
+          }
         }
         &:nth-child(4) {
           transform: translateY(30px);
@@ -179,12 +213,13 @@
       }
     }
     &__item-title {
-      @include adaptiveValue('font-size', 24, 20);
+      @include adaptiveValue('font-size', 24, 16);
       line-height: math.div(29, 24);
       margin-bottom: toRem(25);
       font-family: $fontFamilyHeading;
       @media (max-width: $mobile) {
         margin-bottom: toRem(10);
+        font-weight: 450;
       }
     }
     &__item-descr {
@@ -218,38 +253,34 @@
       }
     }
   }
-  .product {
+  .products {
     @include adaptiveValue('padding-bottom', 120, 40);
     &__container {
-      @media (max-width: $mobile) {
+      @media (max-width: $mobileSmall) {
         margin: 0 toRem(-15);
       }
     }
     &__wrapper {
-      position: relative;
-      margin-left: toRem(-200);
-      @include adaptiveValue('margin-left', -200, -50, 3, 1920, 992);
-      width: 100%;
-      padding: toRem(100) toRem(50);
+      @include adaptiveValue('padding-top', 60, 40);
+      @include adaptiveValue('padding-bottom', 100, 40);
+      @include adaptiveValue('padding-left', 100, 40);
+      @include adaptiveValue('padding-right', 100, 40);
       border-radius: toRem(60);
-      background: var(--1, linear-gradient(97deg, #010101 42.06%, #3b4c82 106.06%));
+      background: var(--1, linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #3b4c82 106.06%));
       box-shadow:
         0px 4px 5px 0px #000 inset,
         -1px 4px 12px 0px rgba(255, 255, 255, 0.4) inset,
         0px 4px 8px 0px rgba(0, 0, 0, 0.25);
-      @media (max-width: $mobile) {
-        margin: 0;
-        border-radius: 0;
-        padding: toRem(32) toRem(24);
-      }
+      position: relative;
       @media (max-width: $mobileSmall) {
+        border-radius: toRem(0);
         padding-right: 0;
       }
       &::before {
         content: '';
         position: absolute;
-        right: toRem(-500);
-        top: 0;
+        right: toRem(-400);
+        top: 400px;
         background: url('@img/catalogs/mask.png') 0 0 no-repeat;
         width: toRem(610);
         height: toRem(562);
@@ -262,102 +293,83 @@
         }
       }
     }
-    &__inner {
-      padding-left: toRem(160);
-      @include adaptiveValue('padding-left', 160, 0, 3, 1920, 992);
-    }
     &__title {
-      @include adaptiveValue('font-size', 64, 22);
-      line-height: math.div(79, 64);
-      @include adaptiveValue('margin-bottom', 60, 40);
-      font-family: $fontFamilyHeading;
+      @include adaptiveValue('padding-left', 85, 40);
       color: #fff;
-      @media (max-width: $mobile) {
-        text-align: center;
-      }
-    }
-    &__button {
-      @media (max-width: $mobile) {
-        text-align: center;
-        a {
-          font-size: toRem(18);
-        }
-      }
-    }
-    .swiper-pagination {
-      bottom: 30px;
-    }
-  }
-  .slider {
-    display: flex;
-    align-items: center;
-    gap: toRem(40);
-    margin-bottom: toRem(60);
-    margin-left: toRem(-80);
-    @include adaptiveValue('margin-left', -80, 0, 3, 1920, 1200);
-    &__inner {
-      max-width: toRem(1200);
-    }
-    &__item {
-      background-color: #e5e5e5;
-      padding: toRem(40) toRem(20);
-      border-radius: toRem(25);
-      position: relative;
-      max-width: toRem(270);
-    }
-    &__item-name {
-      position: absolute;
-      bottom: toRem(40);
-      right: 0;
-      font-size: toRem(24);
-      font-family: $fontFamilyHeading;
-      padding: toRem(10) toRem(40);
-      border-radius: 60px 0px 0px 60px;
-      background: #fff;
-      box-shadow:
-        1px 2px 5px 0px rgba(0, 0, 0, 0.15) inset,
-        -3px -4px 6px 0px rgba(255, 255, 255, 0.38),
-        0px 4px 4px 0px rgba(0, 0, 0, 0.15),
-        -2px -2px 6px 0px rgba(255, 255, 255, 0.83) inset;
+      @include adaptiveValue('margin-bottom', 60, 30);
       @media (max-width: $mobileSmall) {
-        font-size: toRem(18);
+        text-align: center;
+        padding-left: toRem(0);
       }
     }
-    &__button {
-      position: relative;
-      z-index: 2;
-      width: 45px;
-      height: 45px;
-      flex: 0 0 45px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      background: var(--2, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
-      box-shadow:
-        1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
-        -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
-        0px 4px 6px 0px rgba(0, 0, 0, 0.07),
-        -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
-
-      &.product-slider-next svg {
-        rotate: 180deg;
+    .slider {
+      display: flex;
+      align-items: center;
+      gap: toRem(40);
+      &__item {
+        background-color: #e5e5e5;
+        @include adaptiveValue('padding-top', 40, 15);
+        @include adaptiveValue('padding-bottom', 40, 15);
+        border-radius: toRem(25);
+        position: relative;
       }
-      &::after {
-        content: '';
+      &__item-image {
+        margin-bottom: toRem(0);
+      }
+      &__item-name {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: toRem(60);
-        height: toRem(60);
-        border-radius: 59.748px;
-        background: var(--2, linear-gradient(126deg, rgba(229, 229, 229, 0.7) 3.35%, rgba(255, 255, 255, 0) 97.01%));
-        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.03);
-        z-index: -1;
+        bottom: toRem(40);
+        right: 0;
+        @include adaptiveValue('font-size', 24, 16);
+        font-family: $fontFamilyHeading;
+        padding: toRem(10) toRem(40);
+        border-radius: 60px 0px 0px 60px;
+        background: #fff;
+        box-shadow:
+          1px 2px 5px 0px rgba(0, 0, 0, 0.15) inset,
+          -3px -4px 6px 0px rgba(255, 255, 255, 0.38),
+          0px 4px 4px 0px rgba(0, 0, 0, 0.15),
+          -2px -2px 6px 0px rgba(255, 255, 255, 0.83) inset;
+          @media (max-width:$mobileSmall){
+             bottom: toRem(20); 
+          }
       }
-      @media (max-width: $mobile) {
-        display: none;
+      &__button {
+        position: relative;
+        z-index: 2;
+        width: toRem(45);
+        height: toRem(45);
+        flex-shrink: 0;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        background: var(--2, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
+        box-shadow:
+          1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+          -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+          0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+          -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+
+        &.product-slider-next svg {
+          rotate: 180deg;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: toRem(60);
+          height: toRem(60);
+          border-radius: toRem(60);
+          background: var(--2, linear-gradient(126deg, rgba(229, 229, 229, 0.7) 3.35%, rgba(255, 255, 255, 0) 97.01%));
+          box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.03);
+          z-index: -1;
+        }
+        @media (max-width: $mobile) {
+          display: none;
+        }
       }
     }
   }
@@ -367,6 +379,9 @@
       @include adaptiveValue('font-size', 64, 22);
       line-height: math.div(79, 64);
       @include adaptiveValue('margin-bottom', 60, 30);
+      @media (max-width:$mobileSmall){
+         text-align: center; 
+      }
     }
     &__items {
       display: flex;
@@ -453,7 +468,7 @@
       }
     }
     &__item-title {
-      @include adaptiveValue('font-size', 24, 20);
+      @include adaptiveValue('font-size', 24, 18);
       line-height: math.div(29, 24);
     }
     &__item-descr {
@@ -606,23 +621,29 @@
     &__items {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: toRem(40);
+      @include adaptiveValue('gap', 30, 15);
       @media (max-width: $tablet) {
         grid-template-columns: 1fr 1fr;
-        gap: toRem(30);
       }
-      @media (max-width: $mobile) {
-        grid-template-columns: 1fr;
+    }
+    &__item {
+      @media (max-width: $tablet) {
+        margin: 0 auto;
       }
     }
     &__item-image {
       margin-bottom: toRem(30);
-
       img {
-        width: 100%;
-        object-fit: contain;
-
+        object-fit: cover;
         border-radius: toRem(25);
+        @media (max-width: $pc) {
+          width: toRem(230);
+          height: toRem(300);
+        }
+        @media (max-width: $mobileSmall) {
+          width: toRem(200);
+          height: toRem(200);
+        }
       }
     }
     &__item-name,
@@ -631,15 +652,22 @@
       margin-bottom: toRem(10);
     }
     &__item-name {
-      font-size: toRem(24);
+      @include adaptiveValue('font-size', 24, 16);
     }
     &__item-job {
-      font-size: toRem(20);
+      @include adaptiveValue('font-size', 20, 16);
     }
     &__item-email {
       color: $primaryColor;
       font-size: toRem(28);
       position: relative;
+      word-wrap: break-word;
+      @media (max-width: $pc) {
+        font-size: toRem(20);
+      }
+      @media (max-width: $mobileSmall) {
+        font-size: toRem(14);
+      }
 
       &::before,
       &::after {

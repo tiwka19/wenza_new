@@ -1,8 +1,8 @@
 .kit {
-  @include adaptiveValue('padding-top', 120, 40);
+  @include adaptiveValue('padding-top', 80, 40);
   @include adaptiveValue('padding-bottom', 120, 40);
   &__title {
-    @include adaptiveValue('margin-bottom', 80, 15);
+    margin-bottom: toRem(40);
     @media (max-width: $mobile) {
       text-align: center;
     }
@@ -16,14 +16,17 @@
     }
   }
   &__items {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(20);
     @media (max-width: em(1200)) {
       width: 100%;
     }
   }
   &__item {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     border-radius: toRem(25);
     gap: toRem(20);
     background: var(--3, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
@@ -32,10 +35,9 @@
       -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
       0px 4px 6px 0px rgba(0, 0, 0, 0.07),
       -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
-
-    @include adaptiveValue('padding', 40, 20);
-    &:not(:last-child) {
-      margin-bottom: toRem(40);
+    padding: toRem(40);
+    @media (max-width: $pc) {
+      padding: toRem(20);
     }
     @media (max-width: $mobile) {
       flex-direction: column;
@@ -43,11 +45,10 @@
     }
   }
   &__item-data {
-    max-width: toRem(400);
     flex: 1 1 auto;
-  }
-  &__item-image {
-    flex: 0 0 toRem(100);
+    @media (min-width: $mobile) {
+      max-width: toRem(400);
+    }
   }
   &__item-title {
     @include adaptiveValue('font-size', 24, 16);
@@ -56,9 +57,16 @@
   &__item-descr {
     @include adaptiveValue('font-size', 20, 16);
   }
+  &__item-image {
+    flex-shrink: 0;
+  }
   &__item-link {
     font-size: toRem(24);
     padding: toRem(16) toRem(36);
+    @media (max-width: $pc) {
+      padding: toRem(12) toRem(15);
+      font-size: toRem(20);
+    }
     @media (max-width: $mobile) {
       font-size: toRem(20);
       padding: toRem(8) toRem(24);
@@ -73,9 +81,9 @@
       -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
       0px 4px 6px 0px rgba(0, 0, 0, 0.07),
       -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
-      @media (max-width:$mobileSmall){
-         padding: toRem(25) toRem(15); 
-      }
+    @media (max-width: $mobileSmall) {
+      padding: toRem(25) toRem(15);
+    }
   }
   &__marketing-title {
     @include adaptiveValue('font-size', 36, 20);
@@ -119,9 +127,9 @@
     gap: toRem(10);
     position: relative;
     font-size: toRem(20);
-    @media (max-width:$mobileSmall){
-       justify-content: center; 
-       width: 100%;
+    @media (max-width: $mobileSmall) {
+      justify-content: center;
+      width: 100%;
     }
     &::before,
     &::after {

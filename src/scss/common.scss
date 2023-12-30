@@ -63,7 +63,10 @@ h4 {
 }
 
 ._section-title {
-  @include adaptiveValue('font-size', 64, 28);
+  font-size: toRem(64);
+  @media (max-width: $pc) {
+    @include adaptiveValue('font-size', 48, 28);
+  }
   line-height: math.div(79, 64);
   .page-product & {
     @media (max-width: $mobileSmall) {
@@ -242,6 +245,9 @@ table {
     font-size: toRem(28);
     font-family: $fontFamily !important;
     font-weight: 500 !important;
+    @media (max-width: $pc) {
+      font-size: toRem(20);
+    }
     @media (max-width: $mobile) {
       font-size: toRem(20);
     }
@@ -252,32 +258,19 @@ table {
     }
   }
 
-  // tbody {
-  //   tr:first-child td:first-child {
-  //     border-radius: 25px 0 0 0;
-  //   }
-  //   tr:first-child td:last-child {
-  //     border-radius: 0 25px 0 0;
-  //   }
-  //   tr:last-child td:first-child {
-  //     border-radius: 0 0 0 25px;
-  //   }
-  //   tr:last-child td:last-child {
-  //     border-radius: 0 0 25px 0;
-  //   }
-  // }
-
   td {
     padding: toRem(30) toRem(60) !important;
     background-color: #fff;
-    @include adaptiveValue('font-size', 26, 16);
+    font-size: toRem(26);
     border: solid 1px #4d64aa !important;
     border-style: none solid solid none !important;
     line-height: math.div(32, 26);
     vertical-align: middle !important;
-    @media (max-width: $tablet) {
-      padding: toRem(30) !important;
+    @media (max-width: $pc) {
+      font-size: toRem(16);
+      padding: toRem(30) toRem(20) !important;
     }
+
     @media (max-width: $mobileSmall) {
       padding: toRem(10) !important;
       min-width: 120px;
@@ -323,5 +316,53 @@ table {
     @media (max-width: $mobile) {
       white-space: wrap;
     }
+  }
+}
+
+.swiper-button {
+  position: relative;
+  z-index: 2;
+  width: toRem(45);
+  height: toRem(45);
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%);
+  box-shadow:
+    1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+    -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+    0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+    -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+  @media (max-width: $pc) {
+    width: toRem(35);
+    height: toRem(35);
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background: var(--2, linear-gradient(126deg, rgba(229, 229, 229, 0.7) 3.35%, rgba(255, 255, 255, 0) 97.01%));
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.03);
+    z-index: -1;
+    @media (max-width: $pc) {
+      width: toRem(45);
+      height: toRem(45);
+    }
+  }
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.swiper-button-next {
+  svg {
+    transform: rotate(180deg);
   }
 }

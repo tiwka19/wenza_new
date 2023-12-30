@@ -5,6 +5,7 @@
       @include adaptiveValue('margin-bottom', 60, 15);
       @media (max-width: $mobileSmall) {
         text-align: center;
+        font-size: toRem(28) !important;
       }
     }
     &__wrapper {
@@ -19,8 +20,11 @@
     }
     &__text {
       max-width: toRem(947);
-      @include adaptiveValue('font-size', 36, 16);
+      font-size: toRem(36);
       line-height: math.div(44, 36);
+      @media (max-width: $pc) {
+        @include adaptiveValue('font-size', 20, 16);
+      }
       @media (max-width: $mobileSmall) {
         text-align: center;
       }

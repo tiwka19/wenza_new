@@ -8,16 +8,16 @@ import '../../scss/base/swiper.scss';
 // import 'swiper/css';
 
 function initSliders() {
-  if (document.querySelector('.swiper')) {
-    new Swiper('.swiper', {
+  if (document.querySelector('.products-slider')) {
+    new Swiper('.products-slider', {
       modules: [Navigation, Pagination],
-      slidesPerView: 4,
-      spaceBetween: 40,
+      slidesPerView: 'auto',
+      spaceBetween: 30,
       speed: 800,
       grabCursor: true,
       navigation: {
-        prevEl: '.product-slider-prev',
-        nextEl: '.product-slider-next',
+        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next',
       },
 
       pagination: {
@@ -29,21 +29,51 @@ function initSliders() {
       breakpoints: {
         320: {
           slidesPerView: 'auto',
-          spaceBetween: 30,
-          freeMode: true,
         },
-        640: {
+        485: {
           slidesPerView: 2,
         },
-        1200: {
-          slidesPerView: 3,
+        992: {
+          sliderPerView: 3,
         },
-        1580: {
+        1440: {
           slidesPerView: 4,
         },
       },
 
       on: {},
+    });
+  }
+
+  if (document.querySelector('.more__slider')) {
+    new Swiper('.more__slider', {
+      modules: [Pagination],
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      speed: 800,
+      grabCursor: true,
+
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true,
+      },
+    });
+  }
+
+  if (document.querySelector('.post__slider')) {
+    new Swiper('.post__slider', {
+      modules: [Pagination],
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      speed: 800,
+      grabCursor: true,
+
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+        clickable: true,
+      },
     });
   }
 

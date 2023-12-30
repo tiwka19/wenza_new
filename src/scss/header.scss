@@ -20,9 +20,6 @@
   &__container {
     @extend %flexStack;
     gap: toRem(15);
-    @media (max-width: $pc) {
-      max-width: toRem(1136);
-    }
   }
   &__menu {
     z-index: 6;
@@ -294,7 +291,7 @@
     width: toRem(6);
     height: toRem(6);
     border-radius: 50%;
-    background-color: #FFF;
+    background-color: #fff;
     position: relative;
   }
   &__close {

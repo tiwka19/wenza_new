@@ -21,25 +21,23 @@
             <div class="hero__image">
               <img src="@img/hero.png" alt="image" />
             </div>
-            <a href="#" class="hero__button hero__button--mobile button button--primary"> contact us </a>
+            <button data-goto="#callback" data-goto-header data-goto-top="50" class="hero__button hero__button--mobile button button--primary">
+              contact us
+            </button>
           </div>
         </section>
         <section class="news">
           <div class="news__container">
             <div class="news__wrapper">
-              <div class="news__inner">
-                <div class="news__image">
-                  <img src="@img/news-ny.png" alt="news" />
-                  <!-- <a href="#" class="news__button news__button--mobile button button--secondary">contact us</a> -->
-                </div>
-                <div class="news__data">
-                  <h2 class="news__title">
-                    Smart Solutions <br />
-                    for Smart Machines
-                  </h2>
-                  <h3 class="news__subtitle">Metal Cutting Tools Manufacturer</h3>
-                  <!-- <a href="#" class="news__button button button--secondary">contact us</a> -->
-                </div>
+              <div class="news__image">
+                <img src="@img/news-ny.png" alt="news" />
+              </div>
+              <div class="news__data">
+                <h2 class="news__title">
+                  Merry Christmas <br />
+                  Happy New Year!
+                </h2>
+                <h3 class="news__subtitle">May the Holidays bring love, peace, and happiness.</h3>
               </div>
             </div>
           </div>
@@ -163,45 +161,95 @@
             </div>
           </div>
         </section>
-        <section class="product-slider slider">
-          <div class="slider__container">
-            <div class="slider__wrapper">
-              <button class="product-slider-prev slider__button">
-                <span>
+        <section class="products">
+          <div class="products__container">
+            <div class="products__wrapper">
+              <div class="products__inner">
+                <button class="products-slider-button swiper-button swiper-button-prev">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11 1L2 10L11 19" stroke="white" stroke-width="2" stroke-linecap="round" />
                   </svg>
-                </span>
-              </button>
-              <div class="slider__inner swiper">
-                <div class="slider__items swiper-wrapper">
-                  <div class="slider__item swiper-slide">
-                    <a href="#" class="slider__item-image">
-                      <img src="@img/slider/product-slide-1.png" alt="slide" />
-                    </a>
-                    <div class="slider__item-date">27.10.23</div>
-                    <h3 class="slider__item-title">Increase the Speed & Quality</h3>
-                    <div class="slider__item-tags">
-                      <a href="#" class="slider-item-tag">News tag</a>
-                      <a href="#" class="slider-item-tag">News tag</a>
-                      <a href="#" class="slider-item-tag">News tag</a>
+                </button>
+                <div class="products-slider slider swiper">
+                  <div class="slider__items swiper-wrapper">
+                    <div class="slider__item swiper-slide">
+                      <a href="#" class="slider__item-image">
+                        <img src="@img/slider/product-slide-1.png" alt="slide" />
+                      </a>
+                      <div class="slider__item-date">27.10.23</div>
+                      <h3 class="slider__item-title">Increase the Speed & Quality</h3>
+                      <div class="slider__item-tags">
+                        <a href="#" class="slider-item-tag">News tag</a>
+                        <a href="#" class="slider-item-tag">News tag</a>
+                        <a href="#" class="slider-item-tag">News tag</a>
+                      </div>
+                      <a href="#" class="slider__item-button button button--secondary">read more</a>
                     </div>
-                    <a href="#" class="slider__item-button button button--secondary">read more</a>
+                    <div class="slider__item swiper-slide">
+                      <a href="#" class="slider__item-image">
+                        <img src="@img/slider/product-slide-1.png" alt="slide" />
+                      </a>
+                      <div class="slider__item-date">27.10.23</div>
+                      <h3 class="slider__item-title">Increase the Speed & Quality</h3>
+                      <div class="slider__item-tags">
+                        <a href="#" class="slider-item-tag">News tag</a>
+                        <a href="#" class="slider-item-tag">News tag</a>
+                        <a href="#" class="slider-item-tag">News tag</a>
+                      </div>
+                      <a href="#" class="slider__item-button button button--secondary">read more</a>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <a href="#" class="slider__item-image">
+                        <img src="@img/slider/product-slide-1.png" alt="slide" />
+                      </a>
+                      <div class="slider__item-date">27.10.23</div>
+                      <h3 class="slider__item-title">Increase the Speed & Quality</h3>
+                      <div class="slider__item-tags">
+                        <a href="#" class="slider-item-tag">News tag</a>
+                        <a href="#" class="slider-item-tag">News tag</a>
+                        <a href="#" class="slider-item-tag">News tag</a>
+                      </div>
+                      <a href="#" class="slider__item-button button button--secondary">read more</a>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <a href="#" class="slider__item-image">
+                        <img src="@img/slider/product-slide-1.png" alt="slide" />
+                      </a>
+                      <div class="slider__item-date">27.10.23</div>
+                      <h3 class="slider__item-title">Increase the Speed & Quality</h3>
+                      <div class="slider__item-tags">
+                        <a href="#" class="slider-item-tag">News tag</a>
+                        <a href="#" class="slider-item-tag">News tag</a>
+                        <a href="#" class="slider-item-tag">News tag</a>
+                      </div>
+                      <a href="#" class="slider__item-button button button--secondary">read more</a>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <a href="#" class="slider__item-image">
+                        <img src="@img/slider/product-slide-1.png" alt="slide" />
+                      </a>
+                      <div class="slider__item-date">27.10.23</div>
+                      <h3 class="slider__item-title">Increase the Speed & Quality</h3>
+                      <div class="slider__item-tags">
+                        <a href="#" class="slider-item-tag">News tag</a>
+                        <a href="#" class="slider-item-tag">News tag</a>
+                        <a href="#" class="slider-item-tag">News tag</a>
+                      </div>
+                      <a href="#" class="slider__item-button button button--secondary">read more</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <button class="product-slider-next slider__button">
-                <span>
+                <button class="products-slider-button swiper-button swiper-button-next">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11 1L2 10L11 19" stroke="white" stroke-width="2" stroke-linecap="round" />
                   </svg>
-                </span>
-              </button>
+                </button>
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-pagination"></div>
           </div>
         </section>
-        <section class="map">
+        <section class="map _section-title">
           <div class="map__container">
             <h2 class="map__title">
               Wenza is Working <br />

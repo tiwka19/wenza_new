@@ -1,14 +1,26 @@
 .news {
-  @include adaptiveValue('padding-top', 120, 40);
+  @include adaptiveValue('padding-top', 80, 40);
   &__title {
-    @include adaptiveValue('margin-bottom', 60, 10);
+    margin-bottom: toRem(60);
+    @media (max-width: $pc) {
+      @include adaptiveValue('margin-bottom', 40, 15);
+    }
+
     @media (max-width: $mobile) {
       text-align: center;
+      font-size: toRem(28) !important;
     }
   }
+
   &__descr {
-    @include adaptiveValue('font-size', 36, 16);
-    @include adaptiveValue('margin-bottom', 80, 24);
+    line-height: math.div(46, 36);
+    font-size: toRem(36);
+    margin-bottom: toRem(80);
+    @media (max-width: $pc) {
+      @include adaptiveValue('font-size', 20, 16);
+      @include adaptiveValue('margin-bottom', 60, 25);
+    }
+
     @media (max-width: $mobile) {
       text-align: center;
     }
@@ -18,6 +30,9 @@
     grid-template-columns: 1fr 1fr;
     gap: toRem(80) toRem(40);
     padding-bottom: toRem(80);
+    @media (max-width: $pc) {
+      gap: toRem(40);
+    }
     @media (max-width: $mobile) {
       gap: toRem(25) toRem(15);
     }
