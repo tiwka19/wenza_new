@@ -179,7 +179,7 @@
   }
   .more {
     padding-bottom: toRem(120);
-    @media (max-width:$pc){
+    @media (max-width: $pc) {
       @include adaptiveValue('padding-bottom', 80, 40);
     }
     &__title {
@@ -198,7 +198,10 @@
       gap: toRem(30);
       grid-template-columns: repeat(5, 1fr);
       @media (max-width: em(1200)) {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @media (max-width: $tablet) {
+        grid-template-columns: repeat(3, 1fr);
       }
       @media (max-width: $mobile) {
         grid-template-columns: 1fr 1fr;
@@ -214,11 +217,15 @@
     }
     &__item-image {
       margin-bottom: toRem(25);
+      width: toRem(286);
+      height: toRem(320);
+      @media (max-width: $pc) {
+        width: toRem(192);
+        height: toRem(236);
+      }
       img {
-        @media (max-width: $pc) {
-          width: toRem(192);
-          height: toRem(236);
-        }
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         border-radius: toRem(25);
       }

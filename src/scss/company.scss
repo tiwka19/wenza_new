@@ -5,6 +5,7 @@
     position: relative;
     display: grid;
     place-items: center;
+    padding: toRem(30) 0;
     @include adaptiveValue('margin-bottom', 120, 40);
     &::after {
       content: '';
@@ -22,7 +23,7 @@
       min-height: toRem(670);
     }
     @media (max-width: $tablet) {
-      @include adaptiveValue('min-height', 500, 496);
+      min-height: toRem(456);
     }
     &__container {
       display: flex;
@@ -48,7 +49,10 @@
       position: relative;
       z-index: 2;
       margin-bottom: toRem(-200);
-      @include adaptiveValue('margin-right', -200, -50);
+      margin-right: toRem(-200);
+      @media (max-width: $pc) {
+        margin-right: toRem(-250);
+      }
       @media (max-width: $tablet) {
         margin-bottom: 0;
         margin-right: 0 !important;
@@ -59,7 +63,11 @@
     .why-mask-mobile {
       display: none;
     }
-    @include adaptiveValue('padding-bottom', 300, 50);
+    padding-bottom: toRem(300);
+    @media (max-width: $pc) {
+      @include adaptiveValue('padding-bottom', 200, 50);
+    }
+
     &__wrapper {
       display: flex;
       justify-content: space-between;
@@ -269,11 +277,7 @@
     &__wrapper {
       padding: toRem(60) toRem(100) toRem(100) toRem(60);
       border-radius: toRem(60);
-      background: var(--1, linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #3b4c82 106.06%));
-      box-shadow:
-        0px 4px 5px 0px #000 inset,
-        -1px 4px 12px 0px rgba(255, 255, 255, 0.4) inset,
-        0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+      background: var(--4, linear-gradient(97deg, #3b4c82 0%, #010101 58%, #373a3b 106.06%));
       position: relative;
       @media (max-width: $pc) {
         padding: toRem(80) toRem(40);
@@ -293,14 +297,14 @@
         top: 400px;
         background-image: url('@img/catalogs/mask.png');
         background-repeat: no-repeat;
+        background-size: contain;
         width: toRem(610);
         height: toRem(562);
-        background-size: contain;
-        @include adaptiveValue('width', 610, 350, 3, 1920, 1200);
-        @include adaptiveValue('height', 610, 350, 3, 1920, 1200);
-        @include adaptiveValue('right', -500, -200, 3, 1920, 1200);
         @media (max-width: $pc) {
-          top: 350px;
+          width: toRem(420);
+          height: toRem(360);
+          top: 280px;
+          right: -350px;
         }
         @media (max-width: $tablet) {
           display: none;

@@ -1,9 +1,12 @@
 .page-products {
   .hero {
-    @include adaptiveValue('padding-top', 80, 40);
     padding-bottom: toRem(120);
     @media (max-width: $pc) {
+      padding-top: toRem(25);
       @include adaptiveValue('padding-bottom', 80, 40);
+    }
+    @media (max-width: $mobile) {
+      padding-top: toRem(40);
     }
     &__wrapper {
       display: flex;
@@ -31,7 +34,6 @@
     }
     &__description {
       font-size: toRem(36);
-
       line-height: math.div(46, 36);
       margin-bottom: toRem(20);
       @media (max-width: $pc) {
@@ -183,7 +185,7 @@
     &__tech-wrapper {
       max-width: toRem(1320);
       margin: 0 auto;
-      padding: toRem(80) toRem(50) toRem(50) toRem(50);
+      padding: toRem(80) toRem(48) toRem(80) toRem(48);
       border-radius: toRem(25);
       background: var(--2, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
       box-shadow:
@@ -201,11 +203,14 @@
     }
     &__tech-title {
       @include adaptiveValue('margin-bottom', 40, 15);
-      @include adaptiveValue('font-size', 48, 24);
+      @media (max-width: $pc) {
+        font-size: toRem(40) !important;
+      }
     }
     &__tech-text {
       @media (max-width: $pc) {
         font-size: toRem(24);
+        letter-spacing: -1px;
       }
       @media (max-width: $mobile) {
         font-size: toRem(16);

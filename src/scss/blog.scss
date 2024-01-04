@@ -124,6 +124,7 @@
   &__item-link {
     font-size: toRem(16) !important;
     padding: toRem(10) toRem(24) !important;
+    font-weight: 400 !important;
     @media (max-width: $mobile) {
       align-self: center;
     }

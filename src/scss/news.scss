@@ -1,17 +1,18 @@
 .page-news {
   padding-top: toRem(80) !important;
-  @media (max-width: $mobileSmall) {
+  @media (max-width: $mobile) {
     padding-top: toRem(40) !important;
   }
   .news {
     &__title {
       margin-bottom: toRem(60);
       @media (max-width: $pc) {
-        @include adaptiveValue('margin-bottom', 40, 15);
+        margin-bottom: toRem(40);
       }
 
       @media (max-width: $mobile) {
         text-align: center;
+        margin-bottom: toRem(10);
         font-size: toRem(28) !important;
       }
     }
@@ -71,11 +72,11 @@
       }
     }
     &__item-descr {
-      font-size: toRem(20);
+      font-size: toRem(20) !important;
       margin-bottom: toRem(25);
       line-height: math.div(25, 20);
       display: -webkit-box;
-      -webkit-line-clamp: 1;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       @media (max-width: $mobileSmall) {
@@ -97,6 +98,7 @@
     &__item-link {
       font-size: toRem(16) !important;
       padding: toRem(10) toRem(24) !important;
+      font-weight: 400 !important;
     }
   }
 }

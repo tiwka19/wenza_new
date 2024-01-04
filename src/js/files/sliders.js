@@ -35,9 +35,11 @@ function initSliders() {
         },
         992: {
           sliderPerView: 3,
+          spaceBetween: 20,
         },
         1440: {
           slidesPerView: 4,
+          spaceBetween: 30
         },
       },
 

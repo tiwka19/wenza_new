@@ -1,9 +1,11 @@
 .post {
-  @include adaptiveValue('padding-top', 120, 40);
-  padding-bottom: toRem(120);
-    @media (max-width:$pc){
-      @include adaptiveValue('padding-bottom', 80, 40);
-    }
+  padding: toRem(120) 0;
+  @media (max-width: $pc) {
+    padding: toRem(80) 0;
+  }
+  @media (max-width: $mobile) {
+    padding: toRem(40) 0;
+  }
   &__title {
     margin-bottom: toRem(80);
     @media (max-width: $pc) {
@@ -18,10 +20,14 @@
   &__image {
     position: relative;
     @include adaptiveValue('margin-bottom', 30, 15);
+    min-height: toRem(115);
+    height: toRem(320);
+    @media (max-width:$pc){
+       height: toRem(200); 
+    }
     img {
       width: 100%;
-      min-height: toRem(115);
-      height: toRem(320);
+      height: 100%;
       object-fit: cover;
       object-position: center;
       border-radius: toRem(15);
@@ -93,14 +99,14 @@
       display: none;
     }
   }
-  .news__item {
-    margin-bottom: toRem(40);
-    @media (max-width: $tablet) {
-      max-width: toRem(200);
-    }
-  }
 
   .news {
+    &__item {
+      margin-bottom: toRem(40);
+      @media (max-width: $tablet) {
+        max-width: toRem(200);
+      }
+    }
     &__item-image {
       margin-bottom: toRem(25);
       img {
@@ -134,7 +140,7 @@
       margin-bottom: toRem(25);
       line-height: math.div(25, 20);
       display: -webkit-box;
-      -webkit-line-clamp: 1;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       @media (max-width: $mobileSmall) {
@@ -170,16 +176,20 @@
 }
 
 .post__content {
+  img {
+    width: 100%;
+  }
   p {
     padding: toRem(20) 0;
     font-size: toRem(36);
     text-align: justify;
     line-height: math.div(46, 36);
     @media (max-width: $pc) {
-      @include adaptiveValue('font-size', 20, 16);
+      font-size: toRem(20);
     }
     @media (max-width: $mobileSmall) {
       padding: toRem(10) 0;
+      font-size: toRem(16);
     }
   }
 }

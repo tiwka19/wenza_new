@@ -46,7 +46,7 @@
   }
   &__contacts-item {
     @extend %flexCenter;
-    gap: toRem(10);
+    gap: toRem(8);
     font-weight: 500;
     font-size: toRem(20);
     color: #fff;
@@ -55,7 +55,10 @@
       font-size: toRem(16);
     }
     ion-icon {
-      font-size: 24px;
+      font-size: toRem(24);
+      @media (max-width: $pc) {
+        font-size: toRem(20);
+      }
     }
     @media (any-hover: hover) {
       &:hover {

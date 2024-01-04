@@ -2,8 +2,12 @@
   .work {
     @include adaptiveValue('padding-top', 120, 40);
     &__title {
-      @include adaptiveValue('margin-bottom', 60, 15);
+      margin-bottom: toRem(60);
+      @media (max-width: $pc) {
+        margin-bottom: toRem(40);
+      }
       @media (max-width: $mobileSmall) {
+        margin-bottom: toRem(15);
         text-align: center;
         font-size: toRem(28) !important;
       }
@@ -11,11 +15,17 @@
     &__wrapper {
       display: flex;
       align-items: center;
-      @include adaptiveValue('margin-bottom', 60, 15);
+      margin-bottom: toRem(60);
       justify-content: space-between;
-      gap: toRem(30);
+      gap: toRem(40);
+      @media (max-width: $pc) {
+        margin-bottom: toRem(40);
+      }
       @media (max-width: $tablet) {
         flex-direction: column;
+      }
+      @media (max-width: $mobileSmall) {
+        margin-bottom: toRem(15);
       }
     }
     &__text {
@@ -43,11 +53,11 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: toRem(40);
-      @include adaptiveValue('gap', 40, 15);
       padding-bottom: toRem(120);
-    @media (max-width:$pc){
-      @include adaptiveValue('padding-bottom', 80, 40);
-    }
+      @media (max-width: $pc) {
+        gap: toRem(20);
+        @include adaptiveValue('padding-bottom', 80, 40);
+      }
       @media (max-width: $tablet) {
         grid-template-columns: 1fr 1fr;
       }
@@ -59,13 +69,14 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: toRem(40);
-      @include adaptiveValue('gap', 40, 25, 3, 1920, 992);
       padding-bottom: toRem(120);
-    @media (max-width:$pc){
-      @include adaptiveValue('padding-bottom', 80, 40);
-    }
+      @media (max-width: $pc) {
+        padding-bottom: toRem(80);
+        gap: toRem(40) toRem(20);
+      }
       @media (max-width: $tablet) {
         grid-template-columns: 1fr 1fr;
+        padding-bottom: toRem(40);
       }
       @media (max-width: $mobile) {
         grid-template-columns: 1fr;
@@ -84,10 +95,16 @@
       display: flex;
       align-items: center;
       gap: toRem(25);
+      @media (max-width: $pc) {
+        padding: toRem(20);
+      }
     }
     &__item-image {
-      flex: 0 0 toRem(80);
+      flex: 0 0 toRem(100);
       border-radius: 25px;
+      @media (max-width: $pc) {
+        flex: 0 0 toRem(80);
+      }
       @media (max-width: $mobile) {
         flex: 0 0 toRem(50);
       }
@@ -185,11 +202,16 @@
     &__button {
       text-align: center;
       margin-bottom: toRem(15);
-      button {
-        padding: toRem(16) toRem(60);
+      button,
+      input {
+        padding: toRem(16) toRem(60) !important;
+        font-size: toRem(32) !important;
+        @media (max-width: $pc) {
+          padding: toRem(10) toRem(60) !important;
+        }
         @media (max-width: $mobileSmall) {
-          font-size: toRem(16);
-          padding: toRem(10) toRem(30);
+          font-size: toRem(16) !important;
+          padding: toRem(10) toRem(30) !important;
         }
       }
       button.disabled {
