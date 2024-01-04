@@ -8,17 +8,22 @@
   padding: toRem(16) toRem(36);
   border-radius: toRem(60);
   gap: toRem(10);
-  @include adaptiveValue('font-size', 32, 16);
+  font-size: toRem(32);
   font-weight: 500;
   line-height: math.div(37, 32);
   font-family: $fontFamilyHeading;
   cursor: pointer;
   transition: all 0.2s;
+  @media (max-width: $pc) {
+    font-size: toRem(24);
+  }
   @media (max-width: $mobile) {
     padding: toRem(10) toRem(30);
+    font-size: toRem(20);
   }
   @media (max-width: $mobileSmall) {
     padding: toRem(8) toRem(24);
+    font-size: toRem(16);
   }
   @media (any-hover: hover) {
     &:hover {
