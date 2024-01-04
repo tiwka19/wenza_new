@@ -1,6 +1,9 @@
 .post {
   @include adaptiveValue('padding-top', 120, 40);
-  @include adaptiveValue('padding-bottom', 120, 40);
+  padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
   &__title {
     margin-bottom: toRem(80);
     @media (max-width: $pc) {
@@ -22,8 +25,8 @@
       object-fit: cover;
       object-position: center;
       border-radius: toRem(15);
-      @media (max-width:$mobileSmall){
-         height: auto; 
+      @media (max-width: $mobileSmall) {
+        height: auto;
       }
     }
   }
@@ -96,6 +99,66 @@
       max-width: toRem(200);
     }
   }
+
+  .news {
+    &__item-image {
+      margin-bottom: toRem(25);
+      img {
+        min-height: toRem(100);
+        object-fit: cover;
+        border-radius: toRem(25);
+        @media (max-width: $mobileSmall) {
+          border-radius: toRem(15);
+        }
+      }
+    }
+    &__item-date {
+      font-size: toRem(20);
+      line-height: math.div(25, 20);
+      margin-bottom: toRem(10);
+      display: block;
+    }
+    &__item-title {
+      @include adaptiveValue('font-size', 24, 16);
+      line-height: math.div(29, 24);
+      margin-bottom: toRem(10);
+      font-family: $fontFamilyHeading;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $primaryColor;
+        }
+      }
+    }
+    &__item-descr {
+      font-size: toRem(20);
+      margin-bottom: toRem(25);
+      line-height: math.div(25, 20);
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      @media (max-width: $mobileSmall) {
+        display: none;
+      }
+    }
+    &__items-tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: toRem(10);
+      margin-bottom: toRem(25);
+    }
+    &__item-tag {
+      color: $primaryColor;
+      font-weight: 500;
+      @include adaptiveValue('font-size', 20, 16);
+    }
+    &__item-link {
+      font-size: toRem(16) !important;
+      padding: toRem(10) toRem(24) !important;
+    }
+  }
+
   .swiper-pagination {
     text-align: start !important;
   }

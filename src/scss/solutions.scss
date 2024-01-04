@@ -178,7 +178,10 @@
     }
   }
   .more {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__title {
       margin-bottom: toRem(80);
       @media (max-width: $pc) {
@@ -205,8 +208,8 @@
       }
     }
     &__item {
-      @media (max-width:$mobileSmall){
-         max-width: toRem(205); 
+      @media (max-width: $mobileSmall) {
+        max-width: toRem(205);
       }
     }
     &__item-image {
@@ -215,10 +218,6 @@
         @media (max-width: $pc) {
           width: toRem(192);
           height: toRem(236);
-        }
-        @media (max-width: $mobile) {
-          width: auto;
-          height: auto;
         }
         object-fit: cover;
         border-radius: toRem(25);

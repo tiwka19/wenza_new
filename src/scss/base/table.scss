@@ -1,0 +1,93 @@
+table {
+  width: 100%;
+  margin-bottom: toRem(60);
+  border-spacing: 0 !important;
+  border-collapse: initial !important;
+  padding-top: toRem(15);
+  thead {
+    transform: translateY(-15px);
+
+    th {
+      background-color: transparent !important;
+      text-align: center !important;
+    }
+    th:not(:last-child) {
+      border-right: 1px solid #fff;
+    }
+
+    tr {
+      background: linear-gradient(97deg, #373a3b 0%, #010101 42.06%, #3b4c82 106.06%);
+    }
+  }
+
+  th {
+    color: #fff !important;
+    padding: toRem(15) toRem(30) !important;
+    font-size: toRem(28);
+    font-family: $fontFamily !important;
+    font-weight: 500 !important;
+    @media (max-width: $pc) {
+      font-size: toRem(20);
+    }
+    @media (max-width: $mobile) {
+      font-size: toRem(20);
+    }
+    @media (max-width: $mobileSmall) {
+      padding: toRem(10) !important;
+      font-weight: 400 !important;
+      font-size: toRem(18);
+    }
+  }
+
+  td {
+    padding: toRem(30) toRem(60) !important;
+    background-color: #fff;
+    font-size: toRem(26);
+    border: solid 1px #4d64aa !important;
+    border-style: none solid solid none !important;
+    line-height: math.div(32, 26);
+    vertical-align: middle !important;
+    @media (max-width: $pc) {
+      font-size: toRem(16);
+      padding: toRem(30) toRem(20) !important;
+    }
+    @media (max-width: $mobileSmall) {
+      padding: toRem(10) !important;
+      min-width: 120px;
+    }
+  }
+
+  tr:first-child td {
+    border-top-style: solid !important;
+  }
+  tr td:first-child {
+    border-left-style: solid !important;
+  }
+
+  td:nth-child(1) {
+    text-align: center;
+    white-space: nowrap;
+    @media (max-width: $mobile) {
+      white-space: wrap;
+    }
+  }
+}
+
+.tablepress .sorting:hover,
+.tablepress .sorting_asc,
+.tablepress .sorting_desc {
+  color: #fff !important;
+  background-color: inherit !important;
+}
+
+.tablepress > :not(caption) > * > * {
+  vertical-align: middle !important;
+}
+
+.tablepress > :where(tbody) > .odd > * {
+  background-color: #fff !important;
+}
+
+.dataTables_wrapper {
+  margin-bottom: toRem(60) !important;
+}

@@ -44,7 +44,10 @@
       grid-template-columns: repeat(4, 1fr);
       gap: toRem(40);
       @include adaptiveValue('gap', 40, 15);
-      @include adaptiveValue('padding-bottom', 120, 40);
+      padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
       @media (max-width: $tablet) {
         grid-template-columns: 1fr 1fr;
       }
@@ -57,7 +60,10 @@
       grid-template-columns: repeat(3, 1fr);
       gap: toRem(40);
       @include adaptiveValue('gap', 40, 25, 3, 1920, 992);
-      @include adaptiveValue('padding-bottom', 120, 40);
+      padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
       @media (max-width: $tablet) {
         grid-template-columns: 1fr 1fr;
       }

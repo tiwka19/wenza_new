@@ -2,7 +2,10 @@
 .page-home {
   .hero {
     @include adaptiveValue('padding-top', 60, 40);
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__container {
       @extend %flexStack;
       gap: toRem(15);
@@ -71,7 +74,10 @@
     }
   }
   .news {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__wrapper {
       @include adaptiveValue('padding-right', 100, 30);
       position: relative;
@@ -91,7 +97,7 @@
         flex-direction: column;
         gap: toRem(0);
         border-radius: toRem(15);
-        padding-right: 0;
+        padding-right: 0 !important;
       }
     }
 
@@ -151,7 +157,10 @@
     }
   }
   .steps {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__items {
       display: flex;
       justify-content: space-between;
@@ -204,6 +213,9 @@
       position: relative;
       font-family: $fontFamilyHeading;
       margin-bottom: toRem(25);
+      @media (max-width: $pc) {
+        margin-bottom: toRem(15);
+      }
       @media (max-width: $mobileSmall) {
         margin-bottom: toRem(0);
         width: toRem(30);
@@ -277,10 +289,11 @@
     }
   }
   .catalogs {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__title {
-      @include adaptiveValue('font-size', 64, 20);
-      line-height: math.div(64, 79);
       @include adaptiveValue('margin-bottom', 40, 30);
       @media (max-width: $mobileSmall) {
         text-align: center;
@@ -366,7 +379,10 @@
   }
   .products {
     position: relative;
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__container {
       @media (max-width: $mobile) {
         margin: 0 toRem(-25);
@@ -397,11 +413,11 @@
         right: toRem(-520);
         z-index: 1;
         top: toRem(30);
-        background: url('../img/slider/slider-decor.png') 0 0 no-repeat;
         width: 700px;
         height: 800px;
-        object-fit: contain;
+        background-image: url('../img/slider/slider-decor.png');
         background-size: contain;
+        background-repeat: no-repeat;
         @media (max-width: $pc) {
           width: toRem(500);
           top: toRem(200);
@@ -428,94 +444,95 @@
       }
     }
   }
-  .map {
-    &__container {
-      position: relative;
-    }
-    &__title {
-      margin-bottom: toRem(80);
-      @media (max-width: $pc) {
-        @include adaptiveValue('margin-bottom', 40, 25);
-      }
-    }
-    &__container button.zoom {
-      position: absolute;
-      top: 15px;
-      right: 0;
-      z-index: 1;
-      font-size: toRem(18);
-      @media (max-width: $mobile) {
-        font-size: toRem(16);
-        padding: 15px;
-      }
-      @media (max-width: $mobileSmall) {
-        display: none;
-      }
-    }
-    &__data {
-      position: absolute;
-      top: toRem(65);
-      left: 0;
-      padding: toRem(30);
-      margin-left: toRem(15);
-      border-radius: 25px;
-      background: var(--3, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
-      box-shadow:
-        1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
-        -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
-        0px 4px 6px 0px rgba(0, 0, 0, 0.07),
-        -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
-      backdrop-filter: blur(8.5px);
-      z-index: 2;
-      color: #010101;
-      font-size: toRem(20);
-      line-height: math.div(26, 20);
-      max-width: toRem(450);
-      font-weight: 450;
-      @media (max-width: em(1180)) {
-        left: auto;
-        top: 400px;
-        right: 0;
-        margin-right: toRem(15);
-      }
-      @media (max-width: $mobile) {
-        top: 100px;
-        font-size: toRem(16);
-        padding: toRem(15);
-      }
-      @media (max-width: $mobileSmall) {
-        font-size: toRem(14);
-        top: 150px;
-        padding: toRem(10) toRem(15);
-      }
-    }
-    &__data-text {
-      margin-bottom: toRem(15);
-    }
-    &__data-contacts {
-      display: flex;
-      flex-direction: column;
-      gap: toRem(15);
-      @media (max-width: $mobile) {
-        gap: toRem(5);
-      }
-    }
-    &__contacts-item {
-      display: flex;
-      align-items: center;
-      gap: toRem(10);
-      color: #010101;
-      svg {
-        flex: 0 0 toRem(25);
-        fill: #010101;
-      }
-    }
+}
 
-    &__box {
-      height: toRem(750);
-      @media (max-width: $mobile) {
-        height: toRem(350);
-      }
+.map {
+  &__container {
+    position: relative;
+  }
+  &__title {
+    margin-bottom: toRem(80);
+    @media (max-width: $pc) {
+      @include adaptiveValue('margin-bottom', 40, 25);
+    }
+  }
+  &__container button.zoom {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    z-index: 1;
+    font-size: toRem(18);
+    @media (max-width: $mobile) {
+      font-size: toRem(16);
+      padding: 15px;
+    }
+    @media (max-width: $mobileSmall) {
+      display: none;
+    }
+  }
+  &__data {
+    position: absolute;
+    top: toRem(65);
+    left: 0;
+    padding: toRem(30);
+    margin-left: toRem(15);
+    border-radius: 25px;
+    background: var(--3, linear-gradient(123deg, rgba(229, 229, 229, 0.7) -3.86%, rgba(255, 255, 255, 0) 109.9%));
+    box-shadow:
+      1px 1px 5px 0px rgba(0, 0, 0, 0.05) inset,
+      -3px -5px 6px 0px rgba(255, 255, 255, 0.38),
+      0px 4px 6px 0px rgba(0, 0, 0, 0.07),
+      -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
+    backdrop-filter: blur(8.5px);
+    z-index: 2;
+    color: #010101;
+    font-size: toRem(20);
+    line-height: math.div(26, 20);
+    max-width: toRem(450);
+    font-weight: 450;
+    @media (max-width: em(1180)) {
+      left: auto;
+      top: 400px;
+      right: 0;
+      margin-right: toRem(15);
+    }
+    @media (max-width: $mobile) {
+      top: 100px;
+      font-size: toRem(16);
+      padding: toRem(15);
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: toRem(14);
+      top: 150px;
+      padding: toRem(10) toRem(15);
+    }
+  }
+  &__data-text {
+    margin-bottom: toRem(15);
+  }
+  &__data-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(15);
+    @media (max-width: $mobile) {
+      gap: toRem(5);
+    }
+  }
+  &__contacts-item {
+    display: flex;
+    align-items: center;
+    gap: toRem(10);
+    color: #010101;
+    svg {
+      flex: 0 0 toRem(25);
+      fill: #010101;
+    }
+  }
+
+  &__box {
+    height: toRem(750);
+    @media (max-width: $mobile) {
+      height: toRem(350);
     }
   }
 }
@@ -535,8 +552,18 @@
       max-width: 100%;
     }
     img {
+      width: toRem(270);
+      height: toRem(320);
       border-radius: toRem(25);
       object-fit: cover;
+      @media (max-width: $pc) {
+        width: toRem(185);
+        height: toRem(195);
+      }
+      @media (max-width: $mobileSmall) {
+        width: toRem(204);
+        height: toRem(242);
+      }
     }
   }
   &__item-date {
@@ -572,9 +599,9 @@
   }
   &__item-button {
     color: $primaryColor;
-    font-size: toRem(18);
-    line-height: math.div(22, 18);
-    padding: toRem(10) toRem(24);
+    font-size: toRem(18) !important;
+    line-height: math.div(22, 18) !important;
+    padding: toRem(10) toRem(24) !important;
     @media (any-hover: hover) {
       &:hover {
         color: #fff;

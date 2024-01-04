@@ -1,3 +1,22 @@
 #map {
-	background: url("@img/icons/loading.gif") center / 50px no-repeat;
+  background: url('@img/icons/loading.gif') center / 50px no-repeat;
+}
+
+.marker {
+  background-image: url('../img/mapbox-icon.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  cursor: pointer;
+  @media (max-width: $mobile) {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+.mapboxgl-ctrl-bottom-right,
+.mapboxgl-ctrl-bottom-left {
+  display: none;
 }

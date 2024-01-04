@@ -1,0 +1,18 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: $fontFamilyHeading;
+  color: #2e2d2c;
+}
+
+p {
+  font-size: toRem(36);
+  line-height: math.div(46, 36);
+  @media (max-width: $pc) {
+    font-size: toRem(20);
+  }
+  @media (max-width: $mobileSmall) {
+    font-size: toRem(16);
+  }
+}

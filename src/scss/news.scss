@@ -1,97 +1,102 @@
-.news {
-  @include adaptiveValue('padding-top', 80, 40);
-  &__title {
-    margin-bottom: toRem(60);
-    @media (max-width: $pc) {
-      @include adaptiveValue('margin-bottom', 40, 15);
-    }
-
-    @media (max-width: $mobile) {
-      text-align: center;
-      font-size: toRem(28) !important;
-    }
+.page-news {
+  padding-top: toRem(80) !important;
+  @media (max-width: $mobileSmall) {
+    padding-top: toRem(40) !important;
   }
+  .news {
+    &__title {
+      margin-bottom: toRem(60);
+      @media (max-width: $pc) {
+        @include adaptiveValue('margin-bottom', 40, 15);
+      }
 
-  &__descr {
-    line-height: math.div(46, 36);
-    font-size: toRem(36);
-    margin-bottom: toRem(80);
-    @media (max-width: $pc) {
-      @include adaptiveValue('font-size', 20, 16);
-      @include adaptiveValue('margin-bottom', 60, 25);
+      @media (max-width: $mobile) {
+        text-align: center;
+        font-size: toRem(28) !important;
+      }
     }
 
-    @media (max-width: $mobile) {
-      text-align: center;
+    &__descr {
+      line-height: math.div(46, 36);
+      font-size: toRem(36);
+      margin-bottom: toRem(80);
+      @media (max-width: $pc) {
+        margin-bottom: toRem(40);
+      }
+      @media (max-width: $mobile) {
+        text-align: center;
+        font-size: toRem(20);
+        margin-bottom: toRem(25);
+      }
     }
-  }
-  &__items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: toRem(80) toRem(40);
-    padding-bottom: toRem(80);
-    @media (max-width: $pc) {
-      gap: toRem(40);
+    &__items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: toRem(80) toRem(40);
+      padding-bottom: toRem(80);
+      @media (max-width: $pc) {
+        gap: toRem(40);
+      }
+      @media (max-width: $mobile) {
+        gap: toRem(25) toRem(15);
+      }
     }
-    @media (max-width: $mobile) {
-      gap: toRem(25) toRem(15);
-    }
-  }
 
-  &__item-image {
-    margin-bottom: toRem(25);
-    img {
-      min-height: toRem(100);
-      object-fit: cover;
-      border-radius: toRem(25);
+    &__item-image {
+      margin-bottom: toRem(25);
+      img {
+        min-height: toRem(100);
+        object-fit: cover;
+        border-radius: toRem(25);
+        @media (max-width: $mobileSmall) {
+          border-radius: toRem(15);
+        }
+      }
+    }
+    &__item-date {
+      font-size: toRem(20);
+      line-height: math.div(25, 20);
+      margin-bottom: toRem(10);
+      display: block;
+    }
+    &__item-title {
+      @include adaptiveValue('font-size', 24, 16);
+      line-height: math.div(29, 24);
+      margin-bottom: toRem(10);
+      font-family: $fontFamilyHeading;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $primaryColor;
+        }
+      }
+    }
+    &__item-descr {
+      font-size: toRem(20);
+      margin-bottom: toRem(25);
+      line-height: math.div(25, 20);
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
       @media (max-width: $mobileSmall) {
-        border-radius: toRem(15);
+        display: none;
       }
     }
-  }
-  &__item-date {
-    font-size: toRem(20);
-    line-height: math.div(25, 20);
-    margin-bottom: toRem(10);
-    display: block;
-  }
-  &__item-title {
-    @include adaptiveValue('font-size', 24, 16);
-    line-height: math.div(29, 24);
-    margin-bottom: toRem(10);
-    font-family: $fontFamilyHeading;
-    @media (any-hover: hover) {
-      &:hover {
-        color: $primaryColor;
-      }
+    &__items-tags {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: toRem(10);
+      margin-bottom: toRem(25);
     }
-  }
-  &__item-descr {
-    font-size: toRem(20);
-    margin-bottom: toRem(25);
-    line-height: math.div(25, 20);
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    @media (max-width: $mobileSmall) {
-      display: none;
+    &__item-tag {
+      color: $primaryColor;
+      font-weight: 500;
+      @include adaptiveValue('font-size', 20, 16);
     }
-  }
-  &__items-tags {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: toRem(10);
-    margin-bottom: toRem(25);
-  }
-  &__item-tag {
-    color: $primaryColor;
-    font-weight: 500;
-    @include adaptiveValue('font-size', 20, 16);
-  }
-  &__item-link {
-    font-size: toRem(16) !important;
-    padding: toRem(10) toRem(24) !important;
+    &__item-link {
+      font-size: toRem(16) !important;
+      padding: toRem(10) toRem(24) !important;
+    }
   }
 }

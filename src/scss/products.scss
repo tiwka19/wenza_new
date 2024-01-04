@@ -1,7 +1,10 @@
 .page-products {
   .hero {
     @include adaptiveValue('padding-top', 80, 40);
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__wrapper {
       display: flex;
       align-items: center;
@@ -27,9 +30,16 @@
       }
     }
     &__description {
-      @include adaptiveValue('font-size', 36, 16);
+      font-size: toRem(36);
+
       line-height: math.div(46, 36);
       margin-bottom: toRem(20);
+      @media (max-width: $pc) {
+        font-size: toRem(20);
+      }
+      @media (max-width: $mobileSmall) {
+        font-size: toRem(16);
+      }
       a {
         text-underline-offset: 3px;
         color: $primaryColor;
@@ -42,13 +52,14 @@
     }
   }
   .process {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__title {
       margin-bottom: toRem(25);
     }
     &__text {
-      @include adaptiveValue('font-size', 36, 16);
-      line-height: math.div(46, 36);
       margin-bottom: toRem(30);
     }
     &__images {
@@ -96,7 +107,10 @@
     &__items {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      @include adaptiveValue('padding-bottom', 120, 40);
+      padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
       gap: toRem(30);
       @include adaptiveValue('gap', 30, 15, 3, 1920, 992);
       @media (max-width: em(1180)) {
@@ -190,32 +204,32 @@
       @include adaptiveValue('font-size', 48, 24);
     }
     &__tech-text {
-      @include adaptiveValue('font-size', 28, 16);
-      line-height: math.div(36, 28);
+      @media (max-width: $pc) {
+        font-size: toRem(24);
+      }
+      @media (max-width: $mobile) {
+        font-size: toRem(16);
+      }
       margin-bottom: toRem(25);
       text-align: center;
     }
     &__tech-button {
       margin-top: toRem(25);
-      @media (max-width: $mobileSmall) {
+      @media (max-width: $pc) {
+        padding: toRem(16) toRem(36) !important;
+      }
+      @media (max-width: $mobile) {
         font-size: toRem(18);
         margin-top: toRem(0);
       }
     }
   }
+  .products__tech .products__container {
+    max-width: toRem(1320);
+  }
 }
 
 .single-product {
-  section p {
-    font-size: toRem(36) !important;
-    line-height: math.div(44, 36);
-    @media (max-width: $pc) {
-      font-size: toRem(20) !important;
-    }
-    @media (max-width: $mobileSmall) {
-      font-size: toRem(16) !important;
-    }
-  }
   .hero {
     padding: toRem(40) 0;
     min-height: toRem(927);
@@ -303,7 +317,10 @@
     }
   }
   .benefits {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__title {
       @include adaptiveValue('margin-bottom', 60, 15);
     }
@@ -324,6 +341,9 @@
         0px 4px 6px 0px rgba(0, 0, 0, 0.07),
         -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
       padding: toRem(30);
+      @media (max-width: $pc) {
+        padding: toRem(20);
+      }
       @media (max-width: $mobile) {
         padding: toRem(15);
       }
@@ -346,21 +366,27 @@
       @include adaptiveValue('height', 60, 40);
       width: toRem(60);
       height: toRem(60);
+      flex-shrink: 0;
       @media (max-width: $mobile) {
         flex: auot;
       }
     }
     &__item-text {
-      letter-spacing: -1px;
       font-size: toRem(28);
       line-height: math.div(34, 28);
+      @media (max-width: $pc) {
+        font-size: toRem(20);
+      }
       @media (max-width: $mobileSmall) {
         font-size: toRem(18);
       }
     }
   }
   .types {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__title {
       margin-bottom: toRem(50);
       @media (max-width: $mobileSmall) {
@@ -393,6 +419,11 @@
           display: none;
         }
       }
+      @media (max-width: $pc) {
+        transform: translateX(-100px);
+        flex: 0 0 toRem(700);
+        margin-left: toRem(-200);
+      }
       img {
         transform: scale(-1, 1);
         @media (max-width: em(1200)) {
@@ -404,15 +435,17 @@
         }
       }
       @media (min-width: em(1200)) {
-        margin-left: toRem(-100);
+        margin-left: toRem(-300);
       }
     }
     &__items {
+      @media (max-width: $pc) {
+        width: 100%;
+      }
       @media (max-width: em(1200)) {
         display: flex;
         flex-direction: column;
         gap: toRem(25);
-        width: 100%;
       }
     }
     &__item {
@@ -425,6 +458,10 @@
         -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
       padding: toRem(32);
       max-width: toRem(688);
+      @media (max-width: $pc) {
+        max-width: toRem(600);
+        width: 100%;
+      }
       @media (max-width: em(1200)) {
         margin: 0 !important;
         width: 100%;
@@ -438,6 +475,10 @@
     &__item:nth-child(1) {
       margin-bottom: toRem(50);
       margin-right: toRem(230);
+      @media (max-width: $pc) {
+        margin-right: 0;
+        transform: translateX(-100px);
+      }
     }
     &__item:nth-child(2) {
       margin-bottom: toRem(33);
@@ -449,6 +490,10 @@
     }
     &__item:nth-child(4) {
       margin-right: toRem(230);
+      @media (max-width: $pc) {
+        margin-right: 0;
+        transform: translateX(-100px);
+      }
     }
 
     &__item-title {
@@ -484,12 +529,13 @@
       margin-bottom: toRem(40);
     }
     &__text {
-      @include adaptiveValue('font-size', 36, 16);
-      line-height: math.div(49, 36);
       @include adaptiveValue('margin-bottom', 80, 30);
     }
     &__inserts {
-      @include adaptiveValue('padding-bottom', 120, 40);
+      padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
       &-title {
         @include adaptiveValue('font-size', 36, 18);
         margin-bottom: toRem(40);
@@ -563,7 +609,10 @@
     }
   }
   .shapes {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__title {
       @include adaptiveValue('margin-bottom', 40, 20);
       @media (max-width: $mobileSmall) {
@@ -571,8 +620,6 @@
       }
     }
     &__descr {
-      @include adaptiveValue('font-size', 36, 16);
-      line-height: math.div(49, 36);
       @include adaptiveValue('margin-bottom', 40, 20);
       @media (max-width: $mobile) {
         letter-spacing: -1px;
@@ -589,7 +636,10 @@
       @media (max-width: $pc) {
         padding-left: max(20px, calc((100% - 1040px) / 2));
       }
-      @include adaptiveValue('padding-bottom', 120, 40);
+      padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
       @media (max-width: $mobile) {
         padding: 0 toRem(15);
         margin-bottom: toRem(40);
@@ -612,8 +662,37 @@
       display: flex;
     }
   }
+  .sizes {
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
+    &__title {
+      margin-bottom: toRem(40);
+      @media (max-width: $mobileSmall) {
+        margin-bottom: toRem(25);
+      }
+    }
+    &__descr {
+      margin-bottom: toRem(40);
+      @media (max-width: $pc) {
+        margin-bottom: toRem(25);
+      }
+    }
+    &__wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: toRem(30);
+      @media (max-width:$mobile){
+         flex-direction: column; 
+      }
+    }
+  }
   .about-products {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__slider {
       position: relative;
       @media (min-width: $tablet) {
@@ -658,8 +737,10 @@
         -3px -3px 6px 0px rgba(255, 255, 255, 0.83) inset;
       border-radius: 25px;
       flex: 1 1 toRem(370);
-
       transition: transform 0.2s;
+      @media (max-width: $pc) {
+        padding: toRem(20);
+      }
       @media (any-hover: hover) {
         &:hover {
           transform: translateY(-10px);
@@ -676,8 +757,9 @@
       height: toRem(280);
       width: toRem(250);
       object-fit: contain;
-      @media (max-width: em(1200)) {
-        height: toRem(220);
+      @media (max-width: $pc) {
+        width: toRem(250);
+        height: toRem(250);
       }
     }
     &__item-name {
@@ -708,13 +790,14 @@
     }
   }
   .designs {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__title {
       @include adaptiveValue('margin-bottom', 40, 15);
     }
     &__descr {
-      @include adaptiveValue('font-size', 36, 16);
-      line-height: math.div(49, 36);
       letter-spacing: -1px;
       margin-bottom: toRem(40);
     }
@@ -733,11 +816,18 @@
       gap: toRem(40);
       @media (max-width: $mobile) {
         gap: toRem(15);
+        flex-direction: row;
+      }
+      @media (max-width:$mobileSmall){
+         flex-direction: column; 
       }
     }
   }
   .features {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__title {
       @include adaptiveValue('margin-bottom', 60, 25);
     }
@@ -768,22 +858,32 @@
     }
   }
   .manufacture {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__title {
-      @include adaptiveValue('margin-bottom', 60, 25);
+      margin-bottom: toRem(60);
+      @media (max-width: $pc) {
+        margin-bottom: toRem(40);
+      }
+      @media (max-width: $mobile) {
+        margin-bottom: toRem(25);
+      }
       @media (max-width: $mobileSmall) {
         font-size: toRem(20);
       }
     }
     &__text {
-      @include adaptiveValue('font-size', 28, 16);
-      line-height: math.div(36, 28);
       color: #000;
       margin-bottom: toRem(15);
     }
     &__box {
       display: flex;
-      @include adaptiveValue('padding-bottom', 120, 40);
+      padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
       padding-top: toRem(60);
       @media (min-width: $pc) {
         align-items: center;
@@ -808,9 +908,12 @@
         top: 80px;
         width: 140px;
         height: 360px;
-        background: url('data:image/svg+xml,<svg width="151" height="373" viewBox="0 0 151 373" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.666667 139C0.666667 141.946 3.05448 144.333 6 144.333C8.94552 144.333 11.3333 141.946 11.3333 139C11.3333 136.054 8.94552 133.667 6 133.667C3.05448 133.667 0.666667 136.054 0.666667 139ZM78.9902 6V5H78.3983L78.1135 5.51889L78.9902 6ZM139.167 6C139.167 8.94552 141.554 11.3333 144.5 11.3333C147.446 11.3333 149.833 8.94552 149.833 6C149.833 3.05448 147.446 0.666667 144.5 0.666667C141.554 0.666667 139.167 3.05448 139.167 6ZM6.87666 139.481L79.8669 6.48111L78.1135 5.51889L5.12334 138.519L6.87666 139.481ZM78.9902 7H144.5V5H78.9902V7Z" fill="white"/><path d="M0.666667 139C0.666667 141.946 3.05448 144.333 6 144.333C8.94552 144.333 11.3333 141.946 11.3333 139C11.3333 136.054 8.94552 133.667 6 133.667C3.05448 133.667 0.666667 136.054 0.666667 139ZM78.9902 367.5L78.0376 367.804L78.2598 368.5H78.9902V367.5ZM139.667 367.5C139.667 370.446 142.054 372.833 145 372.833C147.946 372.833 150.333 370.446 150.333 367.5C150.333 364.554 147.946 362.167 145 362.167C142.054 362.167 139.667 364.554 139.667 367.5ZM5.04742 139.304L78.0376 367.804L79.9428 367.196L6.95258 138.696L5.04742 139.304ZM78.9902 368.5H145V366.5H78.9902V368.5Z" fill="white"/></svg>');
+        background-image: url('data:image/svg+xml,<svg width="151" height="373" viewBox="0 0 151 373" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.666667 139C0.666667 141.946 3.05448 144.333 6 144.333C8.94552 144.333 11.3333 141.946 11.3333 139C11.3333 136.054 8.94552 133.667 6 133.667C3.05448 133.667 0.666667 136.054 0.666667 139ZM78.9902 6V5H78.3983L78.1135 5.51889L78.9902 6ZM139.167 6C139.167 8.94552 141.554 11.3333 144.5 11.3333C147.446 11.3333 149.833 8.94552 149.833 6C149.833 3.05448 147.446 0.666667 144.5 0.666667C141.554 0.666667 139.167 3.05448 139.167 6ZM6.87666 139.481L79.8669 6.48111L78.1135 5.51889L5.12334 138.519L6.87666 139.481ZM78.9902 7H144.5V5H78.9902V7Z" fill="white"/><path d="M0.666667 139C0.666667 141.946 3.05448 144.333 6 144.333C8.94552 144.333 11.3333 141.946 11.3333 139C11.3333 136.054 8.94552 133.667 6 133.667C3.05448 133.667 0.666667 136.054 0.666667 139ZM78.9902 367.5L78.0376 367.804L78.2598 368.5H78.9902V367.5ZM139.667 367.5C139.667 370.446 142.054 372.833 145 372.833C147.946 372.833 150.333 370.446 150.333 367.5C150.333 364.554 147.946 362.167 145 362.167C142.054 362.167 139.667 364.554 139.667 367.5ZM5.04742 139.304L78.0376 367.804L79.9428 367.196L6.95258 138.696L5.04742 139.304ZM78.9902 368.5H145V366.5H78.9902V368.5Z" fill="white"/></svg>');
         background-repeat: no-repeat;
         background-size: contain;
+        @media (max-width: $pc) {
+          display: none;
+        }
       }
       @media (max-width: $pc) {
         gap: toRem(30);
@@ -867,7 +970,7 @@
           position: absolute;
           right: -365px;
           bottom: -150px;
-          background: url('data:image/svg+xml,<svg width="601" height="126" viewBox="0 0 601 126" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M600.833 120.5C600.833 123.446 598.446 125.833 595.5 125.833C592.554 125.833 590.167 123.446 590.167 120.5C590.167 117.554 592.554 115.167 595.5 115.167C598.446 115.167 600.833 117.554 600.833 120.5ZM212.5 120.5V121.5H212.24L212.013 121.374L212.5 120.5ZM11.3333 5.5C11.3333 8.44552 8.9455 10.8333 6 10.8333C3.0545 10.8333 0.666687 8.44552 0.666687 5.5C0.666687 2.55448 3.0545 0.166667 6 0.166667C8.9455 0.166667 11.3333 2.55448 11.3333 5.5ZM595.5 121.5H212.5V119.5H595.5V121.5ZM212.013 121.374L5.51349 6.37366L6.48651 4.62634L212.987 119.626L212.013 121.374Z" fill="white"/></svg>');
+          background-image: url('data:image/svg+xml,<svg width="601" height="126" viewBox="0 0 601 126" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M600.833 120.5C600.833 123.446 598.446 125.833 595.5 125.833C592.554 125.833 590.167 123.446 590.167 120.5C590.167 117.554 592.554 115.167 595.5 115.167C598.446 115.167 600.833 117.554 600.833 120.5ZM212.5 120.5V121.5H212.24L212.013 121.374L212.5 120.5ZM11.3333 5.5C11.3333 8.44552 8.9455 10.8333 6 10.8333C3.0545 10.8333 0.666687 8.44552 0.666687 5.5C0.666687 2.55448 3.0545 0.166667 6 0.166667C8.9455 0.166667 11.3333 2.55448 11.3333 5.5ZM595.5 121.5H212.5V119.5H595.5V121.5ZM212.013 121.374L5.51349 6.37366L6.48651 4.62634L212.987 119.626L212.013 121.374Z" fill="white"/></svg>');
           width: toRem(590);
           height: toRem(115);
           background-repeat: no-repeat;
@@ -917,6 +1020,9 @@
       }
       @media (max-width: $tablet) {
         margin: 0 auto;
+      }
+      @media (max-width: $mobileSmall) {
+        max-width: toRem(180);
       }
     }
     &__box-item-img {
@@ -996,7 +1102,10 @@
     }
   }
   .engine {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
     &__title {
       max-width: toRem(870);
       @include adaptiveValue('margin-bottom', 60, 25);
@@ -1141,8 +1250,8 @@
           display: none;
         }
       }
-      @media (max-width:$mobileSmall){
-         padding: toRem(20); 
+      @media (max-width: $mobileSmall) {
+        padding: toRem(20);
       }
     }
     &__item-top {
@@ -1167,7 +1276,7 @@
           transform: translate(-98%);
           width: 340px;
           height: 615px;
-          background: url('data:image/svg+xml,<svg width="350" height="627" viewBox="0 0 350 627" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M298.333 621C298.333 623.945 295.946 626.333 293 626.333C290.054 626.333 287.667 623.945 287.667 621C287.667 618.055 290.054 615.667 293 615.667C295.946 615.667 298.333 618.055 298.333 621ZM246 394.5L246.85 393.974L246.86 393.99L246.869 394.006L246 394.5ZM10.8333 6C10.8333 8.94552 8.44553 11.3333 5.5 11.3333C2.55447 11.3333 0.166656 8.94552 0.166656 6C0.166656 3.05448 2.55447 0.666667 5.5 0.666667C8.44553 0.666667 10.8333 3.05448 10.8333 6ZM349.333 567C349.333 569.945 346.946 572.333 344 572.333C341.054 572.333 338.667 569.945 338.667 567C338.667 564.055 341.054 561.667 344 561.667C346.946 561.667 349.333 564.055 349.333 567ZM292.021 621.203L245.021 394.703L246.979 394.297L293.979 620.797L292.021 621.203ZM245.15 395.026L4.64975 6.52635L6.35025 5.47365L246.85 393.974L245.15 395.026ZM246.869 394.006L344.869 566.506L343.131 567.494L245.131 394.994L246.869 394.006Z" fill="white"/></svg>');
+          background-image: url('data:image/svg+xml,<svg width="350" height="627" viewBox="0 0 350 627" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M298.333 621C298.333 623.945 295.946 626.333 293 626.333C290.054 626.333 287.667 623.945 287.667 621C287.667 618.055 290.054 615.667 293 615.667C295.946 615.667 298.333 618.055 298.333 621ZM246 394.5L246.85 393.974L246.86 393.99L246.869 394.006L246 394.5ZM10.8333 6C10.8333 8.94552 8.44553 11.3333 5.5 11.3333C2.55447 11.3333 0.166656 8.94552 0.166656 6C0.166656 3.05448 2.55447 0.666667 5.5 0.666667C8.44553 0.666667 10.8333 3.05448 10.8333 6ZM349.333 567C349.333 569.945 346.946 572.333 344 572.333C341.054 572.333 338.667 569.945 338.667 567C338.667 564.055 341.054 561.667 344 561.667C346.946 561.667 349.333 564.055 349.333 567ZM292.021 621.203L245.021 394.703L246.979 394.297L293.979 620.797L292.021 621.203ZM245.15 395.026L4.64975 6.52635L6.35025 5.47365L246.85 393.974L245.15 395.026ZM246.869 394.006L344.869 566.506L343.131 567.494L245.131 394.994L246.869 394.006Z" fill="white"/></svg>');
           background-repeat: no-repeat;
           background-size: contain;
         }
@@ -1181,7 +1290,7 @@
           transform: translate(-60%);
           width: 407px;
           height: 250px;
-          background: url('data:image/svg+xml,<svg width="419" height="206" viewBox="0 0 419 206" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M187.5 1.5L188.014 0.64234L187.392 0.269455L186.845 0.744723L187.5 1.5ZM0.666667 159C0.666667 161.946 3.05448 164.333 6 164.333C8.94552 164.333 11.3333 161.946 11.3333 159C11.3333 156.054 8.94552 153.667 6 153.667C3.05448 153.667 0.666667 156.054 0.666667 159ZM125.667 79.5C125.667 82.4455 128.054 84.8333 131 84.8333C133.946 84.8333 136.333 82.4455 136.333 79.5C136.333 76.5545 133.946 74.1667 131 74.1667C128.054 74.1667 125.667 76.5545 125.667 79.5ZM293.667 200C293.667 202.946 296.054 205.333 299 205.333C301.946 205.333 304.333 202.946 304.333 200C304.333 197.054 301.946 194.667 299 194.667C296.054 194.667 293.667 197.054 293.667 200ZM408.167 137C408.167 139.946 410.554 142.333 413.5 142.333C416.446 142.333 418.833 139.946 418.833 137C418.833 134.054 416.446 131.667 413.5 131.667C410.554 131.667 408.167 134.054 408.167 137ZM186.845 0.744723L5.34459 158.245L6.65541 159.755L188.155 2.25528L186.845 0.744723ZM186.69 0.913373L130.19 78.9134L131.81 80.0866L188.31 2.08663L186.69 0.913373ZM186.628 1.98974L298.128 200.49L299.872 199.51L188.372 1.01026L186.628 1.98974ZM186.986 2.35766L412.986 137.858L414.014 136.142L188.014 0.64234L186.986 2.35766Z" fill="white"/></svg>');
+          background-image: url('data:image/svg+xml,<svg width="419" height="206" viewBox="0 0 419 206" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M187.5 1.5L188.014 0.64234L187.392 0.269455L186.845 0.744723L187.5 1.5ZM0.666667 159C0.666667 161.946 3.05448 164.333 6 164.333C8.94552 164.333 11.3333 161.946 11.3333 159C11.3333 156.054 8.94552 153.667 6 153.667C3.05448 153.667 0.666667 156.054 0.666667 159ZM125.667 79.5C125.667 82.4455 128.054 84.8333 131 84.8333C133.946 84.8333 136.333 82.4455 136.333 79.5C136.333 76.5545 133.946 74.1667 131 74.1667C128.054 74.1667 125.667 76.5545 125.667 79.5ZM293.667 200C293.667 202.946 296.054 205.333 299 205.333C301.946 205.333 304.333 202.946 304.333 200C304.333 197.054 301.946 194.667 299 194.667C296.054 194.667 293.667 197.054 293.667 200ZM408.167 137C408.167 139.946 410.554 142.333 413.5 142.333C416.446 142.333 418.833 139.946 418.833 137C418.833 134.054 416.446 131.667 413.5 131.667C410.554 131.667 408.167 134.054 408.167 137ZM186.845 0.744723L5.34459 158.245L6.65541 159.755L188.155 2.25528L186.845 0.744723ZM186.69 0.913373L130.19 78.9134L131.81 80.0866L188.31 2.08663L186.69 0.913373ZM186.628 1.98974L298.128 200.49L299.872 199.51L188.372 1.01026L186.628 1.98974ZM186.986 2.35766L412.986 137.858L414.014 136.142L188.014 0.64234L186.986 2.35766Z" fill="white"/></svg>');
           background-repeat: no-repeat;
           background-size: contain;
         }
@@ -1222,7 +1331,7 @@
           width: 580px;
           z-index: 2;
           background-size: contain;
-          background: url('data:image/svg+xml,<svg width="578" height="333" viewBox="0 0 578 333" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.166667 189.5C0.166667 192.446 2.55448 194.833 5.5 194.833C8.44552 194.833 10.8333 192.446 10.8333 189.5C10.8333 186.554 8.44552 184.167 5.5 184.167C2.55448 184.167 0.166667 186.554 0.166667 189.5ZM538.5 331.5L538.243 332.466L539.375 332.768L539.495 331.602L538.5 331.5ZM451.167 29C451.167 31.9455 453.554 34.3333 456.5 34.3333C459.446 34.3333 461.833 31.9455 461.833 29C461.833 26.0545 459.446 23.6667 456.5 23.6667C453.554 23.6667 451.167 26.0545 451.167 29ZM566.667 5.5C566.667 8.44552 569.055 10.8333 572 10.8333C574.945 10.8333 577.333 8.44552 577.333 5.5C577.333 2.55448 574.945 0.166667 572 0.166667C569.055 0.166667 566.667 2.55448 566.667 5.5ZM5.24256 190.466L538.243 332.466L538.758 330.534L5.75744 188.534L5.24256 190.466ZM539.465 331.238L457.465 28.7384L455.535 29.2616L537.535 331.762L539.465 331.238ZM539.495 331.602L572.995 5.60222L571.005 5.39778L537.505 331.398L539.495 331.602Z" fill="white"/></svg>');
+          background-image: url('data:image/svg+xml,<svg width="578" height="333" viewBox="0 0 578 333" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.166667 189.5C0.166667 192.446 2.55448 194.833 5.5 194.833C8.44552 194.833 10.8333 192.446 10.8333 189.5C10.8333 186.554 8.44552 184.167 5.5 184.167C2.55448 184.167 0.166667 186.554 0.166667 189.5ZM538.5 331.5L538.243 332.466L539.375 332.768L539.495 331.602L538.5 331.5ZM451.167 29C451.167 31.9455 453.554 34.3333 456.5 34.3333C459.446 34.3333 461.833 31.9455 461.833 29C461.833 26.0545 459.446 23.6667 456.5 23.6667C453.554 23.6667 451.167 26.0545 451.167 29ZM566.667 5.5C566.667 8.44552 569.055 10.8333 572 10.8333C574.945 10.8333 577.333 8.44552 577.333 5.5C577.333 2.55448 574.945 0.166667 572 0.166667C569.055 0.166667 566.667 2.55448 566.667 5.5ZM5.24256 190.466L538.243 332.466L538.758 330.534L5.75744 188.534L5.24256 190.466ZM539.465 331.238L457.465 28.7384L455.535 29.2616L537.535 331.762L539.465 331.238ZM539.495 331.602L572.995 5.60222L571.005 5.39778L537.505 331.398L539.495 331.602Z" fill="white"/></svg>');
           background-repeat: no-repeat;
         }
       }

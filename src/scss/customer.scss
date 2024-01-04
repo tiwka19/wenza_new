@@ -5,7 +5,10 @@
     margin-bottom: toRem(30);
   }
   &__list {
-    @include adaptiveValue('padding-bottom', 120, 40);
+    padding-bottom: toRem(120);
+    @media (max-width:$pc){
+      @include adaptiveValue('padding-bottom', 80, 40);
+    }
   }
   &__item {
     border-radius: 25px;
