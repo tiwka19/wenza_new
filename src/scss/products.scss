@@ -139,6 +139,7 @@
       backdrop-filter: blur(8.5px);
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       gap: toRem(10);
       @media (max-width: $mobileSmall) {
         padding: toRem(15);
@@ -146,6 +147,7 @@
     }
     &__item-title {
       font-size: toRem(24);
+      line-height: math.div(29, 24);
       @media (max-width: $pc) {
         @include adaptiveValue('font-size', 20, 16);
       }
@@ -153,7 +155,7 @@
     }
     &__item-image {
       max-width: toRem(222);
-      height: toRem(210);
+      height: toRem(209);
       margin: 0 auto;
       @media (max-width: $pc) {
         width: toRem(195);

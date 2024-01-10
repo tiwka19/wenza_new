@@ -83,8 +83,8 @@
       position: relative;
       gap: toRem(40);
       border-radius: toRem(60);
-      background: var(--4, linear-gradient(97deg, #3B4C82 0%, #010101 58%, #373A3B 106.06%));
-     
+      background: var(--4, linear-gradient(97deg, #3b4c82 0%, #010101 58%, #373a3b 106.06%));
+
       overflow: hidden;
       z-index: 2;
       display: flex;
@@ -184,7 +184,7 @@
         -3px -3px 22px 0px rgba(255, 255, 255, 0.83) inset;
       backdrop-filter: blur(8.5px);
       @include adaptiveValue('padding', 30, 15);
-      @media (max-width: $tablet) {
+      @media (max-width: em(1140)) {
         max-width: 100%;
       }
       @media (max-width: $mobileSmall) {
@@ -336,11 +336,20 @@
       margin-left: auto;
       text-align: right;
       z-index: 1;
+      @media (max-width: $mobileSmall) {
+        width: 100%;
+      }
     }
     &__item-title {
       font-size: toRem(32);
       @media (max-width: $pc) {
-        @include adaptiveValue('font-size', 24, 18);
+        font-size: toRem(24);
+      }
+      @media (max-width: $mobile) {
+        font-size: toRem(18);
+      }
+      @media (max-width: $mobileSmall) {
+        font-size: toRem(16);
       }
       line-height: math.div(44, 32);
       margin-bottom: toRem(15);
@@ -366,11 +375,20 @@
       }
     }
     &__item-button {
-      @include adaptiveValue('font-size', 24, 16);
-      line-height: math.div(27, 24);
-      padding: toRem(10) toRem(36);
+      font-size: toRem(24);
+      line-height: math.div(29, 24);
+      @media (max-width: $pc) {
+        font-size: toRem(20);
+      }
+      padding: toRem(16) toRem(36) !important;
       @media (max-width: $mobile) {
-        padding: toRem(8) toRem(24);
+        font-size: toRem(16);
+        padding: toRem(8) toRem(14);
+      }
+      @media (max-width: $mobileSmall) {
+        font-size: toRem(14);
+        width: 100%;
+        padding: toRem(8) toRem(12) !important;
       }
     }
   }
@@ -531,6 +549,13 @@
 
 .slider {
   &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    @media (max-width: $pc) {
+      max-width: toRem(185);
+    }
     @media (max-width: $mobileSmall) {
       max-width: toRem(205);
     }
@@ -590,6 +615,7 @@
     }
   }
   &__item-button {
+    width: auto;
     color: $primaryColor;
     font-size: toRem(18) !important;
     line-height: math.div(22, 18) !important;
